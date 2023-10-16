@@ -186,9 +186,52 @@
     </div>
     <!-- FINE MAIN -->
     <!-- INIZIO BARRA MUSICA -->
-    <div class="container-fluid">
+    <div class="container-fluid sticky-bottom p-1" id="music-bar">
       <div class="row">
-        <div></div>
+        <div class="col-3 d-flex ms-2 align-items-center">
+          <img src="assets/imgs/main/image-17.jpg" width="18%" class="me-2" />
+          <div class="me-2 friends d-flex flex-column justify-content-center">
+            <p class="small">Artistzzzzzz</p>
+            <p class="secondary-col small">Titlezzzzzzzz</p>
+          </div>
+          <i class="bi bi-heart fs-4"></i>
+        </div>
+
+        <div class="audio-player">
+          <div class="audio-controls d-flex flex-column col-6">
+            <div>
+              <button class="skip-button" onclick="skipAudio(-1)">
+                <i class="bi bi-skip-start"></i>
+              </button>
+              <button class="play-pause" onclick="togglePlayPause()">
+                <svg
+                  width="25"
+                  height="25"
+                  viewBox="0 0 110 110"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M55.0039 0C85.3633 0 110.008 24.6441 110.008 54.9995C110.008 85.3559 85.3633 110 55.0039 110C24.6446 110 0 85.3559 0 54.9995C0 24.6441 24.6446 0 55.0039 0ZM48.5749 33.0133C48.5749 31.7902 47.5034 30.7965 46.3426 30.7965H37.0562C35.8061 30.7965 34.8239 31.7902 34.8239 33.0133V76.7162C34.8239 77.9402 35.8061 78.9339 37.0562 78.9339H46.3426C47.5034 78.9339 48.5749 77.9402 48.5749 76.7162V33.0133ZM76.0769 33.0133C76.0769 31.7902 75.0947 30.7965 73.8446 30.7965H64.5582C63.3081 30.7965 62.3259 31.7902 62.3259 33.0133V76.7162C62.3259 77.9402 63.3081 78.9339 64.5582 78.9339H73.8446C75.0947 78.9339 76.0769 77.9402 76.0769 76.7162V33.0133Z"
+                    fill="white"
+                  />
+                </svg>
+              </button>
+              <button class="skip-button" onclick="skipAudio(1)">
+                <i class="bi bi-skip-end"></i>
+              </button>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar">
+                <div class="progress"></div>
+              </div>
+            </div>
+          </div>
+          <audio id="audio" src="/html/Kalimba.mp3"></audio>
+        </div>
+        <audio id="audio" src="/html/Kalimba.mp3"></audio>
       </div>
     </div>
     <script

@@ -48,3 +48,56 @@ ul li:hover {
 .card-main img {
   width: 30%;
 }
+
+#music-bar {
+  background-color: black;
+}
+
+.audio-player {
+  display: flex;
+  align-items: center;
+  width: 300px;
+}
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+}
+
+button.play-pause {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #1db954;
+}
+
+.progress-bar-container {
+  width: 200px;
+  margin: 0 10px;
+  background-color: #888;
+  height: 5px;
+  border-radius: 2.5px;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background-color: #1db954;
+  border-radius: 2.5px;
+}
+
+audio {
+  display: none;
+}
+
+.audio-player:hover button.play-pause {
+  display: block;
+}
+
+.skip-button {
+  background-color: transparent;
+  border: 0;
+  color: white;
+}
