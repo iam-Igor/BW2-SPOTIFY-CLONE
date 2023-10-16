@@ -1,3 +1,5 @@
+// SEZIONE 1
+
 const renderMusic = function (arrayOfMusic) {
   const row = document.getElementById('row-1')
   arrayOfMusic.forEach((music) => {
