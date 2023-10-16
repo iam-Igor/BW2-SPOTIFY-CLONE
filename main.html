@@ -52,7 +52,7 @@
     <!-- MAIN CONTAINER -->
     <div class="container-fluid">
       <div class="row flex-md-row flex-column justify-content-between">
-        <div class="col ms-2 col-md-2">
+        <div class="col ms-2 col-md-2 d-none d-md-block">
           <!-- SIDEBAR SX -->
           <ul class="list-unstyled secondary-col">
             <li><i class="bi bi-house-door fs-4"></i> Home</li>
@@ -90,7 +90,7 @@
             <li><i class="bi bi-bookmark fs-4"></i> I tuoi episodi</li>
           </ul>
           <hr />
-          <div class="playlist-cont d-none d-md-block">
+          <div class="playlist-cont">
             <ul class="list-unstyled secondary-col">
               <li>Top 50 Italia</li>
               <li>Coding Music</li>
@@ -186,7 +186,10 @@
     </div>
     <!-- FINE MAIN -->
     <!-- INIZIO BARRA MUSICA -->
-    <div class="container-fluid sticky-bottom p-2" id="music-bar">
+    <div
+      class="container-fluid sticky-bottom p-2 d-none d-md-block"
+      id="music-bar"
+    >
       <div class="row justify-content-between">
         <div class="col-2 d-flex ms-2 align-items-center">
           <img src="assets/imgs/main/image-17.jpg" width="18%" class="me-2" />
