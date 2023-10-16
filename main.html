@@ -34,7 +34,9 @@
             <i class="bi bi-house-door fs-4"></i>Home
           </button>
           <form id="search-form">
-            <i class="bi bi-search p-1" type="submit"></i>
+            <button type="submit" class="btn">
+              <i class="bi bi-search p-1 color1"></i>
+            </button>
 
             <input
               type="text"
@@ -205,10 +207,14 @@
     >
       <div class="row justify-content-between">
         <div class="col-2 d-flex ms-2 align-items-center">
-          <img src="assets/imgs/main/image-17.jpg" width="18%" class="me-2" />
+          <img
+            src="assets/imgs/main/image-17.jpg"
+            width="18%"
+            class="now-playing-img me-2"
+          />
           <div class="me-2 friends d-flex flex-column justify-content-center">
-            <p class="small">Artistzzzzzz</p>
-            <p class="secondary-col small">Titlezzzzzzzz</p>
+            <p class="small now-playing-artist">Artistzzzzzz</p>
+            <p class="secondary-col small now-playing-title">Titlezzzzzzzz</p>
           </div>
           <i class="bi bi-heart fs-4 d-none d-md-block"></i>
         </div>
@@ -216,13 +222,10 @@
         <div class="audio-player col-6 flex-grow-1 justify-content-center">
           <div class="audio-controls d-flex flex-column">
             <div>
-              <button
-                class="skip-button d-none d-md-inline-block"
-                onclick="skipAudio(-1)"
-              >
+              <button class="skip-button d-none d-md-inline-block">
                 <i class="bi bi-skip-start"></i>
               </button>
-              <button class="play-pause" onclick="togglePlayPause()">
+              <button class="play-pause">
                 <svg
                   width="25"
                   height="25"
@@ -238,19 +241,21 @@
                   />
                 </svg>
               </button>
-              <button
-                class="skip-button d-none d-md-inline-block"
-                onclick="skipAudio(1)"
-              >
+              <button class="skip-button d-none d-md-inline-block">
                 <i class="bi bi-skip-end"></i>
               </button>
             </div>
             <div class="progress-bar-container d-none d-md-block">
               <div class="progress-bar">
-                <div class="progress"></div>
+                <div class="progress">
+                  <p class="color1">00</p>
+                </div>
               </div>
             </div>
-            <audio id="audio" src="/html/Kalimba.mp3"></audio>
+            <audio
+              id="audio"
+              src="https://cdns-preview-2.dzcdn.net/stream/c-245d9fc880c31da2b47800e1d4521ecf-4.mp3"
+            ></audio>
           </div>
         </div>
 
@@ -342,22 +347,22 @@
         </div>
       </div>
     </div>
-
+    <!-- INIZIO BARRA MUSICA SM -->
     <div class="container-fluid d-block d-md-none" id="music-bar">
       <div class="row d-flex">
         <div class="col-2 col-md-3 d-flex">
           <img
             src="assets/imgs/main/image-11.jpg"
-            class="img-fluid"
+            class="now-playing-img img-fluid"
             width="100%"
           />
         </div>
         <div class="col d-flex ps-0 align-items-center">
-          <p class="small now-playing-artist">Bob Marley &#8226;</p>
+          <p class="small now-playing-artist">Bob Marley</p>
           <p class="small now-playing-title">Could You Be Loved</p>
         </div>
         <div class="col">
-          <i class="bi bi-pause-fill fs-1 offset-10" id="play-pause"></i>
+          <i class="bi bi-pause-fill fs-1 offset-10"></i>
         </div>
       </div>
     </div>

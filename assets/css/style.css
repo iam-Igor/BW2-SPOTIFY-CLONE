@@ -53,6 +53,10 @@ ul li:hover {
   width: 30%;
 }
 
+.color1 {
+  color: white;
+}
+
 #music-bar {
   background-color: black;
 }
@@ -76,7 +80,7 @@ button.play-pause {
 }
 
 .progress-bar-container {
-  width: 700px;
+  width: 500px;
   margin: 0 10px;
   background-color: #888;
   height: 5px;
@@ -147,6 +151,6 @@ input[type="range"]::-webkit-slider-thumb {
   fill: green;
 }
 
-#music-bar i:hover {
+i:hover {
   color: green;
 }
