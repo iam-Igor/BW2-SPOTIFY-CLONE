@@ -57,6 +57,12 @@ ul li:hover {
   background-color: black;
 }
 
+@media screen and (max-width: 480px) {
+  #music-bar img {
+    width: 100%;
+  }
+}
+
 #main-content .audio-player {
   display: flex;
   align-items: center;
