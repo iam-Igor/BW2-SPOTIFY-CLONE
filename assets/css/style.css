@@ -69,11 +69,10 @@ button.play-pause {
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #1db954;
 }
 
 .progress-bar-container {
-  width: 200px;
+  width: 700px;
   margin: 0 10px;
   background-color: #888;
   height: 5px;
@@ -82,9 +81,7 @@ button.play-pause {
 }
 
 .progress-bar {
-  height: 100%;
   width: 0;
-  background-color: #1db954;
   border-radius: 2.5px;
 }
 
@@ -92,12 +89,60 @@ audio {
   display: none;
 }
 
-.audio-player:hover button.play-pause {
-  display: block;
-}
-
 .skip-button {
   background-color: transparent;
   border: 0;
   color: white;
+}
+
+input[type="range"] {
+  width: 100px;
+  height: 5px;
+  background-color: lightgrey;
+  border: none;
+  border-radius: 2.5px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 10px;
+  height: 10px;
+  background-color: lightgrey;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  width: 100px;
+  height: 5px;
+  background-color: lightgrey;
+  border: none;
+  border-radius: 2.5px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="range"]::-moz-range-progress {
+  background-color: gray;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  display: none;
+}
+
+#music-bar svg path:hover {
+  fill: green;
+}
+
+#music-bar i:hover {
+  color: green;
 }
