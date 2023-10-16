@@ -1,0 +1,46 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: "Circular";
+}
+
+#library-svg {
+  transform: rotate(-15deg);
+}
+
+.playlist-cont {
+  overflow-y: scroll;
+  height: 460px;
+}
+
+#search-input {
+  width: 300px;
+  border-radius: 0 20px 20px 0;
+  height: 40px;
+  border: 0;
+  background-color: rgb(42, 42, 42);
+}
+
+#search-form {
+  border-radius: 20px;
+  background-color: white;
+  height: 40px;
+  border: 0;
+  background-color: rgb(42, 42, 42);
+}
+
+.small {
+  font-size: 0.6em;
+}
+
+.secondary-col {
+  color: gray;
+}
+
+.friends {
+  line-height: px;
+}
+
+ul li:hover {
+  color: white;
+}
