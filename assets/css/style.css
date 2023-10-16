@@ -44,3 +44,7 @@ body {
 ul li:hover {
   color: white;
 }
+
+.card-main img {
+  width: 30%;
+}
