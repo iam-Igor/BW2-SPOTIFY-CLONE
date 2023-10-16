@@ -65,17 +65,18 @@ const musicId = addressBarContent.get('musicId')
 
 const generateDetails = function (details) {
   const row1 = document.getElementById('row-1')
-  row1.innerHTML = `<div class="col col-4">
+  for (let j = 0; j <= details.tracks.data.length; j++) {
+    row1.innerHTML = `<div class="col col-4">
      <img
-     src="assets/imgs/main/image-13.jpg"
+     src="${details.artist.picture_medium}"
       alt=""
       class="img-fluid"/>
     </div>
-   <div class="col-8">
-    <h6>ALBUM</h6>
-     <h1>Titolo</h1>
-     <p>Artista</p>
-    <p>descrizione</p>
+   <div class="col-8 pt-3">
+    <h6>${details.title}</h6>
+     <h1>${details.tracks.data[j].title}</h1>
+     <p>${details.artist.name}</p>
+    <p> Ascolta le tue canzoni preferite!</p>
      <div class="d-flex align-items-center">
        <a href="#" class="btn btn-success rounded-4 me-2 px-4"
          >Play</a
@@ -88,12 +89,14 @@ const generateDetails = function (details) {
        <i class="bi bi-three-dots ms-3"></i>
      </div>
   </div>`
+  }
 }
 
 const getDetails = function () {
-  fetch('https://striveschool-api.herokuapp.com/api/deezer/search?q=' + musicId)
+  fetch('https://striveschool-api.herokuapp.com/api/deezer/album/75621062')
     .then((res) => {
       if (res.ok) {
+        console.log(res)
         return res.json()
       } else {
         throw new Error('Errore nel caricamento dei dettagli')
@@ -106,3 +109,5 @@ const getDetails = function () {
       console.log('Errore', err)
     })
 }
+
+getDetails()
