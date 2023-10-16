@@ -52,9 +52,9 @@
     <!-- MAIN CONTAINER -->
     <div class="container-fluid">
       <div class="row flex-md-row flex-column justify-content-between">
-        <div class="col ms-2 col-md-2 d-none d-md-block">
+        <div class="col ms-2 col-md-2">
           <!-- SIDEBAR SX -->
-          <ul class="list-unstyled secondary-col">
+          <ul class="list-unstyled secondary-col d-none d-md-block">
             <li><i class="bi bi-house-door fs-4"></i> Home</li>
             <li><i class="bi bi-search fs-4"></i> Cerca</li>
             <li>
@@ -84,13 +84,13 @@
               La tua libreria
             </li>
           </ul>
-          <ul class="list-unstyled secondary-col">
+          <ul class="list-unstyled secondary-col d-none d-md-block">
             <li><i class="bi bi-plus-square fs-4"></i> Crea playlist</li>
             <li><i class="bi bi-heart fs-4"></i> Brani che ti piacciono</li>
             <li><i class="bi bi-bookmark fs-4"></i> I tuoi episodi</li>
           </ul>
           <hr />
-          <div class="playlist-cont">
+          <div class="playlist-cont d-none d-md-block">
             <ul class="list-unstyled secondary-col">
               <li>Top 50 Italia</li>
               <li>Coding Music</li>
@@ -124,7 +124,20 @@
           <div class="row">
             <!-- NOW PLAYING -->
           </div>
-          <h1 class="fs-3">Buon Pomeriggio</h1>
+          <div class="d-flex justify-content-between">
+            <div>
+              <h1 class="fs-3">Buon Pomeriggio</h1>
+              <ul class="list-unstyled d-flex">
+                <li class="fs-6 me-4">Musica</li>
+                <li class="fs-6">Podcast e Show</li>
+              </ul>
+            </div>
+            <div>
+              <i class="bi bi-bell fs-3 d-md-none"></i>
+              <i class="bi bi-clock-history fs-3 d-md-none"></i>
+              <i class="bi bi-gear fs-3 d-md-none"></i>
+            </div>
+          </div>
           <div class="row row-cols-2 row-cols-md-3">
             <div class="col d-flex card-main">
               <div>
@@ -185,7 +198,7 @@
       </div>
     </div>
     <!-- FINE MAIN -->
-    <!-- INIZIO BARRA MUSICA -->
+    <!-- INIZIO BARRA MUSICA MD -->
     <div
       class="container-fluid sticky-bottom p-2 d-none d-md-block"
       id="music-bar"
@@ -200,7 +213,7 @@
           <i class="bi bi-heart fs-4"></i>
         </div>
 
-        <div class="audio-player col-7 flex-grow-1 justify-content-center">
+        <div class="audio-player col-6 flex-grow-1 justify-content-center">
           <div class="audio-controls d-flex flex-column">
             <div>
               <button class="skip-button" onclick="skipAudio(-1)">
@@ -313,6 +326,51 @@
             />
           </svg>
         </div>
+      </div>
+    </div>
+
+    <!-- BARRA SM SECTIONS -->
+    <div class="row sticky-bottom d-md-none">
+      <div class="col">
+        <ul
+          class="list-unstyled secondary-col d-block d-md-none d-flex justify-content-evenly"
+        >
+          <li class="d-flex flex-column align-items-center medium">
+            <i class="bi bi-house-door fs-1"></i> Home
+          </li>
+          <li class="d-flex flex-column align-items-center medium">
+            <i class="bi bi-search fs-1"></i> Cerca
+          </li>
+          <li
+            class="d-flex flex-column align-items-center justify-content-center medium"
+          >
+            <svg
+              class="mb-1"
+              id="library-svg"
+              width="50"
+              height="35"
+              viewBox="0 0 242 255"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M62.9931 0.872341C57.4417 -0.61514 51.735 2.67759 50.2462 8.23384L0.844504 192.603C-0.644288 198.16 2.65154 203.865 8.2029 205.352C13.7543 206.84 19.461 203.547 20.9498 197.991L70.3515 13.621C71.8403 8.06479 68.5444 2.35982 62.9931 0.872341Z"
+                fill="gray"
+              />
+              <path
+                d="M110.839 24.4695C112.327 18.9133 118.034 15.6206 123.586 17.108C129.137 18.5955 132.433 24.3005 130.944 29.8567L81.5423 214.226C80.0535 219.783 74.3467 223.075 68.7954 221.588C63.244 220.1 59.9482 214.395 61.437 208.839L110.839 24.4695Z"
+                fill="gray"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M170.421 42.8009C172.728 34.19 183.571 31.4286 189.719 37.8872L238.275 88.8902C239.628 90.3126 240.566 92.028 241.051 93.863C241.546 95.7534 241.556 97.771 241.034 99.7194L201.893 245.797C200.261 251.887 193.998 255.503 187.908 253.871L129.854 238.316C123.762 236.683 120.148 230.421 121.78 224.331L170.421 42.8009Z"
+                fill="gray"
+              />
+            </svg>
+            La tua libreria
+          </li>
+        </ul>
       </div>
     </div>
     <script

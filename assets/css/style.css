@@ -33,12 +33,16 @@ body {
   font-size: 0.6em;
 }
 
+.medium {
+  font-size: 0.8em;
+}
+
 .secondary-col {
   color: gray;
 }
 
 .friends {
-  line-height: px;
+  line-height: 2px;
 }
 
 ul li:hover {
@@ -53,7 +57,7 @@ ul li:hover {
   background-color: black;
 }
 
-.audio-player {
+#main-content .audio-player {
   display: flex;
   align-items: center;
   width: 300px;
