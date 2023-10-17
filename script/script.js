@@ -47,7 +47,28 @@ const generateFavourites = function (musicData) {
     ul.appendChild(newLi)
   }
 }
+const audiotrack = function (event) {
+  const audioSrc = document.getElementById('audio')
+  audioSrc.src = event.data[0].preview
 
+  const artistInfo = document.querySelectorAll('.now-playing-artist')
+  artistInfo.forEach((artist) => {
+    artist.textContent = `${event.data[0].artist.name}    
+    &#8226;`
+
+    console.log((artist.textContent = `${event.data[0].artist.name}`))
+  })
+
+  const titleInfo = document.querySelectorAll('.now-playing-title')
+  titleInfo.forEach((title) => {
+    title.textContent = `${event.data[0].title}`
+  })
+
+  const imgInfo = document.querySelectorAll('.now-playing-img')
+  imgInfo.forEach((img) => {
+    img.src = `${event.data[0].album.cover_big}`
+  })
+}
 const form = document.getElementById('form-search')
 form.addEventListener('click', function (e) {
   e.preventDefault()
@@ -67,6 +88,7 @@ form.addEventListener('click', function (e) {
       renderSection3(music)
       generateFavourites(music)
       generateDetails(music)
+      audiotrack(music)
     })
     .catch((err) => {
       console.log('Si è verificato un errore', err)
