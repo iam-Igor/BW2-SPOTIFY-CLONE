@@ -1,15 +1,24 @@
-console.log("sono collegato");
-
 const renderAlbum = function (album) {
-   const secToTime = function (duration) {
+   const secToTime = function (duration, type = "albumDuration") {
       const milliseconds = duration * 1000;
       const seconds = Math.floor((milliseconds / 1000) % 60);
       const minutes = Math.floor((milliseconds / 1000 / 60) % 60);
       const hours = Math.floor((milliseconds / 1000 / 60 / 60) % 24);
 
-      return ` ${hours.toString()}hr ${minutes
-         .toString()
-         .padStart(2, "0")}min ${seconds.toString().padStart(2, "0")}sec.`;
+      if (type === "track") {
+         let duration = [
+            hours.toString().padStart(2, "0"),
+            minutes.toString().padStart(2, "0"),
+            seconds.toString().padStart(2, "0"),
+         ];
+
+         duration[0] === "00" ? duration.shift() : duration;
+         return duration.join(":");
+      } else {
+         return ` ${hours.toString()}hr ${minutes
+            .toString()
+            .padStart(2, "0")}min ${seconds.toString().padStart(2, "0")}sec.`;
+      }
    };
 
    const albumName = document.getElementById("album-name");
@@ -20,6 +29,7 @@ const renderAlbum = function (album) {
    const releasedYear = document.getElementById("album-released-year");
    const albumTracks = document.getElementById("album-tracks");
    const albumArtistName = document.getElementById("album-artist-name");
+   const albumListTracks = document.getElementById("album-tracks-continer");
 
    // setting data
    albumName.innerText = album.title;
@@ -33,6 +43,31 @@ const renderAlbum = function (album) {
    );
    albumTracks.innerText = album.nb_tracks + " brani";
    albumArtistName.innerText = album.artist.name;
+
+   // creating album track list
+   console.log("length :", album.tracks.data.length);
+   album.tracks.data.forEach((track, index) => {
+      const trackRow = document.createElement("div");
+      trackRow.className = "row row-cols-3 tracks mx-0 mb-2";
+      trackRow.innerHTML = `
+         <div class="col-6 d-flex align-items-center ps-3">
+            <p class="ps-4 pe-3 m-0">${index + 1}</p>
+            <div >
+            <p class="mb-0 card-text">${track.title}</p>
+            <p class="mb-0"><small class="text-body-secondary ">${
+               track.artist.name
+            }</small></p>
+         </div>
+         </div>
+         <div class="col-3 d-flex justify-content-end align-items-center">
+            <p class="card-text">${track.rank}</p>
+         </div>
+         <div class="col-3 d-flex justify-content-end align-items-center pe-3">
+            <p class="card-text pe-4">${secToTime(track.duration, "track")}</p>
+         </div>
+      `;
+      albumListTracks.appendChild(trackRow);
+   });
 
    // setting height of bg black
    const bgBlack = document.querySelector(".album-bg-black");
