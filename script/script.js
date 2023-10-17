@@ -37,13 +37,12 @@ const generateDetails = function (details) {
 
 const renderSection2 = function (musicData) {
   const section = document.getElementById("section2");
-  console.log(section);
-
-  for (let i = 0; i < 6; i++) {
+  console.log(musicData.data);
+  for (let i = 0; i < musicData.length; i++) {
     const newCol2 = document.createElement("div");
     newCol2.classList.add("col", "col-md-4", "mb-3");
     newCol2.innerHTML = `<div class="card d-flex flex-row align-items-center bg-body-secondary border-0">
-    <img src="${musicData.data[i].artist.picture_small}" class="card-img-top w-25" alt="${musicData.data[i].artist.name}">
+    <img src="${musicData.data[i].album.cover_medium}" class="card-img-top w-25" alt="${musicData.data[i].artist.name}">
     <div class="card-body">
       <h6 class="card-title">${musicData.data[i].artist.name}</h6>
     </div>
