@@ -6,7 +6,7 @@ const musicId = addressBarContent.get("musicId");
 const generateDetails = function (details) {
   console.log(details);
   const row1 = document.getElementById("row-1");
-  for (let j = 0; j <= details.data.length; j++) {
+  for (let j = 0; j < details.data.length; j++) {
     row1.innerHTML = `<div class="col col-4">
      <img
      src="${details.data[j].album.cover_medium}"
@@ -17,9 +17,9 @@ const generateDetails = function (details) {
     <h6>${details.data[j].title}</h6>
      <h1>${details.data[j].album.title}</h1>
      <a href='./details.html?musicId=${details.data[j].artist.id}'>${details.data[j].artist.name}</a>
-    <p> Ascolta le tue canzoni preferite!</p>
+    
      <div class="d-flex align-items-center">
-       <a href="#" class="btn btn-success rounded-4 me-2 px-4"
+       <a href="#" class="btn btn-success rounded-4 me-2 px-4 play-pause"
          >Play</a
       >
       <a
