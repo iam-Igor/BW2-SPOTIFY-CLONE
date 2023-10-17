@@ -4,7 +4,8 @@ const audiotrack = function (event) {
 
   const artistInfo = document.querySelectorAll(".now-playing-artist");
   artistInfo.forEach((artist) => {
-    artist.textContent = `${event.data[0].artist.name}`;
+    artist.textContent = `${event.data[0].artist.name}	
+    &#8226;`;
 
     console.log((artist.textContent = `${event.data[0].artist.name}`));
   });
@@ -19,6 +20,7 @@ const audiotrack = function (event) {
     img.src = `${event.data[0].album.cover_big}`;
   });
 };
+
 const searchForm = document.getElementById("search-form");
 
 searchForm.addEventListener("submit", function (e) {
@@ -56,12 +58,12 @@ playPauseButton.forEach((button) => {
   button.addEventListener("click", function () {
     if (audio.paused) {
       audio.play();
-      button.innerHTML = `<i class="bi bi-pause-circle color1"></i>
+      button.innerHTML = `<i class="bi bi-pause-circle color1 fs-1 fs-md-4"></i>
 
       `;
     } else {
       audio.pause();
-      button.innerHTML = `<i class="bi bi-play-fill color1"></i>`;
+      button.innerHTML = `<i class="bi bi-play-fill color1 fs-1 fs-md-4"></i>`;
     }
   });
 });

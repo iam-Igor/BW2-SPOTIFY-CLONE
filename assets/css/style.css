@@ -49,6 +49,11 @@ ul li:hover {
   color: white;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .card-main img {
   width: 30%;
 }
@@ -153,4 +158,12 @@ input[type="range"]::-webkit-slider-thumb {
 
 i:hover {
   color: green;
+}
+
+#small-bar i:hover {
+  color: white;
+}
+
+#small-bar path:hover {
+  fill: white;
 }

@@ -31,7 +31,7 @@
         </div>
         <div class="col d-flex align-items-center justify-content-center">
           <button class="btn rounded-pill bg-white me-3 p1">
-            <i class="bi bi-house-door fs-4"></i>Home
+            <a href="main.html"><i class="bi bi-house-door fs-4"></i>Home</a>
           </button>
           <form id="search-form">
             <button type="submit" class="btn">
@@ -57,7 +57,7 @@
         <div class="col ms-2 col-md-2">
           <!-- SIDEBAR SX -->
           <ul class="list-unstyled secondary-col d-none d-md-block">
-            <li><i class="bi bi-house-door fs-4"></i> Home</li>
+            <li><a href="main.html"><i class="bi bi-house-door fs-4"></i> Home</li></a>
             <li><i class="bi bi-search fs-4"></i> Cerca</li>
             <li>
               <svg
@@ -226,20 +226,7 @@
                 <i class="bi bi-skip-start"></i>
               </button>
               <button class="play-pause">
-                <svg
-                  width="25"
-                  height="25"
-                  viewBox="0 0 110 110"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M55.0039 0C85.3633 0 110.008 24.6441 110.008 54.9995C110.008 85.3559 85.3633 110 55.0039 110C24.6446 110 0 85.3559 0 54.9995C0 24.6441 24.6446 0 55.0039 0ZM48.5749 33.0133C48.5749 31.7902 47.5034 30.7965 46.3426 30.7965H37.0562C35.8061 30.7965 34.8239 31.7902 34.8239 33.0133V76.7162C34.8239 77.9402 35.8061 78.9339 37.0562 78.9339H46.3426C47.5034 78.9339 48.5749 77.9402 48.5749 76.7162V33.0133ZM76.0769 33.0133C76.0769 31.7902 75.0947 30.7965 73.8446 30.7965H64.5582C63.3081 30.7965 62.3259 31.7902 62.3259 33.0133V76.7162C62.3259 77.9402 63.3081 78.9339 64.5582 78.9339H73.8446C75.0947 78.9339 76.0769 77.9402 76.0769 76.7162V33.0133Z"
-                    fill="white"
-                  />
-                </svg>
+                <i class="bi bi-play-fill color1 fs-1"></i>
               </button>
               <button class="skip-button d-none d-md-inline-block">
                 <i class="bi bi-skip-end"></i>
@@ -361,19 +348,20 @@
           <p class="small now-playing-artist">Bob Marley</p>
           <p class="small now-playing-title">Could You Be Loved</p>
         </div>
-        <div class="col">
-          <i class="bi bi-pause-fill fs-1 offset-10"></i>
+        <div class="col-1 play-pause me-3">
+          <i class="bi bi-play-fill color1 fs-1"></i>
         </div>
       </div>
     </div>
     <!-- BARRA SM SECTIONS -->
-    <div class="row sticky-bottom d-md-none">
+    <div class="row sticky-bottom d-md-none" id="small-bar">
       <div class="col">
         <ul
           class="list-unstyled secondary-col d-block d-md-none d-flex justify-content-evenly"
         >
           <li class="d-flex flex-column align-items-center medium">
-            <i class="bi bi-house-door fs-1"></i> Home
+            <i class="bi bi-house-door fs-1"></i> 
+            <a href="main.html">Home</a>
           </li>
           <li class="d-flex flex-column align-items-center medium">
             <i class="bi bi-search fs-1"></i> Cerca
