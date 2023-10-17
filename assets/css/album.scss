@@ -26,6 +26,7 @@
 
 .container-mid {
    position: relative;
+   overflow: hidden;
 
    .album-bg-color {
       background: rgb(222, 222, 0);
@@ -40,6 +41,7 @@
 
    .album-bg-black {
       background-color: #000;
+      // background-color: red;
       height: 50vh;
    }
 
@@ -50,7 +52,7 @@
       overflow-x: hidden;
 
       // modify height to fix
-      height: 78vh;
+      height: 80vh;
 
       .album-header {
          .album-cover-img {
