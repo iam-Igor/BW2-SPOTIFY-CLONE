@@ -1,10 +1,12 @@
 const renderAlbum = function (album) {
+   // a function that calculates duration of tracks or duration of album
    const secToTime = function (duration, type = "albumDuration") {
       const milliseconds = duration * 1000;
       const seconds = Math.floor((milliseconds / 1000) % 60);
       const minutes = Math.floor((milliseconds / 1000 / 60) % 60);
       const hours = Math.floor((milliseconds / 1000 / 60 / 60) % 24);
 
+      // calculate track length
       if (type === "track") {
          let duration = [
             hours.toString().padStart(2, "0"),
@@ -15,6 +17,7 @@ const renderAlbum = function (album) {
          duration[0] === "00" ? duration.shift() : duration;
          return duration.join(":");
       } else {
+         // calculates album length
          return ` ${hours.toString()}hr ${minutes
             .toString()
             .padStart(2, "0")}min ${seconds.toString().padStart(2, "0")}sec.`;
@@ -75,15 +78,26 @@ const renderAlbum = function (album) {
    const musicBar = document.getElementById("music-bar");
    const header = document.getElementsByTagName("header");
 
+   console.log(
+      "height: ",
+      fullHeight.clientHeight,
+      bgBlack.clientHeight,
+      window.innerHeight / 2,
+      fullHeight.clientHeight - window.innerHeight / 2
+   );
+
    // fullHeight.style.height =
    //    window.innerHeight - musicBar.innerHeight - header.innerHeight + "px";
 
-   bgBlack.style.height =
-      fullHeight.clientHeight -
-      window.innerHeight / 2 -
-      musicBar.innerHeight -
-      header.innerHeight +
-      "px";
+   // bgBlack.style.height =
+   //    fullHeight.clientHeight -
+   //    window.innerHeight / 2 -
+   //    musicBar.innerHeight -
+   //    header.innerHeight +
+   //    "px";
+
+   // bgBlack.style.height =
+   //    fullHeight.clientHeight - window.innerHeight / 2 + "px";
 };
 
 const loadAlbum = function (id = 75621062) {

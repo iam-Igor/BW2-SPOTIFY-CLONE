@@ -17,6 +17,7 @@
 
 .container-mid {
   position: relative;
+  overflow: hidden;
 }
 .container-mid .album-bg-color {
   background: rgb(222, 222, 0);
@@ -32,7 +33,7 @@
   top: 0;
   overflow: scroll;
   overflow-x: hidden;
-  height: 78vh;
+  height: 80vh;
 }
 .container-mid .tracks-and-header .album-header .album-cover-img {
   padding: 1em;
