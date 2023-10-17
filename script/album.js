@@ -10,6 +10,7 @@ const albumListTracks = document.getElementById("album-tracks-continer");
 
 const renderAlbum = function (album) {
   // a function that calculates duration of tracks or duration of album
+  console.log(album);
   const secToTime = function (duration, type = "albumDuration") {
     const milliseconds = duration * 1000;
     const seconds = Math.floor((milliseconds / 1000) % 60);
@@ -61,6 +62,10 @@ const renderAlbum = function (album) {
               track.artist.name
             }</small></p>
          </div>
+         <div class=ms-3>
+         <i class="bi bi-play-fill fs-3 play-track2"></i>
+         </div>
+      </div>
          </div>
          <div class="col-3 d-flex justify-content-end align-items-center">
             <p class="card-text">${track.rank}</p>
@@ -75,8 +80,6 @@ const renderAlbum = function (album) {
   // setting height of bg black
   const bgBlack = document.querySelector(".album-bg-black");
   const fullHeight = document.querySelector(".tracks-and-header");
-  const musicBar = document.getElementById("music-bar");
-  const header = document.getElementsByTagName("header");
 
   console.log(
     "height: ",
@@ -138,7 +141,11 @@ const visualizeAlbums = function (albums) {
               <p class="mb-0"><small class="text-body-secondary ">${
                 album.artist.name
               }</small></p>
+              
            </div>
+           <div class=ms-3>
+              <i class="bi bi-play-fill fs-3 play-track"></i>
+              </div>
            </div>
            <div class="col-3 d-flex justify-content-end align-items-center">
               <p class="card-text">${album.rank}</p>
@@ -151,6 +158,63 @@ const visualizeAlbums = function (albums) {
         `;
     albumListTracks.appendChild(trackRow);
   });
+};
+
+const audiotrack3 = function (event) {
+  const audioSrc = document.getElementById("audio");
+  console.log(event);
+  const playBtnArtist = document.querySelectorAll(".play-track2");
+
+  for (let i = 0; i < playBtnArtist.length; i++) {
+    playBtnArtist[i].addEventListener("click", function () {
+      audioSrc.src = event.preview;
+      console.log((audioSrc.src = event.tracks.data[i].preview));
+      const artistInfo = document.querySelectorAll(".now-playing-artist");
+      artistInfo.forEach((artist) => {
+        artist.textContent = event.artist.name;
+      });
+
+      const titleInfo = document.querySelectorAll(".now-playing-title");
+      titleInfo.forEach((title) => {
+        title.textContent = event.tracks.data[i].title;
+      });
+
+      const imgInfo = document.querySelectorAll(".now-playing-img");
+      imgInfo.forEach((img) => {
+        img.src = event.tracks.data[i].album.cover_big;
+      });
+    });
+  }
+};
+
+const audiotrack2 = function (event) {
+  console.log(event);
+
+  const audioSrc = document.getElementById("audio");
+  console.log(audioSrc);
+
+  const playBtnArtist = document.querySelectorAll(".play-track");
+
+  for (let i = 0; i < playBtnArtist.length; i++) {
+    playBtnArtist[i].addEventListener("click", function () {
+      audioSrc.src = event.data[i].preview;
+      console.log((audioSrc.src = event.data[i].preview));
+      const artistInfo = document.querySelectorAll(".now-playing-artist");
+      artistInfo.forEach((artist) => {
+        artist.textContent = event.data[i].artist.name;
+      });
+
+      const titleInfo = document.querySelectorAll(".now-playing-title");
+      titleInfo.forEach((title) => {
+        title.textContent = event.data[i].title;
+      });
+
+      const imgInfo = document.querySelectorAll(".now-playing-img");
+      imgInfo.forEach((img) => {
+        img.src = event.data[i].album.cover_big;
+      });
+    });
+  }
 };
 
 const visualizeArtist = function (artist) {
@@ -183,6 +247,7 @@ const renderArtist = function (artist) {
     .then((suggested) => {
       console.log(suggested);
       visualizeAlbums(suggested);
+      audiotrack2(suggested);
     })
     .catch((err) => {
       console.log(err);
@@ -200,6 +265,7 @@ const loadAlbum = function () {
     .then((respone) => {
       console.log("Fetch went fine!", respone);
       renderAlbum(respone);
+      audiotrack3(respone);
     })
     .catch((err) => console.log("Fetching issue", err));
 };
@@ -211,8 +277,9 @@ const loadArtist = function () {
     .then((response) => {
       if (!response.ok) {
         throw new Error("Fetching respose ERROR!");
+      } else {
+        return response.json();
       }
-      return response.json();
     })
     .then((response) => {
       console.log("Fetch went fine!", response);
