@@ -1,8 +1,5 @@
 // DETTAGLIO
 
-const addressBarContent = new URLSearchParams(location.search);
-const musicId = addressBarContent.get("musicId");
-
 const generateDetails = function (details) {
   console.log(details);
   const row1 = document.getElementById("row-1");
@@ -49,9 +46,11 @@ const renderSection2 = function (musicData) {
         alt="${musicData.data[0].artist.name}"
       />
       <div class="card-body">
+      <a href="./album.html?musicId=${musicData.data[0].album.id}">
         <h6 class="card-title">
-          ${musicData.data[0].artist.name}
+          ${musicData.data[0].album.title}
         </h6>
+        </a>
       </div>
     </div>
   </div>
@@ -65,9 +64,11 @@ const renderSection2 = function (musicData) {
         alt="${musicData.data[1].artist.name}"
       />
       <div class="card-body">
+      <a href="./album.html?musicId=${musicData.data[1].album.id}">
         <h6 class="card-title">
-          ${musicData.data[1].artist.name}
+          ${musicData.data[1].album.title}
         </h6>
+        </a>
       </div>
     </div>
   </div>
@@ -81,9 +82,11 @@ const renderSection2 = function (musicData) {
         alt="${musicData.data[2].artist.name}"
       />
       <div class="card-body">
-        <h6 class="card-title">
-          ${musicData.data[2].artist.name}
-        </h6>
+      <a href="./album.html?musicId=${musicData.data[2].album.id}">
+      <h6 class="card-title">
+        ${musicData.data[2].album.title}
+      </h6>
+      </a>
       </div>
     </div>
   </div>
@@ -97,9 +100,11 @@ const renderSection2 = function (musicData) {
         alt="${musicData.data[3].artist.name}"
       />
       <div class="card-body">
-        <h6 class="card-title">
-          ${musicData.data[3].artist.name}
-        </h6>
+      <a href="./album.html?musicId=${musicData.data[3].album.id}">
+      <h6 class="card-title">
+        ${musicData.data[3].album.title}
+      </h6>
+      </a>
       </div>
     </div>
   </div>
@@ -113,9 +118,11 @@ const renderSection2 = function (musicData) {
         alt="${musicData.data[4].artist.name}"
       />
       <div class="card-body">
+      <a href="./album.html?musicId=${musicData.data[4].album.id}">
         <h6 class="card-title">
-          ${musicData.data[4].artist.name}
+          ${musicData.data[4].album.title}
         </h6>
+        </a>
       </div>
     </div>
   </div>
@@ -129,9 +136,11 @@ const renderSection2 = function (musicData) {
         alt="${musicData.data[5].artist.name}"
       />
       <div class="card-body">
-        <h6 class="card-title">
-          ${musicData.data[5].artist.name}
-        </h6>
+      <a href="./album.html?musicId=${musicData.data[5].album.id}">
+      <h6 class="card-title">
+        ${musicData.data[5].album.title}
+      </h6>
+      </a>
       </div>
     </div>
   </div>`;
