@@ -128,10 +128,92 @@
                   <div class="col">
                     <h4>Buonasera</h4>
                   </div>
-                  <div
-                    class="row row-cols-2 row-cols-md-3 my-2"
-                    id="section2"
-                  ></div>
+                  <div class="row row-cols-2 row-cols-md-3 my-2" id="section2">
+                    <div class="col mb-3 col-md-4">
+                      <div
+                        class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+                      >
+                        <img
+                          src="assets/imgs/main/image-1.jpg"
+                          class="card-img-top w-25"
+                          alt="${musicData.data[i].artist.name}"
+                        />
+                        <div class="card-body">
+                          <h6 class="card-title">Top Hits Italia</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col mb-3 col-md-4">
+                      <div
+                        class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+                      >
+                        <img
+                          src="assets/imgs/main/image-13.jpg"
+                          class="card-img-top w-25"
+                          alt="${musicData.data[i].artist.name}"
+                        />
+                        <div class="card-body">
+                          <h6 class="card-title">Estate Italiana</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col mb-3 col-md-4">
+                      <div
+                        class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+                      >
+                        <img
+                          src="assets/imgs/main/image-15.jpg"
+                          class="card-img-top w-25"
+                          alt="${musicData.data[i].artist.name}"
+                        />
+                        <div class="card-body">
+                          <h6 class="card-title">Hit internazionali</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col mb-3 col-md-4">
+                      <div
+                        class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+                      >
+                        <img
+                          src="assets/imgs/main/image-2.jpg"
+                          class="card-img-top w-25"
+                          alt="${musicData.data[i].artist.name}"
+                        />
+                        <div class="card-body">
+                          <h6 class="card-title">Festivalbar</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col mb-3 col-md-4">
+                      <div
+                        class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+                      >
+                        <img
+                          src="assets/imgs/main/image-16.jpg"
+                          class="card-img-top w-25"
+                          alt="${musicData.data[i].artist.name}"
+                        />
+                        <div class="card-body">
+                          <h6 class="card-title">Zecchino d'oro</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col mb-3 col-md-4">
+                      <div
+                        class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+                      >
+                        <img
+                          src="assets/imgs/main/image-17.jpg"
+                          class="card-img-top w-25"
+                          alt="${musicData.data[i].artist.name}"
+                        />
+                        <div class="card-body">
+                          <h6 class="card-title">Suggeriti per te</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
                   <h4>Altro di ciò che ti piace</h4>
@@ -140,7 +222,111 @@
                 <div
                   class="row row-cols-2 row-cols-md-5 mt-4 flex-wrap flex-md-row"
                   id="row-3"
-                ></div>
+                >
+                  <div class="col">
+                    <div
+                      class="card border-0 bg-body-secondary my-3 p-2"
+                      style="height: 350px"
+                    >
+                      <img
+                        src="assets/imgs/search/image-1.jpeg"
+                        class="card-img-top"
+                        alt="${musicData.data[i].artist.name}"
+                      />
+                      <div class="card-body">
+                        <a
+                          href="./details.html?musicId=${musicData.data[i].artist.id}"
+                          class="card-title fw-bold"
+                          style="font-size: 15px"
+                          >Power Hits</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card border-0 bg-body-secondary my-3 p-2"
+                      style="height: 350px"
+                    >
+                      <img
+                        src="assets/imgs/search/image-11.jpg"
+                        class="card-img-top"
+                        alt="${musicData.data[i].artist.name}"
+                      />
+                      <div class="card-body">
+                        <a
+                          href="./details.html?musicId=${musicData.data[i].artist.id}"
+                          class="card-title fw-bold"
+                          style="font-size: 15px"
+                          >Trending Hits</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card border-0 bg-body-secondary my-3 p-2"
+                      style="height: 350px"
+                    >
+                      <img
+                        src="assets/imgs/search/image-13.jpeg"
+                        class="card-img-top"
+                        alt="${musicData.data[i].artist.name}"
+                      />
+                      <div class="card-body">
+                        <a
+                          href="./details.html?musicId=${musicData.data[i].artist.id}"
+                          class="card-title fw-bold"
+                          style="font-size: 15px"
+                          >Most listened</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card border-0 bg-body-secondary my-3 p-2"
+                      style="height: 350px"
+                    >
+                      <img
+                        src="assets/imgs/search/image-17.jpg"
+                        class="card-img-top"
+                        alt="${musicData.data[i].artist.name}"
+                      />
+                      <div class="card-body">
+                        <a
+                          href="./details.html?musicId=${musicData.data[i].artist.id}"
+                          class="card-title fw-bold"
+                          style="font-size: 15px"
+                          >Popular Hits</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card border-0 bg-body-secondary my-3 p-2"
+                      style="height: 350px"
+                    >
+                      <img
+                        src="assets/imgs/search/image-19.jpg"
+                        class="card-img-top"
+                        alt="${musicData.data[i].artist.name}"
+                      />
+                      <div class="card-body">
+                        <a
+                          href="./details.html?musicId=${musicData.data[i].artist.id}"
+                          class="card-title fw-bold"
+                          style="font-size: 15px"
+                          >2000'S</a
+                        >
+                        <p class="card-text">
+                          ${musicData.data[i].album.title}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -151,33 +337,106 @@
               <div><i class="bi bi-x"></i></div>
             </div>
             <div>
-              <div class="d-flex">
-                <div class="w-25">
+              <div class="d-flex w-50 mt-2">
+                <div>
                   <img
                     src="assets/imgs/main/image-9.jpg"
                     alt=""
                     class="rounded-circle img-fluid"
+                    width="50"
                   />
                 </div>
                 <div>
-                  <div class="d-flex justify-content-between m-0">
-                    <p>photoArt</p>
-                    <p>2 ore</p>
+                  <div class="d-flex m-0 friends flex-column">
+                    <p class="m-0">photoArt</p>
+                    <p>titolo canzone</p>
                   </div>
-                  <p>titolo canzone</p>
-                  <div>
-                    <i class="bi bi-record-circle text-light"></i>
-                    <p>album</p>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-record-circle text-light friends me-1"></i>
+                    <p class="friends m-0">album</p>
                   </div>
                 </div>
               </div>
-              <p>AMICI</p>
-              <p>AMICI</p>
-              <p>AMICI</p>
-              <p>AMICI</p>
-              <p>AMICI</p>
-              <p>AMICI</p>
-              <p>AMICI</p>
+              <div class="d-flex w-50 mt-2">
+                <div>
+                  <img
+                    src="assets/imgs/main/image-16.jpg"
+                    alt=""
+                    class="rounded-circle img-fluid"
+                    width="50"
+                  />
+                </div>
+                <div>
+                  <div class="d-flex m-0 friends flex-column">
+                    <p class="m-0">giovanni552</p>
+                    <p>titolo canzone</p>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-record-circle text-light friends me-1"></i>
+                    <p class="friends m-0">album</p>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex w-50 mt-2">
+                <div>
+                  <img
+                    src="assets/imgs/main/image-2.jpg"
+                    alt=""
+                    class="rounded-circle img-fluid"
+                    width="50"
+                  />
+                </div>
+                <div>
+                  <div class="d-flex m-0 friends flex-column">
+                    <p class="m-0">user85</p>
+                    <p>titolo canzone</p>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-record-circle text-light friends me-1"></i>
+                    <p class="friends m-0">album</p>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex w-50 mt-2">
+                <div>
+                  <img
+                    src="assets/imgs/main/image-18.jpg"
+                    alt=""
+                    class="rounded-circle img-fluid"
+                    width="50"
+                  />
+                </div>
+                <div>
+                  <div class="d-flex m-0 friends flex-column">
+                    <p class="m-0">marioRossi</p>
+                    <p>titolo canzone</p>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-record-circle text-light friends me-1"></i>
+                    <p class="friends m-0">album</p>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex w-50 mt-2">
+                <div>
+                  <img
+                    src="assets/imgs/main/image-8.jpg"
+                    alt=""
+                    class="rounded-circle img-fluid"
+                    width="50"
+                  />
+                </div>
+                <div>
+                  <div class="d-flex m-0 friends flex-column">
+                    <p class="m-0">user125</p>
+                    <p>titolo canzone</p>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-record-circle text-light friends me-1"></i>
+                    <p class="friends m-0">album</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

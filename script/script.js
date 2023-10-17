@@ -39,15 +39,102 @@ const renderSection2 = function (musicData) {
   const section = document.getElementById("section2");
   console.log(musicData.data);
   for (let i = 0; i < 6; i++) {
-    const newCol2 = document.createElement("div");
-    newCol2.classList.add("col", "col-md-4", "mb-3");
-    newCol2.innerHTML = `<div class="card d-flex flex-row align-items-center bg-body-secondary border-0">
-    <img src="${musicData.data[i].album.cover_medium}" class="card-img-top w-25" alt="${musicData.data[i].artist.name}">
-    <div class="card-body">
-      <h6 class="card-title">${musicData.data[i].artist.name}</h6>
+    section.innerHTML = `<div class="col mb-3 col-md-4">
+    <div
+      class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+    >
+      <img
+        src="${musicData.data[0].album.cover_medium}"
+        class="card-img-top w-25"
+        alt="${musicData.data[0].artist.name}"
+      />
+      <div class="card-body">
+        <h6 class="card-title">
+          ${musicData.data[0].artist.name}
+        </h6>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-3 col-md-4">
+    <div
+      class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+    >
+      <img
+        src="${musicData.data[1].album.cover_medium}"
+        class="card-img-top w-25"
+        alt="${musicData.data[1].artist.name}"
+      />
+      <div class="card-body">
+        <h6 class="card-title">
+          ${musicData.data[1].artist.name}
+        </h6>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-3 col-md-4">
+    <div
+      class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+    >
+      <img
+        src="${musicData.data[2].album.cover_medium}"
+        class="card-img-top w-25"
+        alt="${musicData.data[2].artist.name}"
+      />
+      <div class="card-body">
+        <h6 class="card-title">
+          ${musicData.data[2].artist.name}
+        </h6>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-3 col-md-4">
+    <div
+      class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+    >
+      <img
+        src="${musicData.data[3].album.cover_medium}"
+        class="card-img-top w-25"
+        alt="${musicData.data[3].artist.name}"
+      />
+      <div class="card-body">
+        <h6 class="card-title">
+          ${musicData.data[3].artist.name}
+        </h6>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-3 col-md-4">
+    <div
+      class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+    >
+      <img
+        src="${musicData.data[4].album.cover_medium}"
+        class="card-img-top w-25"
+        alt="${musicData.data[4].artist.name}"
+      />
+      <div class="card-body">
+        <h6 class="card-title">
+          ${musicData.data[4].artist.name}
+        </h6>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-3 col-md-4">
+    <div
+      class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+    >
+      <img
+        src="${musicData.data[5].album.cover_medium}"
+        class="card-img-top w-25"
+        alt="${musicData.data[5].artist.name}"
+      />
+      <div class="card-body">
+        <h6 class="card-title">
+          ${musicData.data[5].artist.name}
+        </h6>
+      </div>
     </div>
   </div>`;
-    section.appendChild(newCol2);
   }
 };
 
@@ -57,16 +144,117 @@ const renderSection3 = function (musicData) {
   const row3 = document.getElementById("row-3");
 
   for (let i = 0; i < 5; i++) {
-    const newCol3 = document.createElement("div");
-    newCol3.classList.add("col");
-    newCol3.innerHTML = `<div class="card border-0 bg-body-secondary my-3 p-2" style='height:350px'>
-        <img src="${musicData.data[i].artist.picture_medium}" class="card-img-top" alt="${musicData.data[i].artist.name}" />
-        <div class="card-body">
-          <a href='./details.html?musicId=${musicData.data[i].artist.id}' class="card-title fw-bold" style='font-size:15px'>${musicData.data[i].artist.name}</a>
-          <p class="card-text">${musicData.data[i].album.title}</p>
-        </div>
-      </div>`;
-    row3.appendChild(newCol3);
+    row3.innerHTML = `<div class="col">
+    <div
+      class="card border-0 bg-body-secondary my-3 p-2"
+      style="height: 350px"
+    >
+      <img
+        src="${musicData.data[0].artist.picture_medium}"
+        class="card-img-top"
+        alt="${musicData.data[0].artist.name}"
+      />
+      <div class="card-body">
+        <a
+          href="./details.html?musicId=${musicData.data[0].artist.id}"
+          class="card-title fw-bold"
+          style="font-size: 15px"
+          >${musicData.data[0].artist.name}</a
+        >  <p class="card-text">
+        ${musicData.data[0].album.title}
+      </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div
+      class="card border-0 bg-body-secondary my-3 p-2"
+      style="height: 350px"
+    >
+      <img
+        src="${musicData.data[1].artist.picture_medium}"
+        class="card-img-top"
+        alt="${musicData.data[1].artist.name}"
+      />
+      <div class="card-body">
+        <a
+          href="./details.html?musicId=${musicData.data[1].artist.id}"
+          class="card-title fw-bold"
+          style="font-size: 15px"
+          >${musicData.data[1].artist.name}</a
+        >  <p class="card-text">
+        ${musicData.data[1].album.title}
+      </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div
+      class="card border-0 bg-body-secondary my-3 p-2"
+      style="height: 350px"
+    >
+      <img
+        src="${musicData.data[2].artist.picture_medium}"
+        class="card-img-top"
+        alt="${musicData.data[2].artist.name}"
+      />
+      <div class="card-body">
+        <a
+          href="./details.html?musicId=${musicData.data[2].artist.id}"
+          class="card-title fw-bold"
+          style="font-size: 15px"
+          >${musicData.data[2].artist.name}</a
+        >  <p class="card-text">
+        ${musicData.data[2].album.title}
+      </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div
+      class="card border-0 bg-body-secondary my-3 p-2"
+      style="height: 350px"
+    >
+      <img
+        src="${musicData.data[3].artist.picture_medium}"
+        class="card-img-top"
+        alt="${musicData.data[3].artist.name}"
+      />
+      <div class="card-body">
+        <a
+          href="./details.html?musicId=${musicData.data[3].artist.id}"
+          class="card-title fw-bold"
+          style="font-size: 15px"
+          >${musicData.data[3].artist.name}</a
+        >  <p class="card-text">
+        ${musicData.data[3].album.title}
+      </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div
+      class="card border-0 bg-body-secondary my-3 p-2"
+      style="height: 350px"
+    >
+      <img
+        src="${musicData.data[4].artist.picture_medium}"
+        class="card-img-top"
+        alt="${musicData.data[4].artist.name}"
+      />
+      <div class="card-body">
+        <a
+          href="./details.html?musicId=${musicData.data[4].artist.id}"
+          class="card-title fw-bold"
+          style="font-size: 15px"
+          >${musicData.data[4].artist.name}</a
+        >
+        <p class="card-text">
+          ${musicData.data[4].album.title}
+        </p>
+      </div>
+    </div>
+  </div>`;
   }
 };
 
