@@ -26,8 +26,8 @@ const renderSection3 = function (musicData) {
   for (let i = 0; i < 5; i++) {
     const newCol3 = document.createElement('div')
     newCol3.classList.add('col')
-    newCol3.innerHTML = `<div class="card border-0 bg-body-secondary my-3 p-2" style='height:230px'>
-        <img src="${musicData.data[i].artist.picture_small}" class="card-img-top" alt="${musicData.data[i].artist.name}" />
+    newCol3.innerHTML = `<div class="card border-0 bg-body-secondary my-3 p-2" style='height:350px'>
+        <img src="${musicData.data[i].artist.picture_medium}" class="card-img-top" alt="${musicData.data[i].artist.name}" />
         <div class="card-body">
           <a href='./details.html?musicId=${musicData.data[i].artist.id}' class="card-title fw-bold" style='font-size:15px'>${musicData.data[i].artist.name}</a>
           <p class="card-text">${musicData.data[i].album.title}</p>

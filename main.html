@@ -26,7 +26,10 @@
             <div class="mx-2"><i class="bi bi-chevron-right"></i></div>
           </div>
           <form class="d-flex" role="search" id="form-search">
-            <button class="btn bg-light text-black rounded-4" type="submit">
+            <button
+              class="btn bg-light text-black rounded-4 d-none d-md-block"
+              type="submit"
+            >
               <div class="d-flex fw-bold">
                 <i class="bi bi-house-door-fill mx-1"></i>Home
               </div>
@@ -47,7 +50,7 @@
       </nav>
     </header>
     <main class="bg-black">
-      <div class="container-fluid mx-1">
+      <div class="container-fluid">
         <div class="row row-cols-3 justify-content-between flex-nowrap">
           <div class="col col-2 bg-dark rounded p-3 d-none d-lg-block pt-3">
             <div>
@@ -73,14 +76,18 @@
               <ul class="list-unstyled" id="favourites"></ul>
             </div>
           </div>
-          <div class="col col-8 rounded-4 bg-dark mx-1">
+          <div class="col col-12 col-md-8 rounded-4 bg-dark mx-1">
             <div class="row d-flex flex-column">
               <div class="col">
                 <div class="position-relative">
                   <ul class="list-unstyled d-flex position-sticky top-50 my-2">
                     <li class="btn btn-dark mx-2 px-2">Playlist</li>
-                    <li class="btn btn-dark mx-2 px-2">Podcast</li>
-                    <li class="btn btn-dark mx-2 px-2">Audiolibri</li>
+                    <li class="btn btn-dark mx-2 px-2 d-none d-md-block">
+                      Podcast
+                    </li>
+                    <li class="btn btn-dark mx-2 px-2 d-none d-md-block">
+                      Audiolibri
+                    </li>
                     <li class="btn btn-dark mx-2 px-2">Artisti</li>
                     <li class="btn btn-dark mx-2 px-2">Album</li>
                   </ul>
@@ -92,21 +99,27 @@
                   <div class="col">
                     <h4>Buonasera</h4>
                   </div>
-                  <div class="row row-cols-3 my-2" id="section2"></div>
+                  <div
+                    class="row row-cols-2 row-cols-md-3 my-2"
+                    id="section2"
+                  ></div>
                 </div>
-                <div class="row mt-4 overflow-y-scroll" id="row-3">
+                <div
+                  class="row row-cols-2 row-cols-md-5 mt-4 flex-column flex-md-row"
+                  id="row-3"
+                >
                   <div
                     class="d-flex align-items-center justify-content-between"
                   >
                     <h4>Altro di ciò che ti piace</h4>
-                    <h6>VISUALIZZA TUTTO</h6>
+                    <h6 class="d-none d-md-block">VISUALIZZA TUTTO</h6>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col col-2 bg-dark rounded d-none d-lg-block">
+          <div class="col col-2 bg-dark rounded d-none d-lg-block pe-0">
             <div class="d-flex justify-content-between my-2">
               <div><p>Attività amici</p></div>
               <div><i class="bi bi-x"></i></div>
@@ -127,11 +140,7 @@
                   </div>
                   <p>titolo canzone</p>
                   <div>
-                    <img
-                      src="assets/imgs/icons/View album.svg"
-                      alt="album"
-                      class="w-25 p-3"
-                    />
+                    <i class="bi bi-record-circle text-light"></i>
                     <p>album</p>
                   </div>
                 </div>
@@ -301,7 +310,7 @@
           </div>
         </div>
       </div>
-      <div class="row sticky-bottom d-md-none" id="small-bar">
+      <div class="row sticky-bottom d-md-none bg-black" id="small-bar">
         <div class="col">
           <ul
             class="list-unstyled secondary-col d-block d-md-none d-flex justify-content-evenly"
