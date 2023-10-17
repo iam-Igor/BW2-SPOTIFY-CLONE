@@ -49,7 +49,9 @@ const renderSection2 = function (musicData) {
       <a href="./album.html?musicId=${musicData.data[0].album.id}">
         <h6 class="card-title">
           ${musicData.data[0].album.title}
+          ${musicData.data[0].album.title}
         </h6>
+        </a>
         </a>
       </div>
     </div>
