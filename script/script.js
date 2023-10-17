@@ -6,7 +6,7 @@ const renderSection2 = function (musicData) {
 
   for (let i = 0; i < 6; i++) {
     const newCol2 = document.createElement('div')
-    newCol2.classList.add('col', 'col-4', 'mb-3')
+    newCol2.classList.add('col', 'col-md-4', 'mb-3')
     newCol2.innerHTML = `<div class="card d-flex flex-row align-items-center bg-body-secondary border-0">
     <img src="${musicData.data[i].artist.picture_small}" class="card-img-top w-25" alt="${musicData.data[i].artist.name}">
     <div class="card-body">
@@ -29,7 +29,7 @@ const renderSection3 = function (musicData) {
     newCol3.innerHTML = `<div class="card border-0 bg-body-secondary my-3 p-2" style='height:230px'>
         <img src="${musicData.data[i].artist.picture_small}" class="card-img-top" alt="${musicData.data[i].artist.name}" />
         <div class="card-body">
-          <p class="card-title fw-bold" style='font-size:15px'>${musicData.data[i].artist.name}</p>
+          <a href='./details.html?musicId=${musicData.data[i].artist.id}' class="card-title fw-bold" style='font-size:15px'>${musicData.data[i].artist.name}</a>
           <p class="card-text">${musicData.data[i].album.title}</p>
         </div>
       </div>`
@@ -37,8 +37,23 @@ const renderSection3 = function (musicData) {
   }
 }
 
-const getMusic = function () {
-  fetch('https://striveschool-api.herokuapp.com/api/deezer/search?q=hits')
+// SEZIONE PREFERITI
+const generateFavourites = function (musicData) {
+  const ul = document.getElementById('favourites')
+  for (let k = 0; k < musicData.data.length; k++) {
+    const newLi = document.createElement('li')
+    newLi.classList.add('lh-base', 'text-secondary')
+    newLi.innerText = `${musicData.data[k].title}`
+    ul.appendChild(newLi)
+  }
+}
+
+const form = document.getElementById('form-search')
+form.addEventListener('click', function (e) {
+  e.preventDefault()
+  const input = document.getElementById('search-input')
+  let index = input.value
+  fetch('https://striveschool-api.herokuapp.com/api/deezer/search?q=' + index)
     .then((res) => {
       if (res.ok) {
         return res.json()
@@ -50,13 +65,32 @@ const getMusic = function () {
       console.log(music)
       renderSection2(music)
       renderSection3(music)
+      generateFavourites(music)
+      generateDetails(music)
     })
     .catch((err) => {
       console.log('Si è verificato un errore', err)
     })
-}
+})
 
-getMusic()
+// const audio = document.getElementById('audio')
+// const playPauseButton = document.querySelectorAll('.play-pause')
+// const stopButton = document.getElementById('stop')
+// const volumeControl = document.getElementById('volume')
+// const nextButton = document.querySelector('.skip-button:nth-child(3)')
+// const prevButton = document.querySelector('.skip-button:nth-child(1)')
+
+// playPauseButton.forEach((button) => {
+//   button.addEventListener('click', function () {
+//     if (audio.paused) {
+//       audio.play()
+//       button.innerHTML = <i class="bi bi-pause-circle color1 fs-1 fs-md-4"></i>
+//     } else {
+//       audio.pause()
+//       button.innerHTML = <i class="bi bi-play-fill color1 fs-1 fs-md-4"></i>
+//     }
+//   })
+// })
 
 // DETTAGLIO
 
@@ -75,7 +109,7 @@ const generateDetails = function (details) {
    <div class="col-8 pt-3">
     <h6>${details.title}</h6>
      <h1>${details.tracks.data[j].title}</h1>
-     <p>${details.artist.name}</p>
+     <a href='./details.html?musicId=${details.artist.id}'>${details.artist.name}</a>
     <p> Ascolta le tue canzoni preferite!</p>
      <div class="d-flex align-items-center">
        <a href="#" class="btn btn-success rounded-4 me-2 px-4"
