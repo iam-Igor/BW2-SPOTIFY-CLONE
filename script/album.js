@@ -45,8 +45,7 @@ const renderAlbum = function (album) {
     0,
     album.release_date.indexOf("-")
   );
-  albumTracks.innerText =
-    album.nb_tracks + (album.nb_tracks === 1 ? " brano" : " brani");
+  albumTracks.innerText = album.nb_tracks + " brani";
   albumArtistName.innerText = album.artist.name;
 
   // creating album track list
@@ -81,8 +80,6 @@ const renderAlbum = function (album) {
   // setting height of bg black
   const bgBlack = document.querySelector(".album-bg-black");
   const fullHeight = document.querySelector(".tracks-and-header");
-  const musicBar = document.getElementById("music-bar");
-  const header = document.getElementsByTagName("header");
 
   console.log(
     "height: ",
@@ -250,6 +247,7 @@ const renderArtist = function (artist) {
     .then((suggested) => {
       console.log(suggested);
       visualizeAlbums(suggested);
+      audiotrack2(suggested);
     })
     .catch((err) => {
       console.log(err);
@@ -267,6 +265,7 @@ const loadAlbum = function () {
     .then((respone) => {
       console.log("Fetch went fine!", respone);
       renderAlbum(respone);
+      audiotrack3(respone);
     })
     .catch((err) => console.log("Fetching issue", err));
 };
@@ -278,8 +277,9 @@ const loadArtist = function () {
     .then((response) => {
       if (!response.ok) {
         throw new Error("Fetching respose ERROR!");
+      } else {
+        return response.json();
       }
-      return response.json();
     })
     .then((response) => {
       console.log("Fetch went fine!", response);
