@@ -2,18 +2,6 @@
   height: 1.5em;
 }
 
-.album-header {
-  height: 50vh;
-  background: rgb(222, 222, 0);
-  background: linear-gradient(180deg, rgb(222, 222, 0) 0%, rgb(222, 222, 0) 50%, rgb(0, 0, 0) 100%);
-}
-.album-header .album-cover-img {
-  padding: 1em;
-}
-.album-header .album-content {
-  padding-top: 1em;
-}
-
 .center-content-main-album {
   height: 100vh;
   width: 100%;
@@ -22,10 +10,31 @@
 .container-mid {
   position: relative;
 }
-.container-mid .album-tracks {
+.container-mid .album-bg-color {
+  background: rgb(222, 222, 0);
+  background: linear-gradient(180deg, rgb(222, 222, 0) 0%, rgb(222, 222, 0) 50%, rgb(0, 0, 0) 100%);
+  height: 50vh;
+}
+.container-mid .album-bg-black {
+  background-color: #000;
+  height: 50vh;
+}
+.container-mid .tracks-and-header {
+  position: absolute;
+  top: 0;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 78vh;
+}
+.container-mid .tracks-and-header .album-header .album-cover-img {
+  padding: 1em;
+}
+.container-mid .tracks-and-header .album-header .album-content {
+  padding-top: 1em;
+}
+.container-mid .tracks-and-header .album-tracks {
   padding: 0;
   width: 100%;
-  position: absolute;
   top: 13em;
   /* From https://css.glass */
   background: rgba(102, 87, 87, 0.466);
