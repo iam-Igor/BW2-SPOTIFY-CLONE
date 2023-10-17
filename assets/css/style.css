@@ -1,57 +1,5 @@
 body {
-  background-color: black;
-  color: white;
-  font-family: "Circular";
-}
-
-#library-svg {
-  transform: rotate(-15deg);
-}
-
-.playlist-cont {
-  overflow-y: scroll;
-  height: 460px;
-}
-
-#search-input {
-  width: 300px;
-  border-radius: 0 20px 20px 0;
-  height: 40px;
-  border: 0;
-  background-color: rgb(42, 42, 42);
-}
-
-#search-form {
-  border-radius: 20px;
-  background-color: white;
-  height: 40px;
-  border: 0;
-  background-color: rgb(42, 42, 42);
-}
-
-.small {
-  font-size: 0.6em;
-}
-
-.medium {
-  font-size: 0.8em;
-}
-
-.secondary-col {
-  color: gray;
-}
-
-.friends {
-  line-height: 2px;
-}
-
-ul li:hover {
-  color: white;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
+  font-family: "circular";
 }
 
 .card-main img {
@@ -166,4 +114,60 @@ i:hover {
 
 #small-bar path:hover {
   fill: white;
+}
+
+#library-svg {
+  transform: rotate(-15deg);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen and (min-width: 481px) {
+  #list-container,
+  #row-3 {
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav {
+    justify-content: center;
+  }
+}
+
+nav svg {
+  width: 20%;
+}
+
+#form-search input:hover {
+  border: 2px solid white;
+}
+
+#form-search input:focus {
+  border: 2px solid white;
+}
+
+#form-search input {
+  border-radius: 0 20px 20px 0;
+}
+
+.slide-in-blurred-top {
+  animation: slide-in-blurred-top 0.2s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes slide-in-blurred-top {
+  0% {
+    transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+    transform-origin: 50% 0%;
+    filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scaleY(1) scaleX(1);
+    transform-origin: 50% 50%;
+    filter: blur(0);
+    opacity: 1;
+  }
 }
