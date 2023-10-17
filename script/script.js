@@ -165,7 +165,7 @@ const renderSection3 = function (musicData) {
       />
       <div class="card-body">
         <a
-          href="./details.html?musicId=${musicData.data[0].artist.id}"
+          href="./album.html?musicId=${musicData.data[0].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
           >${musicData.data[0].artist.name}</a
@@ -187,7 +187,7 @@ const renderSection3 = function (musicData) {
       />
       <div class="card-body">
         <a
-          href="./details.html?musicId=${musicData.data[1].artist.id}"
+          href="./album.html?musicId=${musicData.data[1].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
           >${musicData.data[1].artist.name}</a
@@ -209,7 +209,7 @@ const renderSection3 = function (musicData) {
       />
       <div class="card-body">
         <a
-          href="./details.html?musicId=${musicData.data[2].artist.id}"
+          href="./album.html?musicId=${musicData.data[2].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
           >${musicData.data[2].artist.name}</a
@@ -231,7 +231,7 @@ const renderSection3 = function (musicData) {
       />
       <div class="card-body">
         <a
-          href="./details.html?musicId=${musicData.data[3].artist.id}"
+          href="./album.html?musicId=${musicData.data[3].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
           >${musicData.data[3].artist.name}</a
@@ -253,7 +253,7 @@ const renderSection3 = function (musicData) {
       />
       <div class="card-body">
         <a
-          href="./details.html?musicId=${musicData.data[4].artist.id}"
+          href="./album.html?musicId=${musicData.data[4].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
           >${musicData.data[4].artist.name}</a
