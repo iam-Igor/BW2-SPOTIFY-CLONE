@@ -1,59 +1,58 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const albumId = urlParams.get('albumId');
-    const artistId = urlParams.get('artistId');
-  
-    if (albumId) {
-      // Carica i dettagli dell'album in base all'ID
-      fetchAlbumDetails(albumId);
-    } else if (artistId) {
-      // Carica i dettagli dell'artista in base all'ID
-      fetchArtistDetails(artistId);
-    }
-  
-    // Aggiungi un event listener per la funzione di ricerca
-    const searchForm = document.getElementById('search-form');
-    searchForm.addEventListener('submit', handleSearch);
-  });
-  
-  function fetchAlbumDetails(albumId) {
-    const albumDetailsContainer = document.getElementById('album-details');
+
+      const searchButton = document.getElementById("searchButton");
+      const searchInput = document.getElementById("searchInput");
+      const searchResults = document.getElementById("searchResults");
+
+      searchButton.addEventListener("click", async () => {
+        const searchTerm = searchInput.value;
+        if (searchTerm) {
+          try {
+            const apiUrl = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${searchTerm}`;
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            console.log("Data from API:", data);
+
+            if (data && data.data) {
+              displaySearchResults(data.data);
+            }
+          } catch (error) {
+            console.error("Error fetching data:", error);
+          }
+        }
+      });
+
+      function displaySearchResults(results) {
+        const resultsContainer = document.getElementById("searchResults");
+        resultsContainer.innerHTML = "";
+        results.forEach((result) => {
+          const div = document.createElement("div");
+          div.classList.add("col-md-4", "mb-3", "text-white");
+
+          const div1 = document.createElement("div");
+          div.classList.add("col-md-4", "mb-3");
+
+          const img = document.createElement("img");
+          img.src = result.album.cover_medium;
+          img.classList.add("img-fluid", "rounded");
+
+          const title = document.createElement("h4");
+          title.textContent = result.title;
+
+          const name = document.createElement("h4");
+          name.innerHTML = `<p style="font-size: 14px;">${result.artist.name}</p>`;
+
+          const duration = document.createElement("p");
+          const durationInSeconds = result.duration;
+          const minutes = Math.floor(durationInSeconds / 60);
+          const seconds = durationInSeconds % 60;
+          duration.textContent = `Durata: ${minutes}m ${seconds}s`;
+
+          div.appendChild(img);
+          div.appendChild(title);
+          div.appendChild(name);
+          div.appendChild(duration);
+
+          resultsContainer.appendChild(div);
+        });
+      }
     
-    fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`)
-      .then(response => response.json())
-      .then(data => {
-        // Visualizza i dettagli dell'album nel container
-        albumDetailsContainer.innerHTML = JSON.stringify(data, null, 2);
-      })
-      .catch(error => console.error('Errore nella richiesta API:', error));
-  }
-  
-  function fetchArtistDetails(artistId) {
-    const artistDetailsContainer = document.getElementById('artist-details');
-  
-    fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`)
-      .then(response => response.json())
-      .then(data => {
-        // Visualizza i dettagli dell'artista nel container
-        artistDetailsContainer.innerHTML = JSON.stringify(data, null, 2);
-      })
-      .catch(error => console.error('Errore nella richiesta API:', error));
-  }
-  
-  function handleSearch(event) {
-    event.preventDefault();
-    const query = document.getElementById('search-input').value;
-    // Esegui la ricerca
-    fetchSearchResults(query);
-  }
-  
-  function fetchSearchResults(query) {
-    fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`)
-      .then(response => response.json())
-      .then(data => {
-        // Visualizza i risultati della ricerca
-        console.log('Risultati della ricerca:', data);
-      })
-      .catch(error => console.error('Errore nella richiesta API:', error));
-  }
-  
