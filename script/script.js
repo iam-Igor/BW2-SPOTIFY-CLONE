@@ -38,7 +38,7 @@ const generateDetails = function (details) {
 const renderSection2 = function (musicData) {
   const section = document.getElementById("section2");
   console.log(musicData.data);
-  for (let i = 0; i < musicData.length; i++) {
+  for (let i = 0; i < 6; i++) {
     const newCol2 = document.createElement("div");
     newCol2.classList.add("col", "col-md-4", "mb-3");
     newCol2.innerHTML = `<div class="card d-flex flex-row align-items-center bg-body-secondary border-0">
@@ -55,13 +55,12 @@ const renderSection2 = function (musicData) {
 
 const renderSection3 = function (musicData) {
   const row3 = document.getElementById("row-3");
-  console.log(row3);
 
   for (let i = 0; i < 5; i++) {
     const newCol3 = document.createElement("div");
     newCol3.classList.add("col");
-    newCol3.innerHTML = `<div class="card border-0 bg-body-secondary my-3 p-2" style='height:230px'>
-        <img src="${musicData.data[i].artist.picture_small}" class="card-img-top" alt="${musicData.data[i].artist.name}" />
+    newCol3.innerHTML = `<div class="card border-0 bg-body-secondary my-3 p-2" style='height:350px'>
+        <img src="${musicData.data[i].artist.picture_medium}" class="card-img-top" alt="${musicData.data[i].artist.name}" />
         <div class="card-body">
           <a href='./details.html?musicId=${musicData.data[i].artist.id}' class="card-title fw-bold" style='font-size:15px'>${musicData.data[i].artist.name}</a>
           <p class="card-text">${musicData.data[i].album.title}</p>
