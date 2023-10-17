@@ -42,7 +42,7 @@ const generateFavourites = function (musicData) {
   const ul = document.getElementById('favourites')
   for (let k = 0; k < musicData.data.length; k++) {
     const newLi = document.createElement('li')
-    newLi.classList.add('lh-base', 'text-secondary')
+    newLi.classList.add('lh-base', 'text-secondary', 'link-light')
     newLi.innerText = `${musicData.data[k].title}`
     ul.appendChild(newLi)
   }
@@ -95,24 +95,25 @@ form.addEventListener('click', function (e) {
     })
 })
 
-// const audio = document.getElementById('audio')
-// const playPauseButton = document.querySelectorAll('.play-pause')
-// const stopButton = document.getElementById('stop')
-// const volumeControl = document.getElementById('volume')
-// const nextButton = document.querySelector('.skip-button:nth-child(3)')
-// const prevButton = document.querySelector('.skip-button:nth-child(1)')
+const audio = document.getElementById('audio')
 
-// playPauseButton.forEach((button) => {
-//   button.addEventListener('click', function () {
-//     if (audio.paused) {
-//       audio.play()
-//       button.innerHTML = <i class="bi bi-pause-circle color1 fs-1 fs-md-4"></i>
-//     } else {
-//       audio.pause()
-//       button.innerHTML = <i class="bi bi-play-fill color1 fs-1 fs-md-4"></i>
-//     }
-//   })
-// })
+const playPauseButton = document.querySelectorAll('.play-pause')
+const stopButton = document.getElementById('stop')
+const volumeControl = document.getElementById('volume')
+const nextButton = document.querySelector('.skip-button:nth-child(3)')
+const prevButton = document.querySelector('.skip-button:nth-child(1)')
+
+playPauseButton.forEach((button) => {
+  button.addEventListener('click', function () {
+    if (audio.paused) {
+      audio.play()
+      button.innerHTML = `<i class="bi bi-pause-circle color1 fs-1 fs-md-4"></i>`
+    } else {
+      audio.pause()
+      button.innerHTML = `<i class="bi bi-play-fill color1 fs-1 fs-md-4"></i>`
+    }
+  })
+})
 
 // DETTAGLIO
 
