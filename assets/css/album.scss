@@ -3,6 +3,16 @@
 //    height: 100%;
 // }
 
+.custom-shadow {
+   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.custom-text-shadow {
+   text-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
 .artist-img-small {
    height: 1.5em;
 }
