@@ -11,18 +11,10 @@ closeBtn.addEventListener("click", function () {
 
 // EVENT LISTENER PER IL CUORE PREFERITI
 
-const heartBtn = document.getElementsByClassName("heart");
-for (let i = 0; i < heartBtn.length; i++) {
-  heartBtn[i].addEventListener("click", function () {
-    heartBtn[i].classList.remove("bi-heart");
-    heartBtn[i].classList.add("bi-heart-fill");
-  });
-}
-
 const HeartAnimation = document.getElementsByClassName("HeartAnimation")[0];
 
 HeartAnimation.addEventListener("click", function () {
-  HeartAnimation.classList.add("animate");
+  HeartAnimation.classList.toggle("animate");
 });
 
 // DETTAGLIO
