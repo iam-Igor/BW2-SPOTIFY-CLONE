@@ -1,0 +1,44 @@
+.container-player {
+   position: fixed;
+   bottom: 0;
+
+   .player-buttons {
+      i {
+         color: #fff;
+         transition: all 0.3s;
+      }
+   }
+
+   .player-container-right,
+   .player-container-left,
+   .player-buttons {
+      i:hover {
+         color: #fff !important;
+      }
+   }
+}
+
+.fs-7 {
+   font-size: 0.7rem;
+}
+
+.player-container-left {
+   a:hover {
+      text-decoration: underline !important;
+   }
+
+   .contributors {
+      a:hover {
+         color: #fff !important;
+      }
+   }
+}
+
+.sliderRange {
+   accent-color: #fff;
+   background: rebeccapurple !important;
+
+   &:hover {
+      accent-color: #1db954;
+   }
+}
