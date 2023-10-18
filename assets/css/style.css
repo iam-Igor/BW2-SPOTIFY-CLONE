@@ -141,6 +141,14 @@ nav svg {
   width: 20%;
 }
 
+#favourites-cont {
+  height: 55vh;
+}
+
+#favourites li {
+  list-style-type: none;
+}
+
 #form-search input:hover {
   border: 2px solid white;
 }
