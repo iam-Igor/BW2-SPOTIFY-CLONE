@@ -62,3 +62,31 @@ body {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 } /*# sourceMappingURL=album.css.map */
+
+#album-tracks-continer .card-text {
+  font-size: 0.8em;
+}
+
+@media screen and (max-width: 480px) {
+  .moving {
+    z-index: -2;
+
+    white-space: nowrap;
+    animation: moveText 10s linear infinite;
+  }
+
+  @keyframes moveText {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-20px);
+    }
+    75% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+}

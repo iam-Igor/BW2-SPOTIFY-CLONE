@@ -52,10 +52,13 @@ const renderAlbum = function (album) {
   console.log("length :", album.tracks.data.length);
   album.tracks.data.forEach((track, index) => {
     const trackRow = document.createElement("div");
+    console.log(album);
     trackRow.className = "row row-cols-3 tracks mx-0 mb-2";
     trackRow.innerHTML = `
          <div class="col-6 d-flex align-items-center ps-3">
             <p class="ps-4 pe-3 m-0">${index + 1}</p>
+            <img src="${album.artist.picture_small}" class="me-2">
+
             <div >
             <p class="mb-0 card-text">${track.title}</p>
             <p class="mb-0"><small class="text-body-secondary ">${
@@ -131,23 +134,27 @@ const visualizeAlbums = function (albums) {
   };
 
   albums.data.forEach((album, index) => {
+    console.log(album);
     const trackRow = document.createElement("div");
     trackRow.className = "row row-cols-3 tracks mx-0 mb-2";
     trackRow.innerHTML = `
            <div class="col-6 d-flex align-items-center ps-3">
               <p class="ps-4 pe-3 m-0">${index + 1}</p>
-              <div>
-              <p class="mb-0 card-text">${album.title}</p>
+              <img src="${album.album.cover_small}" class="me-2">
+
+              <div class="moving">
+             
+              <p class="mb-0 card-text ">${album.title}</p>
               <p class="mb-0"><small class="text-body-secondary ">${
                 album.artist.name
               }</small></p>
               
            </div>
-           <div class=ms-3>
+           <div >
               <i class="bi bi-play-fill fs-3 play-track"></i>
               </div>
            </div>
-           <div class="col-3 d-flex justify-content-end align-items-center">
+           <div class="col-3 d-flex justify-content-end align-items-center ">
               <p class="card-text">${album.rank}</p>
            </div>
            <div class="col-3 d-flex justify-content-end align-items-center pe-3">
