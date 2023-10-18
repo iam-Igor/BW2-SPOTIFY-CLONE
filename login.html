@@ -92,12 +92,19 @@
                   <label for="login-password" class="form-label"
                     >Password</label
                   >
-                  <input
-                    type="password"
-                    class="form-control"
-                    placeholder="Password"
-                    id="login-password"
-                  />
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Password "
+                      id="login-password"
+                    />
+
+                    <label for="checkbox"
+                      ><i class="bi bi-eye-slash fs-3 ms-1" id="eye-icon"></i>
+                    </label>
+                    <input type="checkbox" id="checkbox" hidden />
+                  </div>
                 </div>
                 <div class="form-check form-switch">
                   <input
