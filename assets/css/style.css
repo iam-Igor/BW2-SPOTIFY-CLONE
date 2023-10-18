@@ -194,3 +194,9 @@ nav svg {
 .grow:hover { 
   transform: scale(1.1); 
 }
+
+.loginalert {
+  background-color: rgb(233, 20, 41);
+  color: white;
+  border: none
+}
