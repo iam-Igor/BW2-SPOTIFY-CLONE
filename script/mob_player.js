@@ -42,3 +42,9 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + musicId)
     getPlayer(response);
   })
   .catch((err) => console.log("Fetching issue", err));
+
+const HeartAnimation = document.getElementsByClassName("HeartAnimation")[0];
+
+HeartAnimation.addEventListener("click", function () {
+  HeartAnimation.classList.toggle("animate");
+});
