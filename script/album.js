@@ -61,11 +61,11 @@ const renderAlbum = function (album) {
 
             <div class="moving">
             <p class="mb-0 card-text ">${track.title}</p>
-            <p class="mb-0"><small class="text-body-secondary ">${
+            <p class="mb-0"><small class="text-body-secondary">${
               track.artist.name
             }</small></p>
          </div>
-         <div class=ms-3>
+         <div class="ms-3">
          <i class="bi bi-play-fill fs-3 play-track2"></i>
          </div>
       </div>
@@ -151,7 +151,7 @@ const visualizeAlbums = function (albums) {
               
            </div>
            <div >
-              <i class="bi bi-play-fill fs-3 play-track"></i>
+              <i class="bi bi-play-fill fs-3 play-track "></i>
               </div>
            </div>
            <div class="col-3 d-flex justify-content-end align-items-center ">

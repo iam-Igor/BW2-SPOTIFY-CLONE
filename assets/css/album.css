@@ -94,4 +94,8 @@ body {
   .container {
     padding: 0;
   }
+
+  #album-tracks-continer img {
+    width: 22%;
+  }
 }
