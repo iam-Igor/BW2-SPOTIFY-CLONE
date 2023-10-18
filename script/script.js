@@ -12,8 +12,8 @@ closeBtn.addEventListener("click", function () {
 // DETTAGLIO
 
 const generateDetails = function (details) {
-  console.log(details)
-  const row1 = document.getElementById('row-1')
+  console.log(details);
+  const row1 = document.getElementById("row-1");
   for (let j = 0; j < details.data.length; j++) {
     row1.innerHTML = `<div class="col col-4">
      <img
@@ -38,15 +38,15 @@ const generateDetails = function (details) {
        >
        <i class="bi bi-three-dots ms-3"></i>
      </div>
-  </div>`
+  </div>`;
   }
-}
+};
 
 // SEZIONE 2
 
 const renderSection2 = function (musicData) {
-  const section = document.getElementById('section2')
-  console.log(musicData.data)
+  const section = document.getElementById("section2");
+  console.log(musicData.data);
   for (let i = 0; i < 6; i++) {
     section.innerHTML = `<div class="col mb-3 col-md-4 grow">
     <div
@@ -157,14 +157,14 @@ const renderSection2 = function (musicData) {
       </a>
       </div>
     </div>
-  </div>`
+  </div>`;
   }
-}
+};
 
 // SEZIONE 3
 
 const renderSection3 = function (musicData) {
-  const row3 = document.getElementById('row-3')
+  const row3 = document.getElementById("row-3");
 
   for (let i = 0; i < 5; i++) {
     row3.innerHTML = `<div class="col grow">
@@ -277,103 +277,95 @@ const renderSection3 = function (musicData) {
         </p>
       </div>
     </div>
-  </div>`
+  </div>`;
   }
-}
+};
 
 // SEZIONE PREFERITI
 const generateFavourites = function (musicData) {
-  console.log(musicData)
-  const ul = document.getElementById('favourites')
+  console.log(musicData);
+  const ul = document.getElementById("favourites");
   for (let k = 0; k < musicData.data.length; k++) {
-    const newLi = document.createElement('li')
-    newLi.classList.add('lh-base', 'text-secondary', 'link-light')
-    newLi.innerHTML = `<a href="./album.html?musicId=${musicData.data[k].album.id}">${musicData.data[k].title}</a>`
-    ul.appendChild(newLi)
+    const newLi = document.createElement("li");
+    newLi.classList.add("lh-base", "text-secondary", "link-light");
+    newLi.innerHTML = `<a href="./album.html?musicId=${musicData.data[k].album.id}">${musicData.data[k].title}</a>`;
+    ul.appendChild(newLi);
   }
-}
+};
 const audiotrack = function (event) {
-<<<<<<< Updated upstream
-  console.log(event)
-  const audioSrc = document.getElementById('audio')
-  audioSrc.src = event.data[0].preview
-
-  console.log((audioSrc.src = event.data[0].preview))
-  const artistInfo = document.querySelectorAll('.now-playing-artist')
-=======
   console.log(event);
   const audioSrc = document.getElementById("audio");
   audioSrc.src = event.data[0].preview;
+
   console.log((audioSrc.src = event.data[0].preview));
   const artistInfo = document.querySelectorAll(".now-playing-artist");
->>>>>>> Stashed changes
   artistInfo.forEach((artist) => {
-    artist.textContent = event.data[0].artist.name
-  })
+    artist.textContent = event.data[0].artist.name;
+  });
 
-  const titleInfo = document.querySelectorAll('.now-playing-title')
+  const titleInfo = document.querySelectorAll(".now-playing-title");
   titleInfo.forEach((title) => {
-    title.textContent = event.data[0].title
-  })
+    title.textContent = event.data[0].title;
+  });
 
-  const imgInfo = document.querySelectorAll('.now-playing-img')
+  const imgInfo = document.querySelectorAll(".now-playing-img");
   imgInfo.forEach((img) => {
-    img.src = event.data[0].album.cover_big
-  })
-}
+    img.src = event.data[0].album.cover_big;
+  });
+};
 
-const form = document.getElementById('form-search')
-form.addEventListener('submit', function (e) {
-  e.preventDefault()
-  const input = document.getElementById('search-input')
-  let index = input.value
-  fetch('https://striveschool-api.herokuapp.com/api/deezer/search?q=' + index)
+const form = document.getElementById("form-search");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const input = document.getElementById("search-input");
+  let index = input.value;
+  fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + index)
     .then((res) => {
       if (res.ok) {
-        return res.json()
+        return res.json();
       } else {
-        throw new Error('Errore nel contattare il server')
+        throw new Error("Errore nel contattare il server");
       }
     })
     .then((music) => {
-      renderSection2(music)
-      renderSection3(music)
-      generateFavourites(music)
+      renderSection2(music);
+      renderSection3(music);
+      generateFavourites(music);
 
-      audiotrack(music)
-      generateDetails(music)
+      audiotrack(music);
+      generateDetails(music);
     })
     .catch((err) => {
-      console.log('Si è verificato un errore', err)
-    })
-})
+      console.log("Si è verificato un errore", err);
+    });
+});
 
-const audio = document.getElementById('audio')
+const audio = document.getElementById("audio");
 
-const playPauseButton = document.querySelectorAll('.play-pause')
-const stopButton = document.getElementById('stop')
-const volumeControl = document.getElementById('volume')
-const nextButton = document.querySelector('.skip-button:nth-child(3)')
-const prevButton = document.querySelector('.skip-button:nth-child(1)')
+const playPauseButton = document.querySelectorAll(".play-pause");
+const stopButton = document.getElementById("stop");
+const volumeControl = document.getElementById("volume");
+const nextButton = document.querySelector(".skip-button:nth-child(3)");
+const prevButton = document.querySelector(".skip-button:nth-child(1)");
 
 playPauseButton.forEach((button) => {
-  button.addEventListener('click', function () {
+  button.addEventListener("click", function () {
     if (audio.paused) {
-      audio.play()
-      button.innerHTML = `<i class="bi bi-pause-circle color1 fs-1 fs-md-4"></i>`
+      audio.play();
+      button.innerHTML = `<i class="bi bi-pause-circle color1 fs-1 fs-md-4"></i>`;
     } else {
-      audio.pause()
-      button.innerHTML = `<i class="bi bi-play-fill color1 fs-1 fs-md-4"></i>`
+      audio.pause();
+      button.innerHTML = `<i class="bi bi-play-fill color1 fs-1 fs-md-4"></i>`;
     }
-  })
-})
+  });
+});
 
 // SEZIONE CERCA MOBILE
 
-const searchButton2 = document.getElementById('search2')
+const searchButton2 = document.getElementById("search2");
 
-searchButton2.addEventListener('click', function () {
-  const navBar = document.getElementById('navbar')
-  navBar.classList.remove('d-none')
-  navBar.classList.add('slide-in-blurred-top')
-})
+searchButton2.addEventListener("click", function () {
+  const navBar = document.getElementById("navbar");
+  navBar.classList.remove("d-none");
+  navBar.classList.add("slide-in-blurred-top");
+});
