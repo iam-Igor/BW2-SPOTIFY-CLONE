@@ -72,8 +72,8 @@
               />
             </form>
           </div>
-          <div class="text-light fs-3 me-2 d-none d-md-block">
-            <div class="dropdown">
+          <div class="text-light fs-3 me-2">
+            <div class="dropdown d-none d-md-block">
               <button
                 class="dropdown-toggle bg-black border-0"
                 type="button"
@@ -152,7 +152,7 @@
           >
             <div class="row d-flex flex-column bg-black">
               <div class="col">
-                <div class="position-relative">
+                <div class="position-relative d-none d-md-block">
                   <ul class="list-unstyled d-flex position-sticky top-50 my-2">
                     <li class="btn btn-dark mx-2 px-2">Playlist</li>
                     <li class="btn btn-dark mx-2 px-2 d-none d-md-block">
@@ -167,10 +167,55 @@
                 </div>
               </div>
               <div class="col">
-                <div class="row flex-nowrap bg-black p-3 my-3" id="row-1"></div>
+                <div
+                  class="row flex-nowrap bg-black p-md-3 my-3"
+                  id="row-1"
+                ></div>
                 <div class="row flex-column" id="row-2">
-                  <div class="col">
+                  <div class="col d-flex justify-content-between">
                     <h4>Buonasera</h4>
+                    <div class="dropdown offset-4 d-md-none">
+                      <button
+                        class="dropdown-toggle bg-black border-0"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i class="bi bi-person-circle fs-4"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li class="d-flex">
+                          <a class="dropdown-item pe-0" href="account.html"
+                            >Account</a
+                          ><a class="dropdown-item ps-0" href="#"
+                            ><i class="bi bi-person"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="settings.html"
+                            >Settings<i class="bi bi-gear ms-2"></i>
+                          </a>
+                        </li>
+                        <li class="d-flex">
+                          <a class="dropdown-item" href="login.html"
+                            >Logout<i class="bi bi-box-arrow-right ms-2"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="d-md-none">
+                      <i class="bi bi-bell fs-4 position-relative">
+                        <span
+                          class="position-absolute top-0 start-0 translate-middle p-1 bg-primary border border-light rounded-circle"
+                        >
+                          <span class="visually-hidden">New alerts</span>
+                        </span>
+                      </i>
+                      <i class="bi bi-clock-history fs-4"></i>
+                      <a href="settings.html"
+                        ><i class="bi bi-gear fs-4"> </i
+                      ></a>
+                    </div>
                   </div>
                   <div class="row row-cols-2 row-cols-md-3 my-2" id="section2">
                     <div class="col mb-3 col-md-4">
@@ -270,7 +315,8 @@
                   <div class="col">
                     <div
                       class="card border-0 bg-body-secondary my-3 p-2"
-                      style="height: 350px"
+                      style="height: 250px"
+                      id="card1"
                     >
                       <img
                         src="assets/imgs/search/image-1.jpeg"
@@ -290,7 +336,7 @@
                   <div class="col">
                     <div
                       class="card border-0 bg-body-secondary my-3 p-2"
-                      style="height: 350px"
+                      style="height: 250px"
                     >
                       <img
                         src="assets/imgs/search/image-11.jpg"
@@ -310,7 +356,7 @@
                   <div class="col">
                     <div
                       class="card border-0 bg-body-secondary my-3 p-2"
-                      style="height: 350px"
+                      style="height: 250px"
                     >
                       <img
                         src="assets/imgs/search/image-13.jpeg"
@@ -330,7 +376,7 @@
                   <div class="col">
                     <div
                       class="card border-0 bg-body-secondary my-3 p-2"
-                      style="height: 350px"
+                      style="height: 250px"
                     >
                       <img
                         src="assets/imgs/search/image-17.jpg"
@@ -350,7 +396,7 @@
                   <div class="col">
                     <div
                       class="card border-0 bg-body-secondary my-3 p-2"
-                      style="height: 350px"
+                      style="height: 250px"
                     >
                       <img
                         src="assets/imgs/search/image-19.jpg"
@@ -463,7 +509,7 @@
               <p class="small now-playing-artist"></p>
               <p class="secondary-col small now-playing-title"></p>
             </div>
-            <i class="bi bi-heart fs-4 d-none d-md-block heart"></i>
+            <i class="HeartAnimation"></i>
           </div>
 
           <div class="audio-player col-6 flex-grow-1 justify-content-center">
