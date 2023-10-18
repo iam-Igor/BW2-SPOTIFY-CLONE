@@ -2,21 +2,21 @@
 
 const closeBtn = document.getElementsByClassName("close-tab")[0];
 closeBtn.addEventListener("click", function () {
-  const friendstab = document.getElementById("friends-activity");
-  friendstab.classList.add("d-lg-none");
+   const friendstab = document.getElementById("friends-activity");
+   friendstab.classList.add("d-lg-none");
 
-  const mainContent = document.getElementById("main-content");
-  mainContent.classList.add("col-md-10");
+   const mainContent = document.getElementById("main-content");
+   mainContent.classList.add("col-md-10");
 });
 
 // EVENT LISTENER PER IL CUORE PREFERITI
 
 const heartBtn = document.getElementsByClassName("heart");
 for (let i = 0; i < heartBtn.length; i++) {
-  heartBtn[i].addEventListener("click", function () {
-    heartBtn[i].classList.remove("bi-heart");
-    heartBtn[i].classList.add("bi-heart-fill");
-  });
+   heartBtn[i].addEventListener("click", function () {
+      heartBtn[i].classList.remove("bi-heart");
+      heartBtn[i].classList.add("bi-heart-fill");
+   });
 }
 
 // DETTAGLIO
@@ -58,11 +58,7 @@ const renderSection2 = function (musicData) {
    const section = document.getElementById("section2");
    console.log(musicData.data);
    for (let i = 0; i < 6; i++) {
-      section.innerHTML = `<div class="col mb-3 col-md-4">
-  const section = document.getElementById("section2");
-  console.log(musicData.data);
-  for (let i = 0; i < 6; i++) {
-    section.innerHTML = `<div class="col mb-3 col-md-4 grow">
+      section.innerHTML = `<div class="col mb-3 col-md-4 grow">
     <div
       class="card d-flex flex-row align-items-center bg-body-secondary border-0"
     >
@@ -181,9 +177,7 @@ const renderSection3 = function (musicData) {
    const row3 = document.getElementById("row-3");
 
    for (let i = 0; i < 5; i++) {
-      row3.innerHTML = `<div class="col">
-  for (let i = 0; i < 5; i++) {
-    row3.innerHTML = `<div class="col grow">
+      row3.innerHTML = `<div class="col grow">
     <div
       class="card border-0 bg-body-secondary my-3 p-2"
       style="height: 350px"
@@ -299,23 +293,15 @@ const renderSection3 = function (musicData) {
 
 // SEZIONE PREFERITI
 const generateFavourites = function (musicData) {
+   console.log(musicData);
    const ul = document.getElementById("favourites");
    for (let k = 0; k < musicData.data.length; k++) {
       const newLi = document.createElement("li");
       newLi.classList.add("lh-base", "text-secondary", "link-light");
-      newLi.innerText = `${musicData.data[k].title}`;
+      newLi.innerHTML = `<a href="./album.html?musicId=${musicData.data[k].album.id}">${musicData.data[k].title}</a>`;
       ul.appendChild(newLi);
    }
-  console.log(musicData);
-  const ul = document.getElementById("favourites");
-  for (let k = 0; k < musicData.data.length; k++) {
-    const newLi = document.createElement("li");
-    newLi.classList.add("lh-base", "text-secondary", "link-light");
-    newLi.innerHTML = `<a href="./album.html?musicId=${musicData.data[k].album.id}">${musicData.data[k].title}</a>`;
-    ul.appendChild(newLi);
-  }
 };
-
 const audiotrack = function (event) {
    console.log(event);
    const audioSrc = document.getElementById("audio");
