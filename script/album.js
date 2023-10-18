@@ -167,6 +167,7 @@ const audiotrack3 = function (event) {
 
   for (let i = 0; i < playBtnArtist.length; i++) {
     playBtnArtist[i].addEventListener("click", function () {
+<<<<<<< Updated upstream
       audioSrc.src = event.preview;
       console.log((audioSrc.src = event.tracks.data[i].preview));
       const artistInfo = document.querySelectorAll(".now-playing-artist");

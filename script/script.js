@@ -293,12 +293,20 @@ const generateFavourites = function (musicData) {
   }
 }
 const audiotrack = function (event) {
+<<<<<<< Updated upstream
   console.log(event)
   const audioSrc = document.getElementById('audio')
   audioSrc.src = event.data[0].preview
 
   console.log((audioSrc.src = event.data[0].preview))
   const artistInfo = document.querySelectorAll('.now-playing-artist')
+=======
+  console.log(event);
+  const audioSrc = document.getElementById("audio");
+  audioSrc.src = event.data[0].preview;
+  console.log((audioSrc.src = event.data[0].preview));
+  const artistInfo = document.querySelectorAll(".now-playing-artist");
+>>>>>>> Stashed changes
   artistInfo.forEach((artist) => {
     artist.textContent = event.data[0].artist.name
   })
