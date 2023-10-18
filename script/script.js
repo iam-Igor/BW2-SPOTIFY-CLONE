@@ -1,3 +1,14 @@
+// EVENT LISTENER PER CHIUDERE SEZ. AMICI ED INGRANDIRE SEZ. CENTRALE
+
+const closeBtn = document.getElementsByClassName("close-tab")[0];
+closeBtn.addEventListener("click", function () {
+  const friendstab = document.getElementById("friends-activity");
+  friendstab.classList.add("d-lg-none");
+
+  const mainContent = document.getElementById("main-content");
+  mainContent.classList.add("col-md-10");
+});
+
 // DETTAGLIO
 
 const generateDetails = function (details) {

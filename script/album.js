@@ -136,7 +136,7 @@ const visualizeAlbums = function (albums) {
     trackRow.innerHTML = `
            <div class="col-6 d-flex align-items-center ps-3">
               <p class="ps-4 pe-3 m-0">${index + 1}</p>
-              <div >
+              <div>
               <p class="mb-0 card-text">${album.title}</p>
               <p class="mb-0"><small class="text-body-secondary ">${
                 album.artist.name
@@ -224,8 +224,6 @@ const visualizeArtist = function (artist) {
   albumCoverArt.setAttribute("src", `${artist.picture_medium}`);
 
   albumTracks.innerText = artist.nb_album + " " + "album";
-
-  albumArtistName.innerText = artist.name;
 };
 
 const addressBarContent = new URLSearchParams(location.search);
