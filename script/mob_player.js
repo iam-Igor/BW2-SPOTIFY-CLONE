@@ -1,3 +1,6 @@
+const container = document.querySelector(".container");
+container.classList.add("transition-slide-up");
+
 const addressBarContent = new URLSearchParams(location.search);
 const musicId = addressBarContent.get("musicId");
 
