@@ -13,7 +13,7 @@ const generateDetails = function (details) {
    <div class="col-8 pt-3">
     <h6>${details.data[j].title}</h6>
      <h1>${details.data[j].album.title}</h1>
-     <a href='./details.html?musicId=${details.data[j].artist.id}'>${details.data[j].artist.name}</a>
+     <a href='./album.html?musicId=${details.data[j].artist.id}'>${details.data[j].artist.name}</a>
     
      <div class="d-flex align-items-center">
        <a href="#" class="btn btn-success rounded-4 me-2 px-4 play-pause"
@@ -49,7 +49,7 @@ const renderSection2 = function (musicData) {
       <a href="./album.html?musicId=${musicData.data[0].album.id}">
         <h6 class="card-title">
           ${musicData.data[0].album.title}
-          ${musicData.data[0].album.title}
+         
         </h6>
         </a>
         </a>
@@ -271,11 +271,12 @@ const renderSection3 = function (musicData) {
 
 // SEZIONE PREFERITI
 const generateFavourites = function (musicData) {
+  console.log(musicData);
   const ul = document.getElementById("favourites");
   for (let k = 0; k < musicData.data.length; k++) {
     const newLi = document.createElement("li");
     newLi.classList.add("lh-base", "text-secondary", "link-light");
-    newLi.innerText = `${musicData.data[k].title}`;
+    newLi.innerHTML = `<a href="./album.html?musicId=${musicData.data[k].album.id}">${musicData.data[k].title}</a>`;
     ul.appendChild(newLi);
   }
 };

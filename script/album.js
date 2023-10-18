@@ -37,7 +37,7 @@ const renderAlbum = function (album) {
 
   // setting data
   albumName.innerText = album.title;
-  recordType.innerText = album.record_type.toUpperCase();
+  // recordType.innerText = album.record_type.toUpperCase();
   albumArtist.setAttribute("src", `${album.artist.picture}`);
   albumCoverArt.setAttribute("src", `${album.cover_medium}`);
   albumDuration.innerText = secToTime(album.duration);
