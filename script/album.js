@@ -55,12 +55,12 @@ const renderAlbum = function (album) {
     console.log(album);
     trackRow.className = "row row-cols-3 tracks mx-0 mb-2";
     trackRow.innerHTML = `
-         <div class="col-6 d-flex align-items-center ps-3">
+         <div class="col-6 d-flex align-items-center ps-0 ps-md-3">
             <p class="ps-4 pe-3 m-0">${index + 1}</p>
             <img src="${album.artist.picture_small}" class="me-2">
 
-            <div >
-            <p class="mb-0 card-text">${track.title}</p>
+            <div class="moving">
+            <p class="mb-0 card-text ">${track.title}</p>
             <p class="mb-0"><small class="text-body-secondary ">${
               track.artist.name
             }</small></p>
@@ -138,7 +138,7 @@ const visualizeAlbums = function (albums) {
     const trackRow = document.createElement("div");
     trackRow.className = "row row-cols-3 tracks mx-0 mb-2";
     trackRow.innerHTML = `
-           <div class="col-6 d-flex align-items-center ps-3">
+           <div class="col-6 d-flex align-items-center ps-0 ps-md-3 single-card">
               <p class="ps-4 pe-3 m-0">${index + 1}</p>
               <img src="${album.album.cover_small}" class="me-2">
 
