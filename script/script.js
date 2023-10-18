@@ -9,6 +9,16 @@ closeBtn.addEventListener("click", function () {
   mainContent.classList.add("col-md-10");
 });
 
+// EVENT LISTENER PER IL CUORE PREFERITI
+
+const heartBtn = document.getElementsByClassName("heart");
+for (let i = 0; i < heartBtn.length; i++) {
+  heartBtn[i].addEventListener("click", function () {
+    heartBtn[i].classList.remove("bi-heart");
+    heartBtn[i].classList.add("bi-heart-fill");
+  });
+}
+
 // DETTAGLIO
 
 const generateDetails = function (details) {
