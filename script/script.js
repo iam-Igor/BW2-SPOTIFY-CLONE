@@ -17,6 +17,8 @@ HeartAnimation.addEventListener("click", function () {
   HeartAnimation.classList.toggle("animate");
 });
 
+// EVENT LISTENER PER APRIRE MOB PLAYER
+
 // DETTAGLIO
 
 const generateDetails = function (details) {
@@ -342,6 +344,12 @@ const audiotrack = function (event) {
   const imgInfo = document.querySelectorAll(".now-playing-img");
   imgInfo.forEach((img) => {
     img.src = event.data[0].album.cover_big;
+  });
+
+  const musicBarSM = document.getElementById("music-bar2");
+  musicBarSM.addEventListener("click", function () {
+    const newUrl = `./mobile_player.html?musicId=${event.data[0].album.id}`;
+    window.location.href = newUrl;
   });
 };
 
