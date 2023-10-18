@@ -1,0 +1,32 @@
+.container-player {
+  position: fixed;
+  bottom: 0;
+}
+.container-player .player-buttons i {
+  color: #fff;
+  transition: all 0.3s;
+}
+.container-player .player-container-right i:hover,
+.container-player .player-container-left i:hover,
+.container-player .player-buttons i:hover {
+  color: #fff !important;
+}
+
+.fs-7 {
+  font-size: 0.7rem;
+}
+
+.player-container-left a:hover {
+  text-decoration: underline !important;
+}
+.player-container-left .contributors a:hover {
+  color: #fff !important;
+}
+
+.sliderRange {
+  accent-color: #fff;
+  background: rebeccapurple !important;
+}
+.sliderRange:hover {
+  accent-color: #1db954;
+}/*# sourceMappingURL=player.css.map */
