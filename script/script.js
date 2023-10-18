@@ -374,8 +374,10 @@ playPauseButton.forEach((button) => {
 
 const searchButton2 = document.getElementById("search2");
 
-searchButton2.addEventListener("click", function () {
-   const navBar = document.getElementById("navbar");
-   navBar.classList.remove("d-none");
-   navBar.classList.add("slide-in-blurred-top");
-});
+if (searchButton2) {
+   searchButton2.addEventListener("click", function () {
+      const navBar = document.getElementById("navbar");
+      navBar.classList.remove("d-none");
+      navBar.classList.add("slide-in-blurred-top");
+   });
+}
