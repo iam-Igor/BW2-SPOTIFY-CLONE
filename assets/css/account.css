@@ -1,0 +1,36 @@
+nav svg {
+  width: 50%;
+}
+
+nav li {
+  font-weight: bold;
+}
+
+nav hr {
+  width: 2%;
+  border: 2px solid white;
+  transform: rotate(90deg);
+}
+
+main li:hover {
+  background-color: black;
+}
+
+footer svg {
+  width: 60%;
+}
+
+footer li {
+  font-weight: 400;
+  font-size: 16px;
+}
+footer ul {
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 480px) {
+  footer ul {
+    text-align: center;
+    line-height: 1.5;
+  }
+}
