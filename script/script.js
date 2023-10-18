@@ -14,9 +14,9 @@ const generateDetails = function (details) {
     <h6>${details.data[j].title}</h6>
      <h1>${details.data[j].album.title}</h1>
      <a href='./album.html?musicId=${details.data[j].artist.id}'>${details.data[j].artist.name}</a>
-     <a href='./album.html?musicId=${details.data[j].artist.id}'>${details.data[j].artist.name}</a>
+   
     
-     <div class="d-flex align-items-center">
+     <div class="d-flex align-items-center mt-3">
        <a href="#" class="btn btn-success rounded-4 me-2 px-4 play-pause"
          >Play</a
       >
@@ -37,7 +37,7 @@ const renderSection2 = function (musicData) {
   const section = document.getElementById('section2')
   console.log(musicData.data)
   for (let i = 0; i < 6; i++) {
-    section.innerHTML = `<div class="col mb-3 col-md-4">
+    section.innerHTML = `<div class="col mb-3 col-md-4 grow">
     <div
       class="card d-flex flex-row align-items-center bg-body-secondary border-0"
     >
@@ -57,7 +57,7 @@ const renderSection2 = function (musicData) {
       </div>
     </div>
   </div>
-  <div class="col mb-3 col-md-4">
+  <div class="col mb-3 col-md-4 grow">
     <div
       class="card d-flex flex-row align-items-center bg-body-secondary border-0"
     >
@@ -75,7 +75,7 @@ const renderSection2 = function (musicData) {
       </div>
     </div>
   </div>
-  <div class="col mb-3 col-md-4">
+  <div class="col mb-3 col-md-4 grow">
     <div
       class="card d-flex flex-row align-items-center bg-body-secondary border-0"
     >
@@ -93,7 +93,7 @@ const renderSection2 = function (musicData) {
       </div>
     </div>
   </div>
-  <div class="col mb-3 col-md-4">
+  <div class="col mb-3 col-md-4 grow">
     <div
       class="card d-flex flex-row align-items-center bg-body-secondary border-0"
     >
@@ -111,7 +111,7 @@ const renderSection2 = function (musicData) {
       </div>
     </div>
   </div>
-  <div class="col mb-3 col-md-4">
+  <div class="col mb-3 col-md-4 grow">
     <div
       class="card d-flex flex-row align-items-center bg-body-secondary border-0"
     >
@@ -129,7 +129,7 @@ const renderSection2 = function (musicData) {
       </div>
     </div>
   </div>
-  <div class="col mb-3 col-md-4">
+  <div class="col mb-3 col-md-4 grow">
     <div
       class="card d-flex flex-row align-items-center bg-body-secondary border-0"
     >
@@ -156,7 +156,7 @@ const renderSection3 = function (musicData) {
   const row3 = document.getElementById('row-3')
 
   for (let i = 0; i < 5; i++) {
-    row3.innerHTML = `<div class="col">
+    row3.innerHTML = `<div class="col grow">
     <div
       class="card border-0 bg-body-secondary my-3 p-2"
       style="height: 350px"
@@ -178,7 +178,7 @@ const renderSection3 = function (musicData) {
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="col grow"">
     <div
       class="card border-0 bg-body-secondary my-3 p-2"
       style="height: 350px"
@@ -200,7 +200,7 @@ const renderSection3 = function (musicData) {
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="col grow"">
     <div
       class="card border-0 bg-body-secondary my-3 p-2"
       style="height: 350px"
@@ -222,7 +222,7 @@ const renderSection3 = function (musicData) {
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="col grow"">
     <div
       class="card border-0 bg-body-secondary my-3 p-2"
       style="height: 350px"
@@ -244,7 +244,7 @@ const renderSection3 = function (musicData) {
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="col grow"">
     <div
       class="card border-0 bg-body-secondary my-3 p-2"
       style="height: 350px"
