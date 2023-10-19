@@ -9,6 +9,19 @@ closeBtn.addEventListener("click", function () {
   mainContent.classList.add("col-md-10");
 });
 
+// EVENT LISTENER PER AGGIORNARE AVANZAMENTO BARRA PLAYER DESKTOP
+
+const audioSrc = document.getElementById("audio");
+
+const progressBar = document.getElementsByClassName("progress-bar")[0];
+audioSrc.addEventListener("timeupdate", function () {
+  const currentTime = audioSrc.currentTime;
+  const duration = audioSrc.duration;
+  const percentagePlayed = (currentTime / duration) * 100;
+
+  progressBar.style.width = percentagePlayed + "%";
+});
+
 // EVENT LISTENER PER IL CUORE PREFERITI
 
 const HeartAnimation = document.getElementsByClassName("HeartAnimation")[0];

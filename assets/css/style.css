@@ -35,15 +35,21 @@ button.play-pause {
 .progress-bar-container {
   width: 500px;
   margin: 0 10px;
-  background-color: #888;
+  background-color: lightgray;
   height: 5px;
   border-radius: 2.5px;
   position: relative;
 }
 
 .progress-bar {
-  width: 0;
+  width: 0px;
+  height: 5px;
+  background-color: green;
   border-radius: 2.5px;
+}
+
+.progress {
+  background-color: green;
 }
 
 audio {
@@ -71,33 +77,27 @@ input[type="range"] {
 input[type="range"]::-webkit-slider-thumb {
   width: 10px;
   height: 10px;
-  background-color: lightgrey;
+  background-color: green;
   border: none;
   border-radius: 50%;
   cursor: pointer;
 }
 
+/* VOLUME INPUT */
 input[type="range"] {
   width: 100px;
   height: 5px;
-  background-color: lightgrey;
+  background-color: green;
   border: none;
   border-radius: 2.5px;
   outline: none;
   opacity: 0.7;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
-
-  -webkit-appearance: none;
-  appearance: none;
 }
 
 input[type="range"]::-moz-range-progress {
-  background-color: gray;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  display: none;
+  background-color: green;
 }
 
 #music-bar svg path:hover {
