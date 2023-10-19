@@ -1,5 +1,28 @@
 import { player } from "./player.js";
 
+// when user close the right side container modify the layout
+const rightContainer = document.getElementById("friends-activity");
+const btnRightContainerClose = rightContainer.querySelector(".close-tab");
+
+if (rightContainer) {
+   btnRightContainerClose.addEventListener("click", function () {
+      console.log("time to reset");
+      const playList = document.getElementById(
+         "rendered-playlist-middle-container"
+      );
+      const leftContainer = document.getElementById("left-container");
+      const mainContainer = document.getElementById("main-container");
+      const mainContent = document.getElementById("main-content");
+
+      playList.classList.remove("col-md-8");
+      playList.classList.add("col-md-9");
+      leftContainer.classList.add("col-md-3");
+      mainContainer.classList.remove("row-cols-3");
+      mainContent.classList.remove("col-md-10");
+      // mainContainer.classList.add("row-cols-2");
+   });
+}
+
 const albumName = document.getElementById("album-name");
 const recordType = document.getElementById("record-type");
 const albumArtist = document.getElementById("album-artist");
