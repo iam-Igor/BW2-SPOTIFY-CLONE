@@ -167,6 +167,8 @@ const visualizeAlbums = function (albums) {
   });
 };
 
+// SCELTA DELLA TRACCIA IN MODALITA' ALBUM
+
 const audiotrack3 = function (event) {
   const audioSrc = document.getElementById("audio");
   console.log(event);
@@ -174,7 +176,7 @@ const audiotrack3 = function (event) {
 
   for (let i = 0; i < playBtnArtist.length; i++) {
     playBtnArtist[i].addEventListener("click", function () {
-      audioSrc.src = event.preview;
+      audioSrc.src = event.tracks.data[i].preview;
       console.log((audioSrc.src = event.tracks.data[i].preview));
       const artistInfo = document.querySelectorAll(".now-playing-artist");
       artistInfo.forEach((artist) => {
@@ -191,8 +193,17 @@ const audiotrack3 = function (event) {
         img.src = event.tracks.data[i].album.cover_big;
       });
     });
+
+    console.log(event);
+    const musicBarSM = document.getElementById("music-bar3");
+    musicBarSM.addEventListener("click", function () {
+      const newUrl = `./mobile_player.html?musicId=${event.tracks.data[i].album.id}`;
+      window.location.href = newUrl;
+    });
   }
 };
+
+// SCELTA DELLA TRACCIA IN MODALITA' ARTISTA
 
 const audiotrack2 = function (event) {
   console.log(event);
@@ -220,6 +231,11 @@ const audiotrack2 = function (event) {
       imgInfo.forEach((img) => {
         img.src = event.data[i].album.cover_big;
       });
+    });
+    const musicBarSM = document.getElementById("music-bar3");
+    musicBarSM.addEventListener("click", function () {
+      const newUrl = `./mobile_player.html?musicId=${event.data[i].album.id}`;
+      window.location.href = newUrl;
     });
   }
 };
