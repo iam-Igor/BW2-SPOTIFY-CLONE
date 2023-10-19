@@ -37,6 +37,16 @@ audioSrc.addEventListener("timeupdate", function () {
   progressBar.style.width = percentagePlayed + "%";
 });
 
+// GESTIONE VOLUME DEL PLAYER
+const volumeInput = document.getElementById("volume");
+
+volumeInput.addEventListener("input", function () {
+  const volume = volumeInput.value;
+  audioSrc.volume = volume;
+
+  audioSrc.volume = volumeInput.value / 100;
+});
+
 const formatTime = function (seconds) {
   const minutes = Math.floor(seconds / 60);
   const remainingSeconds = Math.floor(seconds % 60);
