@@ -390,9 +390,11 @@ playPauseButton.forEach((button) => {
     if (audio.paused) {
       audio.play();
       button.innerHTML = `<i class="bi bi-pause-circle color1 fs-1 fs-md-4"></i>`;
+      button.style.transform = "scale(0.8)";
     } else {
       audio.pause();
       button.innerHTML = `<i class="bi bi-play-fill color1 fs-1 fs-md-4"></i>`;
+      button.style.transform = "scale(1)";
     }
   });
 });
