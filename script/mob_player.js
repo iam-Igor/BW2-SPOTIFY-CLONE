@@ -38,8 +38,6 @@ const getPlayer = function (music) {
 
     progressBar.style.width = percentagePlayed + "%";
   });
-
-  const body = document.querySelector("body");
 };
 
 fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + musicId)
