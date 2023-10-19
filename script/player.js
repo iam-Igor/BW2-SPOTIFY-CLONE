@@ -1,3 +1,9 @@
+// iterate the fetch data: in this case album
+// automatically get the first track of the list
+// because player requires a "trackId"
+// usually get trackId via "URLSearchParams(location.search)"
+// if there isn't set the ID of the first track on the album(fetch)
+
 const player = function (data) {
    // let currentTrackId = data.tracks.data.id;
    const btnPrevious = document.getElementById("btn-previous");
@@ -142,22 +148,3 @@ const player = function (data) {
 };
 
 export { player };
-
-// const loadAlbum = function () {
-//    fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
-//       .then((response) => {
-//          if (!response.ok) {
-//             throw new Error("Fetching respose ERROR!");
-//          }
-//          return response.json();
-//       })
-//       .then((respone) => {
-//          console.log("Fetch went fine!", respone);
-//          //  renderAlbum(respone);
-//          //  audiotrack3(respone);
-//          player(respone);
-//       })
-//       .catch((err) => console.log("Fetching issue", err));
-// };
-
-// loadAlbum();
