@@ -36,9 +36,13 @@
 
 .sliderRange {
    accent-color: #fff;
-   background: rebeccapurple !important;
 
    &:hover {
       accent-color: #1db954;
    }
+}
+
+footer,
+.progress {
+   background-color: #000;
 }

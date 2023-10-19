@@ -2,11 +2,11 @@
 
 const closeBtn = document.getElementsByClassName("close-tab")[0];
 closeBtn.addEventListener("click", function () {
-  const friendstab = document.getElementById("friends-activity");
-  friendstab.classList.add("d-lg-none");
+   const friendstab = document.getElementById("friends-activity");
+   friendstab.classList.add("d-lg-none");
 
-  const mainContent = document.getElementById("main-content");
-  mainContent.classList.add("col-md-10");
+   const mainContent = document.getElementById("main-content");
+   mainContent.classList.add("col-md-10");
 });
 
 // EVENT LISTENER PER IL CUORE PREFERITI
@@ -14,16 +14,16 @@ closeBtn.addEventListener("click", function () {
 const HeartAnimation = document.getElementsByClassName("HeartAnimation")[0];
 
 HeartAnimation.addEventListener("click", function () {
-  HeartAnimation.classList.toggle("animate");
+   HeartAnimation.classList.toggle("animate");
 });
 
 // DETTAGLIO
 
 const generateDetails = function (details) {
-  console.log(details);
-  const row1 = document.getElementById("row-1");
-  for (let j = 0; j < details.data.length; j++) {
-    row1.innerHTML = `<div class="col col-4">
+   console.log(details);
+   const row1 = document.getElementById("row-1");
+   for (let j = 0; j < details.data.length; j++) {
+      row1.innerHTML = `<div class="col col-4">
      <img
      src="${details.data[j].album.cover_medium}"
       alt=""
@@ -47,16 +47,16 @@ const generateDetails = function (details) {
        <i class="bi bi-three-dots ms-3"></i>
      </div>
   </div>`;
-  }
+   }
 };
 
 // SEZIONE 2
 
 const renderSection2 = function (musicData) {
-  const section = document.getElementById("section2");
-  console.log(musicData.data);
-  for (let i = 0; i < 6; i++) {
-    section.innerHTML = `<div class="col mb-3 col-md-4 grow">
+   const section = document.getElementById("section2");
+   console.log(musicData.data);
+   for (let i = 0; i < 6; i++) {
+      section.innerHTML = `<div class="col mb-3 col-md-4 grow">
     <div
       class="card d-flex flex-row align-items-center bg-body-secondary border-0"
     >
@@ -166,16 +166,16 @@ const renderSection2 = function (musicData) {
       </div>
     </div>
   </div>`;
-  }
+   }
 };
 
 // SEZIONE 3
 
 const renderSection3 = function (musicData) {
-  const row3 = document.getElementById("row-3");
-  console.log(musicData);
+   const row3 = document.getElementById("row-3");
+   console.log(musicData);
 
-  row3.innerHTML = `<div class="col grow">
+   row3.innerHTML = `<div class="col grow">
     <div
       class="card border-0 bg-body-secondary my-3 p-2"
       style="height: 260px"
@@ -313,68 +313,68 @@ const renderSection3 = function (musicData) {
 
 // SEZIONE PREFERITI
 const generateFavourites = function (musicData) {
-  console.log(musicData);
-  const ul = document.getElementById("favourites");
-  for (let k = 0; k < musicData.data.length; k++) {
-    const newLi = document.createElement("li");
-    newLi.classList.add("lh-base", "text-secondary", "link-light");
-    newLi.innerHTML = `<a href="./album.html?musicId=${musicData.data[k].album.id}">${musicData.data[k].album.title}</a>`;
-    ul.appendChild(newLi);
-  }
+   console.log(musicData);
+   const ul = document.getElementById("favourites");
+   for (let k = 0; k < musicData.data.length; k++) {
+      const newLi = document.createElement("li");
+      newLi.classList.add("lh-base", "text-secondary", "link-light");
+      newLi.innerHTML = `<a href="./album.html?musicId=${musicData.data[k].album.id}">${musicData.data[k].album.title}</a>`;
+      ul.appendChild(newLi);
+   }
 };
 const audiotrack = function (event) {
-  console.log(event);
-  const audioSrc = document.getElementById("audio");
-  audioSrc.src = event.data[0].preview;
+   console.log(event);
+   const audioSrc = document.getElementById("audio");
+   audioSrc.src = event.data[0].preview;
 
-  console.log((audioSrc.src = event.data[0].preview));
-  const artistInfo = document.querySelectorAll(".now-playing-artist");
-  artistInfo.forEach((artist) => {
-    artist.textContent = event.data[0].artist.name;
-  });
+   console.log((audioSrc.src = event.data[0].preview));
+   const artistInfo = document.querySelectorAll(".now-playing-artist");
+   artistInfo.forEach((artist) => {
+      artist.textContent = event.data[0].artist.name;
+   });
 
-  const titleInfo = document.querySelectorAll(".now-playing-title");
-  titleInfo.forEach((title) => {
-    title.textContent = event.data[0].title;
-  });
+   const titleInfo = document.querySelectorAll(".now-playing-title");
+   titleInfo.forEach((title) => {
+      title.textContent = event.data[0].title;
+   });
 
-  const imgInfo = document.querySelectorAll(".now-playing-img");
-  imgInfo.forEach((img) => {
-    img.src = event.data[0].album.cover_big;
-  });
+   const imgInfo = document.querySelectorAll(".now-playing-img");
+   imgInfo.forEach((img) => {
+      img.src = event.data[0].album.cover_big;
+   });
 
-  // EVENT LISTENER PER APRIRE MOB PLAYER
-  const musicBarSM = document.getElementById("music-bar2");
-  musicBarSM.addEventListener("click", function () {
-    const newUrl = `./mobile_player.html?musicId=${event.data[0].album.id}`;
-    window.location.href = newUrl;
-  });
+   // EVENT LISTENER PER APRIRE MOB PLAYER
+   const musicBarSM = document.getElementById("music-bar2");
+   musicBarSM.addEventListener("click", function () {
+      const newUrl = `./mobile_player.html?musicId=${event.data[0].album.id}`;
+      window.location.href = newUrl;
+   });
 };
 
 const form = document.getElementById("form-search");
 form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  const input = document.getElementById("search-input");
-  let index = input.value;
-  fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + index)
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      } else {
-        throw new Error("Errore nel contattare il server");
-      }
-    })
-    .then((music) => {
-      renderSection2(music);
-      renderSection3(music);
-      generateFavourites(music);
+   e.preventDefault();
+   const input = document.getElementById("search-input");
+   let index = input.value;
+   fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + index)
+      .then((res) => {
+         if (res.ok) {
+            return res.json();
+         } else {
+            throw new Error("Errore nel contattare il server");
+         }
+      })
+      .then((music) => {
+         renderSection2(music);
+         renderSection3(music);
+         generateFavourites(music);
 
-      audiotrack(music);
-      generateDetails(music);
-    })
-    .catch((err) => {
-      console.log("Si è verificato un errore", err);
-    });
+         audiotrack(music);
+         generateDetails(music);
+      })
+      .catch((err) => {
+         console.log("Si è verificato un errore", err);
+      });
 });
 
 const audio = document.getElementById("audio");
@@ -386,15 +386,15 @@ const nextButton = document.querySelector(".skip-button:nth-child(3)");
 const prevButton = document.querySelector(".skip-button:nth-child(1)");
 
 playPauseButton.forEach((button) => {
-  button.addEventListener("click", function () {
-    if (audio.paused) {
-      audio.play();
-      button.innerHTML = `<i class="bi bi-pause-circle color1 fs-1 fs-md-4"></i>`;
-    } else {
-      audio.pause();
-      button.innerHTML = `<i class="bi bi-play-fill color1 fs-1 fs-md-4"></i>`;
-    }
-  });
+   button.addEventListener("click", function () {
+      if (audio.paused) {
+         audio.play();
+         button.innerHTML = `<i class="bi bi-pause-circle color1 fs-1 fs-md-4"></i>`;
+      } else {
+         audio.pause();
+         button.innerHTML = `<i class="bi bi-play-fill color1 fs-1 fs-md-4"></i>`;
+      }
+   });
 });
 
 // SEZIONE CERCA MOBILE
@@ -402,7 +402,7 @@ playPauseButton.forEach((button) => {
 const searchButton2 = document.getElementById("search2");
 
 searchButton2.addEventListener("click", function () {
-  const navBar = document.getElementById("navbar");
-  navBar.classList.remove("d-none");
-  navBar.classList.add("slide-in-blurred-top");
+   const navBar = document.getElementById("navbar");
+   navBar.classList.remove("d-none");
+   navBar.classList.add("slide-in-blurred-top");
 });

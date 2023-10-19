@@ -25,8 +25,12 @@
 
 .sliderRange {
   accent-color: #fff;
-  background: rebeccapurple !important;
 }
 .sliderRange:hover {
   accent-color: #1db954;
+}
+
+footer,
+.progress {
+  background-color: #000;
 }/*# sourceMappingURL=player.css.map */

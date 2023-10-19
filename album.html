@@ -17,8 +17,18 @@
       <link rel="stylesheet" href="assets/css/style.css" />
       <link rel="stylesheet" href="./assets/css/album.css">
       <link rel="stylesheet" href="assets/css/circular-font.css">
+
+      <!-- icons IMPORTANTE!!!! -->
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      />
+      <link rel="stylesheet" href="./assets/css/player.css" />
    </head>
-   <body data-bs-theme="dark" class="overflow-x-hidden">
+   <body data-bs-theme="dark" class="overflow-hidden">
       <header class="position-sticky top-0 z-3">
          <nav
             class="navbar navbar-expand-lg bg-black d-none d-md-block"
@@ -114,10 +124,10 @@
       </header>
       <main class="bg-black">
          <div class="container-fluid p-0 " id="main-content">
-            <div
+            <div id="main-container"
                class="row row-cols-3 justify-content-between flex-nowrap mx-0"
             >
-               <div class="col col-2 rounded p-3 d-none d-lg-block pt-3">
+               <div id="left-container" class="col col-2 rounded p-3 d-none d-md-block d-lg-block pt-3">
                   <div>
                      <div class="d-flex text-light link-success" style="cursor: pointer">
                         <i class="bi bi-bookshelf me-2"></i>
@@ -141,7 +151,7 @@
                      <ul class="list-unstyled" id="favourites"></ul>
                   </div>
                </div>
-               <div class="col col-12 col-md-8 bg-dark p-0">
+               <div id="rendered-playlist-middle-container" class="col col-12 col-md-8 bg-dark p-0">
                   <!-- MAIN CENTER CONTENT DELLA PAGINA -->
                   <div class="row-fluid bg-dark row-cols-1 center-content-main-album w-100">
                      <div class="col bg-dark container-mid px-0">
@@ -349,7 +359,7 @@
             </div>
          </div>
          <!-- INIZIO BARRA MUSICA MD -->
-         <div
+         <!-- <div
             class="container-fluid position-sticky bottom-0 p-2 d-md-block d-none"
             id="music-bar"
          >
@@ -478,7 +488,7 @@
                   </svg>
                </div>
             </div>
-         </div>
+         </div> -->
          <!-- INIZIO BARRA MUSICA SM -->
          <div class="container-fluid  d-md-none bg-black" id="music-bar">
             <div class="row d-flex">
@@ -544,13 +554,106 @@
             </div>
          </div>
       </main>
+      <footer class="container-player container-fluid d-none d-md-block d-lg-block d-xl-block d-xxl-block">
+         <div id="player-main" class="row row-cols-3 ">
+            <div
+               class="col-3 d-flex align-items-center player-container-left"
+            >
+               <div class="d-flex align-items-center">
+                  <img
+                     id="player-img"
+                     class="img-thumbnail border-0 p-0 me-3"
+                     src="https://e-cdns-images.dzcdn.net/images/cover/8b8fc5d117f9357b79f0a0a410a170e8/56x56-000000-80-0-0.jpg"
+                     alt="cover image"
+                  />
+                  <div class="d-flex flex-column me-4">
+                     <a class="text-decoration-none text-white" href="#" id="player-title"
+                        >Title song</a
+                     >
+                     <span  id="player-artists" class="fs-7 contributors">
+                        <a
+                           class="text-decoration-none text-white-50 fs-7"
+                           href="#"
+                           >artist 1</a
+                        >
+                        <a
+                           class="text-decoration-none text-white-50 fs-7"
+                           href="#"
+                           >artist 2</a
+                        >
+                     </span>
+                  </div>
+                  <div>
+                     <i class="far fa-heart text-white-50"></i>
+                  </div>
+               </div>
+            </div>
+            <div class="col-6 player-center">
+               <div
+                  class="player-buttons d-flex justify-content-center mt-3 align-items-center"
+               >
+                  <a href="#" id="btn-previous" class="mt-1"><i class="fas fa-step-backward text-white-50 fs-5"></i></a>
+                  <i
+                     id="btn-play"
+                     class="fas fa-play-circle fs-2 px-3"
+                  ></i>
+                  <a href="#" id="btn-next" class="mt-1"><i class="fas fa-step-forward text-white-50 fs-5"></i></a>               
+               </div>
+               <div
+                  class="progress text-white-50 d-flex align-items-center mb-3 mt-2"
+               >
+                  <span class="mx-2 fs-6 mb-1" id="currentTime"
+                     >0:00</span
+                  >
+                  <label class="d-none" for="progressBar">Duration</label>
+                  <input
+                     class="w-100 sliderRange"
+                     id="progressBar"
+                     type="range"
+                     min="0"
+                     max="100"
+                     value="0"
+                  />
+                  <span class="mx-2 fs-6 mb-1" id="duration">0:00</span>
+               </div>
+            </div>
+            <div
+               class="player-container-right col-3 d-flex align-items-center justify-content-end"
+            >
+               <div
+                  class="d-flex align-items-center justify-content-center"
+               >
+                  <i
+                     class="far fa-caret-square-right text-white-50 me-2 fs-6"
+                  ></i>
+                  <i
+                     class="fas fa-microphone text-white-50 me-2 fs-6"
+                  ></i>
+                  <i class="fas fa-stream text-white-50 me-2 fs-6"></i>
+                  <i class="fas fa-users text-white-50 me-2 fs-6"></i>
+                  <i class="bi bi-speaker text-white-50 me-2 fs-6"></i>
+                  <label class="d-none" for="volume">Volume</label>
+                  <input
+                     id="volume"
+                     class="me-2 sliderRange"
+                     min="0"
+                     max="100"
+                     value="75"
+                     type="range"
+                  />
+                  <i class="fas fa-expand text-white-50 me-2 fs-6"></i>
+               </div>
+            </div>
+         </div>
+      </footer>
       <script
          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
          crossorigin="anonymous"
       ></script>
    
-      <script src="./script/album.js"></script>
+      <script type="module" src="./script/player.js"></script>
+      <script type="module" src="./script/album.js"></script>
       <script src="script/script.js"></script>
    </body>
 </html>
