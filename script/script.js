@@ -17,10 +17,33 @@ const progressBar = document.getElementsByClassName("progress-bar")[0];
 audioSrc.addEventListener("timeupdate", function () {
   const currentTime = audioSrc.currentTime;
   const duration = audioSrc.duration;
+  const songStart = document.getElementsByClassName("song-start")[0];
+  const songEnd = document.getElementsByClassName("song-end")[0];
+
+  const formattedCurrentTime = formatTime(currentTime);
+  songStart.textContent = formattedCurrentTime;
+
+  const remainingTime = duration - currentTime;
+
+  const formattedRemainingTime = formatTime(remainingTime);
+  songEnd.textContent = formattedRemainingTime;
+
+  if (songEnd.textContent === "NaN:NaN") {
+    songEnd.textContent = "";
+  }
+
   const percentagePlayed = (currentTime / duration) * 100;
 
   progressBar.style.width = percentagePlayed + "%";
 });
+
+const formatTime = function (seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = Math.floor(seconds % 60);
+  return `${String(minutes).padStart(2, "0")}:${String(
+    remainingSeconds
+  ).padStart(2, "0")}`;
+};
 
 // EVENT LISTENER PER IL CUORE PREFERITI
 
