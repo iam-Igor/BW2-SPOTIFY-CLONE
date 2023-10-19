@@ -17,6 +17,8 @@ const getPlayer = function (music) {
   const audioSource = document.getElementById("audio-player");
   audioSource.src = `${music.tracks.data[0].preview}`;
 
+  console.log(music);
+
   const playbtn = document.getElementById("play-pause");
   playbtn.addEventListener("click", function () {
     if (audioSource.paused) {
@@ -27,6 +29,17 @@ const getPlayer = function (music) {
       playbtn.innerHTML = `<i class="bi bi-play-circle color1 fs-1 text-white"></i>`;
     }
   });
+
+  audioSource.addEventListener("timeupdate", function () {
+    const progressBar = document.getElementsByClassName("progress")[0];
+    const currentTime = audioSource.currentTime;
+    const duration = audioSource.duration;
+    const percentagePlayed = (currentTime / duration) * 100;
+
+    progressBar.style.width = percentagePlayed + "%";
+  });
+
+  const body = document.querySelector("body");
 };
 
 fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + musicId)
