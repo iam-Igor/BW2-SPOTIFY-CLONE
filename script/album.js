@@ -1,27 +1,31 @@
 import { player } from "./player.js";
 
 // when user close the right side container modify the layout
-const rightContainer = document.getElementById("friends-activity");
-const btnRightContainerClose = rightContainer.querySelector(".close-tab");
+const displayDynamicalyWhenCloseRight = function () {
+   const rightContainer = document.getElementById("friends-activity");
+   const btnRightContainerClose = rightContainer.querySelector(".close-tab");
 
-if (rightContainer) {
-   btnRightContainerClose.addEventListener("click", function () {
-      console.log("time to reset");
-      const playList = document.getElementById(
-         "rendered-playlist-middle-container"
-      );
-      const leftContainer = document.getElementById("left-container");
-      const mainContainer = document.getElementById("main-container");
-      const mainContent = document.getElementById("main-content");
+   if (rightContainer) {
+      btnRightContainerClose.addEventListener("click", function () {
+         // console.log("time to reset");
+         const playList = document.getElementById(
+            "rendered-playlist-middle-container"
+         );
+         const leftContainer = document.getElementById("left-container");
+         const mainContainer = document.getElementById("main-container");
+         const mainContent = document.getElementById("main-content");
 
-      playList.classList.remove("col-md-8");
-      playList.classList.add("col-md-9");
-      leftContainer.classList.add("col-md-3");
-      mainContainer.classList.remove("row-cols-3");
-      mainContent.classList.remove("col-md-10");
-      // mainContainer.classList.add("row-cols-2");
-   });
-}
+         playList.classList.remove("col-md-8");
+         playList.classList.add("col-md-9");
+         leftContainer.classList.add("col-md-3");
+         mainContainer.classList.remove("row-cols-3");
+         mainContent.classList.remove("col-md-10");
+         // mainContainer.classList.add("row-cols-2");
+      });
+   }
+};
+
+displayDynamicalyWhenCloseRight();
 
 const albumName = document.getElementById("album-name");
 const recordType = document.getElementById("record-type");
@@ -33,32 +37,33 @@ const albumTracks = document.getElementById("album-tracks");
 const albumArtistName = document.getElementById("album-artist-name");
 const albumListTracks = document.getElementById("album-tracks-continer");
 
+// a function that calculates duration of tracks or duration of album
+const secToTime = function (duration, type = "albumDuration") {
+   const milliseconds = duration * 1000;
+   const seconds = Math.floor((milliseconds / 1000) % 60);
+   const minutes = Math.floor((milliseconds / 1000 / 60) % 60);
+   const hours = Math.floor((milliseconds / 1000 / 60 / 60) % 24);
+
+   // calculate track length
+   if (type === "track") {
+      let duration = [
+         hours.toString().padStart(2, "0"),
+         minutes.toString().padStart(2, "0"),
+         seconds.toString().padStart(2, "0"),
+      ];
+
+      duration[0] === "00" ? duration.shift() : duration;
+      return duration.join(":");
+   } else {
+      // calculates album length
+      return ` ${hours.toString()}hr ${minutes
+         .toString()
+         .padStart(2, "0")}min ${seconds.toString().padStart(2, "0")}sec.`;
+   }
+};
+
 const renderAlbum = function (album) {
-   // a function that calculates duration of tracks or duration of album
-   console.log(album);
-   const secToTime = function (duration, type = "albumDuration") {
-      const milliseconds = duration * 1000;
-      const seconds = Math.floor((milliseconds / 1000) % 60);
-      const minutes = Math.floor((milliseconds / 1000 / 60) % 60);
-      const hours = Math.floor((milliseconds / 1000 / 60 / 60) % 24);
-
-      // calculate track length
-      if (type === "track") {
-         let duration = [
-            hours.toString().padStart(2, "0"),
-            minutes.toString().padStart(2, "0"),
-            seconds.toString().padStart(2, "0"),
-         ];
-
-         duration[0] === "00" ? duration.shift() : duration;
-         return duration.join(":");
-      } else {
-         // calculates album length
-         return ` ${hours.toString()}hr ${minutes
-            .toString()
-            .padStart(2, "0")}min ${seconds.toString().padStart(2, "0")}sec.`;
-      }
-   };
+   // console.log(album);
 
    // setting data
    albumName.innerText = album.title;
@@ -74,10 +79,10 @@ const renderAlbum = function (album) {
    albumArtistName.innerText = album.artist.name;
 
    // creating album track list
-   console.log("length :", album.tracks.data.length);
+   // console.log("length :", album.tracks.data.length);
    album.tracks.data.forEach((track, index) => {
       const trackRow = document.createElement("div");
-      console.log(album);
+      // console.log(album);
       trackRow.className = "row row-cols-3 tracks mx-0 mb-2";
       trackRow.innerHTML = `
          <div class="col-6 d-flex align-items-center ps-0 ps-md-3">
@@ -136,7 +141,7 @@ const renderAlbum = function (album) {
 // this is only for the artist
 // render artist's tracks
 const visualizeAlbums = function (albums, musicId) {
-   console.log("this is artist: ", albums);
+   // console.log("this is artist: ", albums);
    const albumListTracks = document.getElementById("album-tracks-continer");
 
    const secToTime = function (duration, type = "albumDuration") {
@@ -164,7 +169,7 @@ const visualizeAlbums = function (albums, musicId) {
    };
 
    albums.data.forEach((album, index) => {
-      console.log("inside album", albums);
+      // console.log("inside album", albums);
       const trackRow = document.createElement("div");
       trackRow.className = "row row-cols-3 tracks mx-0 mb-2";
       trackRow.innerHTML = `
@@ -202,13 +207,13 @@ const visualizeAlbums = function (albums, musicId) {
 
 const audiotrack3 = function (event) {
    const audioSrc = document.getElementById("audio");
-   console.log(event);
+   // console.log(event);
    const playBtnArtist = document.querySelectorAll(".play-track2");
 
    for (let i = 0; i < playBtnArtist.length; i++) {
       playBtnArtist[i].addEventListener("click", function () {
          audioSrc.src = event.preview;
-         console.log((audioSrc.src = event.tracks.data[i].preview));
+         // console.log((audioSrc.src = event.tracks.data[i].preview));
          const artistInfo = document.querySelectorAll(".now-playing-artist");
          artistInfo.forEach((artist) => {
             artist.textContent = event.artist.name;
@@ -228,17 +233,17 @@ const audiotrack3 = function (event) {
 };
 
 const audiotrack2 = function (event) {
-   console.log(event);
+   // console.log(event);
 
    const audioSrc = document.getElementById("audio");
-   console.log(audioSrc);
+   // console.log(audioSrc);
 
    const playBtnArtist = document.querySelectorAll(".play-track");
 
    for (let i = 0; i < playBtnArtist.length; i++) {
       playBtnArtist[i].addEventListener("click", function () {
          audioSrc.src = event.data[i].preview;
-         console.log((audioSrc.src = event.data[i].preview));
+         // console.log((audioSrc.src = event.data[i].preview));
          const artistInfo = document.querySelectorAll(".now-playing-artist");
          artistInfo.forEach((artist) => {
             artist.textContent = event.data[i].artist.name;
@@ -337,3 +342,5 @@ loadArtist();
 
 // get the artist
 // render each track
+
+export { displayDynamicalyWhenCloseRight, secToTime };

@@ -15,8 +15,8 @@
          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
       />
       <link rel="stylesheet" href="assets/css/style.css" />
-      <link rel="stylesheet" href="./assets/css/album.css">
-      <link rel="stylesheet" href="assets/css/circular-font.css">
+      <link rel="stylesheet" href="./assets/css/album.css" />
+      <link rel="stylesheet" href="assets/css/circular-font.css" />
 
       <!-- icons IMPORTANTE!!!! -->
       <link
@@ -91,43 +91,47 @@
                <div class="text-light fs-3 me-2 d-none d-md-block">
                   <div class="dropdown">
                      <button
-                       class="dropdown-toggle bg-black border-0"
-                       type="button"
-                       data-bs-toggle="dropdown"
-                       aria-expanded="false"
+                        class="dropdown-toggle bg-black border-0"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
                      >
-                       <i class="bi bi-person-circle"></i>
+                        <i class="bi bi-person-circle"></i>
                      </button>
                      <ul class="dropdown-menu">
-                       <li class="d-flex">
-                         <a class="dropdown-item pe-0" href="account.html">Account</a
-                         ><a class="dropdown-item ps-0" href="#"
-                           ><i class="bi bi-person"></i
-                         ></a>
-                       </li>
-                       <li>
-                         <a class="dropdown-item" href="settings.html"
-                           >Settings<i class="bi bi-gear ms-2"></i>
-                         </a>
-                       </li>
-                       <li class="d-flex">
-                         <a class="dropdown-item" href="login.html"
-                           >Logout<i class="bi bi-box-arrow-right ms-2"></i>
-                         </a>
-                       </li>
+                        <li class="d-flex">
+                           <a class="dropdown-item pe-0" href="account.html"
+                              >Account</a
+                           ><a class="dropdown-item ps-0" href="#"
+                              ><i class="bi bi-person"></i
+                           ></a>
+                        </li>
+                        <li>
+                           <a class="dropdown-item" href="settings.html"
+                              >Settings<i class="bi bi-gear ms-2"></i>
+                           </a>
+                        </li>
+                        <li class="d-flex">
+                           <a class="dropdown-item" href="login.html"
+                              >Logout<i class="bi bi-box-arrow-right ms-2"></i>
+                           </a>
+                        </li>
                      </ul>
-                   </div>
+                  </div>
                </div>
-               
             </div>
          </nav>
       </header>
       <main class="bg-black">
-         <div class="container-fluid p-0 " id="main-content">
-            <div id="main-container"
+         <div class="container-fluid p-0" id="main-content">
+            <div
+               id="main-container"
                class="row row-cols-3 justify-content-between flex-nowrap mx-0"
             >
-               <div id="left-container" class="col col-2 rounded p-3 d-none d-md-block d-lg-block pt-3">
+               <div
+                  id="left-container"
+                  class="col col-2 rounded p-3 d-none d-md-block d-lg-block pt-3"
+               >
                   <div>
                      <div class="d-flex text-light link-success cursor-pointer">
                         <i class="bi bi-bookshelf me-2"></i>
@@ -142,7 +146,7 @@
                         <p>Brani che ti piacciono</p>
                      </div>
                      <div class="d-flex text-light link-success cursor-pointer">
-                        <i class="bi bi-bookmark me-2" ></i>
+                        <i class="bi bi-bookmark me-2"></i>
                         <p>I tuoi episodi</p>
                      </div>
                      <!-- <div class="d-flex text-light link-success cursor-pointer" style="cursor: pointer">
@@ -167,120 +171,113 @@
                      <ul class="list-unstyled" id="favourites"></ul>
                   </div>
                </div>
-               <div id="rendered-playlist-middle-container" class="col col-12 col-md-8 bg-dark p-0">
+               <div
+                  id="rendered-playlist-middle-container"
+                  class="col col-12 col-md-8 bg-dark p-0"
+               >
                   <!-- MAIN CENTER CONTENT DELLA PAGINA -->
-                  <div class="row-fluid bg-dark row-cols-1 center-content-main-album w-100">
+                  <div
+                     class="row-fluid bg-dark row-cols-1 center-content-main-album w-100"
+                  >
                      <div class="col bg-dark container-mid px-0">
-         
-                        <div class="album-bg-color"></div>
+                        <div class="artist-bg-img">
+                           <img
+                              id="artist-cover-img-xl"
+                              src=""
+                              alt="Artist cover image"
+                              class="img-fluid"
+                           />
+                        </div>
                         <div class="album-bg-black"></div>
 
-                        <div class="tracks-and-header w-100">                  
-                           <div class="album-header d-flex pt-5 align-items-end ">
-                              <div class="album-cover-img pb-3">
-                                 <img
-                                    id="album-cover-art"
-                                    src=""
-                                    class="img-fluid custom-shadow"
-                                    alt="album-cover"
-                                 />
-                              </div>
-                              <div class="album-content mt-3 mb-3 custom-text-shadow">
-                                 <p id="record-type" class="album-type mb-0 fw-bold "></p>
-                                 <h1 id="album-name"></h1>
-                                 <div class="d-flex album-header-txt flex-column flex-md-row">
-                                    <img id="album-artist"
-                                       class="artist-img-small rounded-circle me-1 d-none d-md-inline-block"
-                                       src=""
-                                       alt="artist cover"
-                                    />
-                                    <p id="album-artist-name" class="mb-0">
-                                       
-                                    </p>
-                                    
-                                    <p id="album-released-year"  class="mb-0">
-                                 
-                                 </p>
-                                 <div class="d-flex flex-column flex-md-row">
-                                    <span class="mx-1 d-none d-md-inline-block">&#8226</span>
-                                    <p id="album-tracks" class="mb-0 pe-1"></p>
-                                    <span class="mx-1 d-none d-md-inline-block">&#8226</span>
-                                    <p id="album-duration" class="mb-0 d-none d-md-inline-block">53 min 20 sec.</p>
-                                 </div>
-                                 </div>
-                              </div>
+                        <div class="tracks-and-header w-100 pt-5">
+                           <div
+                              class="album-header d-flex flex-column pt-5 align-items-start artist-header ps-4"
+                           >
+                              <p class="mt-5 pt-5 mb-0">
+                                 <span
+                                    ><i
+                                       class="bi bi-patch-check text-primary me-2"
+                                    ></i></span
+                                 >Artista Verificato
+                              </p>
+                              <h1 id="name-artist" class="artist-name"></h1>
+                              <p>
+                                 <span id="listeners"></span>
+                                 ascoltatori mensili
+                              </p>
                            </div>
 
                            <!-- play and play list -->
                            <div class="album-tracks">
-                           <div class="play">
-                              <!-- not writtern yet -->
-                           </div>
-                           <div class="track-list container">
-                              <div class="row row-cols-3 track-header mx-0">
-                              <div class="col-6 d-flex ps-3">
-                                 <p class="ps-4 pe-3 my-3">#</p>
-                                 <p class="my-3">TITOLO</p>
+                              <div class="play">
+                                 <!-- not writtern yet -->
                               </div>
-                              <div class="col-3 d-flex justify-content-end ">
-                                 <p class="my-3">RIPRODUZIONI</p>
+                              <div class="track-list container">
+                                 <div class="row row-cols-3 track-header mx-0">
+                                    <div class="col-6 d-flex ps-3">
+                                       <p class="ps-4 pe-3 my-3">#</p>
+                                       <p class="my-3">TITOLO</p>
+                                    </div>
+                                    <div
+                                       class="col-3 d-flex justify-content-end"
+                                    >
+                                       <p class="my-3">RIPRODUZIONI</p>
+                                    </div>
+                                    <div
+                                       class="col-3 d-flex justify-content-end pe-3"
+                                    >
+                                       <p class="pe-4 my-3">DURATA</p>
+                                    </div>
+                                 </div>
+                                 <hr class="mx-3 mt-0" />
+
+                                 <!-- track container -->
+                                 <div id="album-tracks-continer">
+                                    <!-- each track row -->
+                                    <!-- <div
+                                       class="row row-cols-3 tracks mx-0 mb-2 track-row"
+                                    >
+                                       <div
+                                          class="col-6 d-flex align-items-center ps-3"
+                                       >
+                                          <p class="ps-4 pe-3 m-0">1</p>
+                                          <div>
+                                             <p class="mb-0 card-text">
+                                                Montanelli - Intro
+                                             </p>
+                                             <p class="mb-0">
+                                                <small
+                                                   class="text-body-secondary text-dark-emphasis"
+                                                   >Pinguini Tattici
+                                                   Nucleari</small
+                                                >
+                                             </p>
+                                          </div>
+                                       </div>
+                                       <div
+                                          class="col-3 d-flex justify-content-end align-items-center"
+                                       >
+                                          <p class="card-text">694.578</p>
+                                       </div>
+                                       <div
+                                          class="col-3 d-flex justify-content-end align-items-center pe-3"
+                                       >
+                                          <p class="card-text pe-4">1:28</p>
+                                       </div>
+                                    </div> -->
+                                 </div>
                               </div>
-                              <div class="col-3 d-flex justify-content-end pe-3">
-                                 <p class="pe-4 my-3">DURATA</p>
-                              </div>
-                              </div>
-                              <hr class="mx-3 mt-0">
-
-                              <!-- track container -->
-                              <div id="album-tracks-continer">
-                              <!-- each track row -->
-                              <!-- <div class="row row-cols-3 tracks mx-0 mb-2">
-                                 <div class="col-6 d-flex align-items-center ps-3">
-                                    <p class="ps-4 pe-3 m-0">1</p>
-                                    <div >
-                                    <p class="mb-0 card-text">Montanelli - Intro</p>
-                                    <p class="mb-0 "><small class="text-body-secondary text-dark-emphasis">Pinguini Tattici Nucleari</small></p>
-                                 </div>
-                                 </div>
-                                 <div class="col-3 d-flex justify-content-end align-items-center">
-                                    <p class="card-text">694.578</p>
-                                 </div>
-                                 <div class="col-3 d-flex justify-content-end align-items-center pe-3">
-                                    <p class="card-text pe-4">1:28</p>
-                                 </div>
-                              </div> -->
-                                                         
-                              <!-- <div class="row row-cols-3 tracks mx-0 mb-2">
-                                 <div class="col-6 d-flex align-items-center ps-3">
-                                    <p class="ps-4 pe-3 m-0">1</p>
-                                    <div >
-                                    <p class="mb-0 card-text">Montanelli - Intro</p>
-                                    <p class="mb-0"><small class="text-body-secondary ">Pinguini Tattici Nucleari</small></p>
-                                 </div>
-                                 </div>
-                                 <div class="col-3 d-flex justify-content-end align-items-center">
-                                    <p class="card-text">694.578</p>
-                                 </div>
-                                 <div class="col-3 d-flex justify-content-end align-items-center pe-3">
-                                    <p class="card-text pe-4">1:28</p>
-                                 </div>
-                              </div>-->
-
-
-
-
-
-                              </div>
-                           </div>
                            </div>
                         </div>
-
-            
                      </div>
-                  </div> 
+                  </div>
                </div>
 
-               <div class="col col-2 bg-black rounded d-none d-lg-block pe-0" id="friends-activity">
+               <div
+                  class="col col-2 bg-black rounded d-none d-lg-block pe-0"
+                  id="friends-activity"
+               >
                   <div class="d-flex justify-content-between my-2">
                      <div><p>Attività amici</p></div>
                      <div><i class="bi bi-x close-tab fs-4"></i></div>
@@ -506,20 +503,20 @@
             </div>
          </div> -->
          <!-- INIZIO BARRA MUSICA SM -->
-         <div class="container-fluid  d-md-none bg-black" id="music-bar">
+         <div class="container-fluid d-md-none bg-black" id="music-bar">
             <div class="row d-flex">
-              <div class="col-2 col-md-3 d-flex">
-                <img src="" class="now-playing-img img-fluid" width="100%" />
-              </div>
-              <div class="col d-flex ps-0 align-items-center">
-                <p class="small now-playing-artist"></p>
-                <p class="small now-playing-title"></p>
-              </div>
-              <div class="col-1 play-pause me-3">
-                <i class="bi bi-play-fill color1 fs-1"></i>
-              </div>
+               <div class="col-2 col-md-3 d-flex">
+                  <img src="" class="now-playing-img img-fluid" width="100%" />
+               </div>
+               <div class="col d-flex ps-0 align-items-center">
+                  <p class="small now-playing-artist"></p>
+                  <p class="small now-playing-title"></p>
+               </div>
+               <div class="col-1 play-pause me-3">
+                  <i class="bi bi-play-fill color1 fs-1"></i>
+               </div>
             </div>
-          </div>
+         </div>
 
          <!-- BARRA SM RICERCA -->
          <div class="row sticky-bottom d-md-none bg-black" id="small-bar">
@@ -570,11 +567,11 @@
             </div>
          </div>
       </main>
-      <footer class="container-player container-fluid d-none d-md-block d-lg-block d-xl-block d-xxl-block">
-         <div id="player-main" class="row row-cols-3 ">
-            <div
-               class="col-3 d-flex align-items-center player-container-left"
-            >
+      <footer
+         class="container-player container-fluid d-none d-md-block d-lg-block d-xl-block d-xxl-block"
+      >
+         <div id="player-main" class="row row-cols-3">
+            <div class="col-3 d-flex align-items-center player-container-left">
                <div class="d-flex align-items-center">
                   <img
                      id="player-img"
@@ -583,10 +580,13 @@
                      alt="cover image"
                   />
                   <div class="d-flex flex-column me-4">
-                     <a class="text-decoration-none text-white" href="#" id="player-title"
+                     <a
+                        class="text-decoration-none text-white"
+                        href="#"
+                        id="player-title"
                         >Title song</a
                      >
-                     <span  id="player-artists" class="fs-7 contributors">
+                     <span id="player-artists" class="fs-7 contributors">
                         <a
                            class="text-decoration-none text-white-50 fs-7"
                            href="#"
@@ -608,19 +608,18 @@
                <div
                   class="player-buttons d-flex justify-content-center mt-3 align-items-center"
                >
-                  <a href="#" id="btn-previous" class="mt-1"><i class="fas fa-step-backward text-white-50 fs-5"></i></a>
-                  <i
-                     id="btn-play"
-                     class="fas fa-play-circle fs-2 px-3"
-                  ></i>
-                  <a href="#" id="btn-next" class="mt-1"><i class="fas fa-step-forward text-white-50 fs-5"></i></a>               
+                  <a href="#" id="btn-previous" class="mt-1"
+                     ><i class="fas fa-step-backward text-white-50 fs-5"></i
+                  ></a>
+                  <i id="btn-play" class="fas fa-play-circle fs-2 px-3"></i>
+                  <a href="#" id="btn-next" class="mt-1"
+                     ><i class="fas fa-step-forward text-white-50 fs-5"></i
+                  ></a>
                </div>
                <div
                   class="progress text-white-50 d-flex align-items-center mb-3 mt-2"
                >
-                  <span class="mx-2 fs-6 mb-1" id="currentTime"
-                     >0:00</span
-                  >
+                  <span class="mx-2 fs-6 mb-1" id="currentTime">0:00</span>
                   <label class="d-none" for="progressBar">Duration</label>
                   <input
                      class="w-100 sliderRange"
@@ -636,15 +635,11 @@
             <div
                class="player-container-right col-3 d-flex align-items-center justify-content-end"
             >
-               <div
-                  class="d-flex align-items-center justify-content-center"
-               >
+               <div class="d-flex align-items-center justify-content-center">
                   <i
                      class="far fa-caret-square-right text-white-50 me-2 fs-6"
                   ></i>
-                  <i
-                     class="fas fa-microphone text-white-50 me-2 fs-6"
-                  ></i>
+                  <i class="fas fa-microphone text-white-50 me-2 fs-6"></i>
                   <i class="fas fa-stream text-white-50 me-2 fs-6"></i>
                   <i class="fas fa-users text-white-50 me-2 fs-6"></i>
                   <i class="bi bi-speaker text-white-50 me-2 fs-6"></i>
@@ -667,9 +662,10 @@
          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
          crossorigin="anonymous"
       ></script>
-   
-      <script type="module" src="./script/player.js"></script>
-      <script type="module" src="./script/album.js"></script>
+
+      <!-- <script type="module" src="./script/player.js"></script> -->
+      <!-- <script type="module" src="./script/album.js"></script> -->
+      <script type="module" src="./script/artist.js"></script>
       <script src="script/script.js"></script>
    </body>
 </html>

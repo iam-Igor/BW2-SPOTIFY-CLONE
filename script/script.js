@@ -56,6 +56,7 @@ const generateDetails = function (details) {
 const renderSection2 = function (musicData) {
    const section = document.getElementById("section2");
    console.log(musicData.data);
+   console.log("music data", musicData);
    for (let i = 0; i < 6; i++) {
       section.innerHTML = `<div class="col mb-3 col-md-4 grow">
     <div
@@ -67,7 +68,7 @@ const renderSection2 = function (musicData) {
         alt="${musicData.data[0].artist.name}"
       />
       <div class="card-body">
-      <a href="./album.html?musicId=${musicData.data[0].album.id}">
+      <a href="./album.html?musicId=${musicData.data[0].album.id}&albumId=${musicData.data[0].album.id}">
         <h6 class="card-title">
           ${musicData.data[0].album.title}
          
@@ -87,7 +88,7 @@ const renderSection2 = function (musicData) {
         alt="${musicData.data[1].artist.name}"
       />
       <div class="card-body">
-      <a href="./album.html?musicId=${musicData.data[1].album.id}">
+      <a href="./album.html?musicId=${musicData.data[1].album.id}&albumId=${musicData.data[0].album.id}">
         <h6 class="card-title">
           ${musicData.data[1].album.title}
         </h6>
@@ -105,7 +106,7 @@ const renderSection2 = function (musicData) {
         alt="${musicData.data[2].artist.name}"
       />
       <div class="card-body">
-      <a href="./album.html?musicId=${musicData.data[2].album.id}">
+      <a href="./album.html?musicId=${musicData.data[2].album.id}&albumId=${musicData.data[0].album.id}">
       <h6 class="card-title">
         ${musicData.data[2].album.title}
       </h6>
@@ -123,7 +124,7 @@ const renderSection2 = function (musicData) {
         alt="${musicData.data[3].artist.name}"
       />
       <div class="card-body">
-      <a href="./album.html?musicId=${musicData.data[3].album.id}">
+      <a href="./album.html?musicId=${musicData.data[3].album.id}&albumId=${musicData.data[0].album.id}">
       <h6 class="card-title">
         ${musicData.data[3].album.title}
       </h6>
@@ -141,7 +142,7 @@ const renderSection2 = function (musicData) {
         alt="${musicData.data[4].artist.name}"
       />
       <div class="card-body">
-      <a href="./album.html?musicId=${musicData.data[4].album.id}">
+      <a href="./album.html?musicId=${musicData.data[4].album.id}&albumId=${musicData.data[0].album.id}">
         <h6 class="card-title">
           ${musicData.data[4].album.title}
         </h6>
@@ -159,7 +160,7 @@ const renderSection2 = function (musicData) {
         alt="${musicData.data[5].artist.name}"
       />
       <div class="card-body">
-      <a href="./album.html?musicId=${musicData.data[5].album.id}">
+      <a href="./album.html?musicId=${musicData.data[5].album.id}&albumId=${musicData.data[0].album.id}">
       <h6 class="card-title">
         ${musicData.data[5].album.title}
       </h6>
@@ -188,7 +189,7 @@ const renderSection3 = function (musicData) {
       />
       <div class="card-body">
         <a
-          href="./artist.html?musicId=${musicData.data[6].artist.id}"
+          href="./artist.html?musicId=${musicData.data[6].artist.id}&artistId=${musicData.data[6].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
           >${musicData.data[6].artist.name}</a
