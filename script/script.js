@@ -286,7 +286,7 @@ const renderSection3 = function (musicData) {
       </div>
     </div>
   </div>
-  <div class="col grow"">
+  <div class="col grow d-md-none"">
     <div
       class="card border-0 bg-body-secondary my-3 p-2 "
       style="height: 260px"
