@@ -80,35 +80,37 @@
 
 #album-tracks-continer .card-text {
    font-size: 0.8em;
- }
- 
- @media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 480px) {
    .moving {
-     width: 250px;
- 
-     z-index: -2;
-     overflow: hidden;
-     white-space: nowrap;
-     animation: moveText 10s linear infinite;
-     text-overflow: ellipsis;
+      width: 250px;
+
+      z-index: -2;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: moveText 10s linear infinite;
+      text-overflow: ellipsis;
    }
- 
+
    @keyframes moveText {
-     0% {
-       transform: translateX(0);
-     }
-     25% {
-       transform: translateX(-20px);
-     }
-     75% {
-       transform: translateX(-10px);
-     }
-     100% {
-       transform: translateX(0px);
-     }
+      0% {
+         transform: translateX(0);
+      }
+      25% {
+         transform: translateX(-20px);
+      }
+      75% {
+         transform: translateX(-10px);
+      }
+      100% {
+         transform: translateX(0px);
+      }
    }
- }
- 
+}
+
+.cursor-pointer {
+   cursor: pointer;
+}
 
 // -----------------
-
