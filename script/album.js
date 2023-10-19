@@ -48,7 +48,7 @@ const renderAlbum = function (album) {
   albumTracks.innerText = album.nb_tracks + " brani";
   albumArtistName.innerText = album.artist.name;
 
-  // creating album track list
+  // creating album track list    PAGINA ALBUMS!!
   console.log("length :", album.tracks.data.length);
   album.tracks.data.forEach((track, index) => {
     const trackRow = document.createElement("div");
