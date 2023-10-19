@@ -140,70 +140,69 @@ const renderAlbum = function (album) {
 
 // this is only for the artist
 // render artist's tracks
-const visualizeAlbums = function (albums, musicId) {
-   // console.log("this is artist: ", albums);
-   const albumListTracks = document.getElementById("album-tracks-continer");
+// const visualizeAlbums = function (albums, musicId) {
+//    // console.log("this is artist: ", albums);
+//    const albumListTracks = document.getElementById("album-tracks-continer");
 
-   const secToTime = function (duration, type = "albumDuration") {
-      const milliseconds = duration * 1000;
-      const seconds = Math.floor((milliseconds / 1000) % 60);
-      const minutes = Math.floor((milliseconds / 1000 / 60) % 60);
-      const hours = Math.floor((milliseconds / 1000 / 60 / 60) % 24);
+//    const secToTime = function (duration, type = "albumDuration") {
+//       const milliseconds = duration * 1000;
+//       const seconds = Math.floor((milliseconds / 1000) % 60);
+//       const minutes = Math.floor((milliseconds / 1000 / 60) % 60);
+//       const hours = Math.floor((milliseconds / 1000 / 60 / 60) % 24);
 
-      // calculate track length
-      if (type === "track") {
-         let duration = [
-            hours.toString().padStart(2, "0"),
-            minutes.toString().padStart(2, "0"),
-            seconds.toString().padStart(2, "0"),
-         ];
+//       // calculate track length
+//       if (type === "track") {
+//          let duration = [
+//             hours.toString().padStart(2, "0"),
+//             minutes.toString().padStart(2, "0"),
+//             seconds.toString().padStart(2, "0"),
+//          ];
 
-         duration[0] === "00" ? duration.shift() : duration;
-         return duration.join(":");
-      } else {
-         // calculates album length
-         return ` ${hours.toString()}hr ${minutes
-            .toString()
-            .padStart(2, "0")}min ${seconds.toString().padStart(2, "0")}sec.`;
-      }
-   };
+//          duration[0] === "00" ? duration.shift() : duration;
+//          return duration.join(":");
+//       } else {
+//          // calculates album length
+//          return ` ${hours.toString()}hr ${minutes
+//             .toString()
+//             .padStart(2, "0")}min ${seconds.toString().padStart(2, "0")}sec.`;
+//       }
+//    };
 
-   albums.data.forEach((album, index) => {
-      // console.log("inside album", albums);
-      const trackRow = document.createElement("div");
-      trackRow.className = "row row-cols-3 tracks mx-0 mb-2";
-      trackRow.innerHTML = `
-           <div class="col-6 d-flex align-items-center ps-0 ps-md-3 single-card">
-              <p class="ps-4 pe-3 m-0 number">${index + 1}</p>
-              <img src="${album.album.cover_small}" class="me-2">
+//    albums.data.forEach((album, index) => {
+//       // console.log("inside album", albums);
+//       const trackRow = document.createElement("div");
+//       trackRow.className = "row row-cols-3 tracks mx-0 mb-2";
+//       trackRow.innerHTML = `
+//            <div class="col-6 d-flex align-items-center ps-0 ps-md-3 single-card">
+//               <p class="ps-4 pe-3 m-0 number">${index + 1}</p>
+//               <img src="${album.album.cover_small}" class="me-2">
 
-              <div class="moving">
-              <a href="artist.html?musicId=${musicId}&trackId=${
-         album.id
-      }" class="mb-0 card-text ">${album.title}</a>
+//               <div class="moving">
+//               <a href="artist.html?musicId=${musicId}&trackId=${
+//          album.id
+//       }" class="mb-0 card-text ">${album.title}</a>
 
-    
-              <p class="mb-0"><small class="text-body-secondary">${
-                 album.artist.name
-              }</small></p>
-              
-           </div>
-           <div >
-              <i class="bi bi-play-fill fs-3 play-track "></i>
-              </div>
-           </div>
-           <div class="col-3 d-flex justify-content-end align-items-center ">
-              <p class="card-text">${album.rank}</p>
-           </div>
-           <div class="col-3 d-flex justify-content-end align-items-center pe-3">
-              <p class="card-text pe-4">
-              ${secToTime(album.duration, "track")}
-            </p>
-           </div>
-        `;
-      albumListTracks.appendChild(trackRow);
-   });
-};
+//               <p class="mb-0"><small class="text-body-secondary">${
+//                  album.artist.name
+//               }</small></p>
+
+//            </div>
+//            <div >
+//               <i class="bi bi-play-fill fs-3 play-track "></i>
+//               </div>
+//            </div>
+//            <div class="col-3 d-flex justify-content-end align-items-center ">
+//               <p class="card-text">${album.rank}</p>
+//            </div>
+//            <div class="col-3 d-flex justify-content-end align-items-center pe-3">
+//               <p class="card-text pe-4">
+//               ${secToTime(album.duration, "track")}
+//             </p>
+//            </div>
+//         `;
+//       albumListTracks.appendChild(trackRow);
+//    });
+// };
 
 const audiotrack3 = function (event) {
    const audioSrc = document.getElementById("audio");
@@ -276,28 +275,28 @@ const addressBarContent = new URLSearchParams(location.search);
 const musicId = addressBarContent.get("musicId");
 
 // fetch artist's tracks
-const renderArtist = function (artist) {
-   fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/artist/" +
-         musicId +
-         "/top?limit=50"
-   )
-      .then((res) => {
-         if (res.ok) {
-            return res.json();
-         } else {
-            throw new Error();
-         }
-      })
-      .then((suggested) => {
-         console.log(suggested);
-         visualizeAlbums(suggested, musicId);
-         audiotrack2(suggested);
-      })
-      .catch((err) => {
-         console.log(err);
-      });
-};
+// const renderArtist = function (artist) {
+//    fetch(
+//       "https://striveschool-api.herokuapp.com/api/deezer/artist/" +
+//          musicId +
+//          "/top?limit=50"
+//    )
+//       .then((res) => {
+//          if (res.ok) {
+//             return res.json();
+//          } else {
+//             throw new Error();
+//          }
+//       })
+//       .then((suggested) => {
+//          console.log(suggested);
+//          // visualizeAlbums(suggested, musicId);
+//          audiotrack2(suggested);
+//       })
+//       .catch((err) => {
+//          console.log(err);
+//       });
+// };
 
 const loadAlbum = function () {
    fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + musicId)
@@ -319,26 +318,26 @@ const loadAlbum = function () {
 loadAlbum();
 
 // fetch for artists
-const loadArtist = function () {
-   fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/" + musicId)
-      .then((response) => {
-         if (!response.ok) {
-            throw new Error("Fetching respose ERROR!");
-         } else {
-            return response.json();
-         }
-      })
-      .then((response) => {
-         console.log("Fetch went fine!", response);
-         // fertch artist's tracks
-         renderArtist(response);
-         // render artist profile
-         visualizeArtist(response);
-      })
-      .catch((err) => console.log("Fetching issue", err));
-};
+// const loadArtist = function () {
+//    fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/" + musicId)
+//       .then((response) => {
+//          if (!response.ok) {
+//             throw new Error("Fetching respose ERROR!");
+//          } else {
+//             return response.json();
+//          }
+//       })
+//       .then((response) => {
+//          console.log("Fetch went fine!", response);
+//          // fertch artist's tracks
+//          renderArtist(response);
+//          // render artist profile
+//          visualizeArtist(response);
+//       })
+//       .catch((err) => console.log("Fetching issue", err));
+// };
 
-loadArtist();
+// loadArtist();
 
 // get the artist
 // render each track

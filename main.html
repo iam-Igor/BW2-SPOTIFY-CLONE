@@ -1,705 +1,870 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Spotify</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/circular-font.css" />
-  </head>
-  <body data-bs-theme="dark" class="overflow-x-hidden">
-    <header class="position-sticky top-0 z-3">
-      <nav
-        class="navbar navbar-expand-lg bg-black d-none d-md-block"
-        id="navbar"
-      >
-        <div class="container">
-          <div class="text-light d-flex">
-            <div class="mx-2">
-              <i class="bi bi-three-dots d-none d-md-inline-block"></i>
-            </div>
-            <div class="mx-2">
-              <i class="bi bi-chevron-left d-none d-md-inline-block"></i>
-            </div>
-            <div class="mx-2">
-              <i class="bi bi-chevron-right d-none d-md-inline-block"></i>
-            </div>
-          </div>
-          <div class="d-flex">
-            <svg
-              viewBox="0 0 1134 340"
-              class="spotify-logo--text d-inlibe-block d-md-none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Spotify</title>
-              <path
-                fill="green"
-                d="M8 171c0 92 76 168 168 168s168-76 168-168S268 4 176 4 8 79 8 171zm230 78c-39-24-89-30-147-17-14 2-16-18-4-20 64-15 118-8 162 19 11 7 0 24-11 18zm17-45c-45-28-114-36-167-20-17 5-23-21-7-25 61-18 136-9 188 23 14 9 0 31-14 22zM80 133c-17 6-28-23-9-30 59-18 159-15 221 22 17 9 1 37-17 27-54-32-144-35-195-19zm379 91c-17 0-33-6-47-20-1 0-1 1-1 1l-16 19c-1 1-1 2 0 3 18 16 40 24 64 24 34 0 55-19 55-47 0-24-15-37-50-46-29-7-34-12-34-22s10-16 23-16 25 5 39 15c0 0 1 1 2 1s1-1 1-1l14-20c1-1 1-1 0-2-16-13-35-20-56-20-31 0-53 19-53 46 0 29 20 38 52 46 28 6 32 12 32 22 0 11-10 17-25 17zm95-77v-13c0-1-1-2-2-2h-26c-1 0-2 1-2 2v147c0 1 1 2 2 2h26c1 0 2-1 2-2v-46c10 11 21 16 36 16 27 0 54-21 54-61s-27-60-54-60c-15 0-26 5-36 17zm30 78c-18 0-31-15-31-35s13-34 31-34 30 14 30 34-12 35-30 35zm68-34c0 34 27 60 62 60s62-27 62-61-26-60-61-60-63 27-63 61zm30-1c0-20 13-34 32-34s33 15 33 35-13 34-32 34-33-15-33-35zm140-58v-29c0-1 0-2-1-2h-26c-1 0-2 1-2 2v29h-13c-1 0-2 1-2 2v22c0 1 1 2 2 2h13v58c0 23 11 35 34 35 9 0 18-2 25-6 1 0 1-1 1-2v-21c0-1 0-2-1-2h-2c-5 3-11 4-16 4-8 0-12-4-12-12v-54h30c1 0 2-1 2-2v-22c0-1-1-2-2-2h-30zm129-3c0-11 4-15 13-15 5 0 10 0 15 2h1s1-1 1-2V93c0-1 0-2-1-2-5-2-12-3-22-3-24 0-36 14-36 39v5h-13c-1 0-2 1-2 2v22c0 1 1 2 2 2h13v89c0 1 1 2 2 2h26c1 0 1-1 1-2v-89h25l37 89c-4 9-8 11-14 11-5 0-10-1-15-4h-1l-1 1-9 19c0 1 0 3 1 3 9 5 17 7 27 7 19 0 30-9 39-33l45-116v-2c0-1-1-1-2-1h-27c-1 0-1 1-1 2l-28 78-30-78c0-1-1-2-2-2h-44v-3zm-83 3c-1 0-2 1-2 2v113c0 1 1 2 2 2h26c1 0 1-1 1-2V134c0-1 0-2-1-2h-26zm-6-33c0 10 9 19 19 19s18-9 18-19-8-18-18-18-19 8-19 18zm245 69c10 0 19-8 19-18s-9-18-19-18-18 8-18 18 8 18 18 18zm0-34c9 0 17 7 17 16s-8 16-17 16-16-7-16-16 7-16 16-16zm4 18c3-1 5-3 5-6 0-4-4-6-8-6h-8v19h4v-6h4l4 6h5zm-3-9c2 0 4 1 4 3s-2 3-4 3h-4v-6h4z"
-              ></path>
-            </svg>
-            <div
-              class="fw-bold bg-light rounded-pill text-dark p-2 align-self-center d-none d-md-inline-block"
-            >
-              <a href="main.html"
-                ><i class="bi bi-house-door-fill mx-1"></i>Home</a
-              >
-            </div>
-            <form
-              class="d-flex align-items-center"
-              role="search"
-              id="form-search"
-            >
-              <button class="btn bg-dark text-white rounded-4" type="submit">
-                <i class="bi bi-search"></i>
-              </button>
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Spotify</title>
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+         crossorigin="anonymous"
+      />
+      <link
+         rel="stylesheet"
+         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      />
+      <link rel="stylesheet" href="assets/css/style.css" />
+      <link rel="stylesheet" href="assets/css/circular-font.css" />
 
-              <input
-                class="form-control mx-2 rounded-4 w-100"
-                type="search"
-                placeholder="Cosa vuoi ascoltare?"
-                aria-label="Search"
-                id="search-input"
-              />
-            </form>
-          </div>
-          <div class="text-light fs-3 me-2">
-            <div class="dropdown d-none d-md-block">
-              <button
-                class="dropdown-toggle bg-black border-0"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <i class="bi bi-person-circle"></i>
-              </button>
-              <ul class="dropdown-menu">
-                <li class="d-flex">
-                  <a class="dropdown-item pe-0" href="account.html">Account</a
-                  ><a class="dropdown-item ps-0" href="#"
-                    ><i class="bi bi-person"></i
-                  ></a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="settings.html"
-                    >Settings<i class="bi bi-gear ms-2"></i>
-                  </a>
-                </li>
-                <li class="d-flex">
-                  <a class="dropdown-item" href="login.html"
-                    >Logout<i class="bi bi-box-arrow-right ms-2"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <main class="bg-black">
-      <div class="container-fluid p-0">
-        <div
-          class="row row-cols-3 justify-content-between flex-nowrap mx-0 bg-black"
-        >
-          <div class="col col-2 rounded p-3 d-none d-lg-block">
-            <div>
-              <div
-                class="d-flex text-light link-success"
-                style="cursor: pointer"
-              >
-                <i class="bi bi-bookshelf me-2"></i>
-                <p>La tua libreria</p>
-              </div>
-              <div
-                class="d-flex text-light link-success"
-                style="cursor: pointer"
-              >
-                <i class="bi bi-plus-square-fill me-2"></i>
-                <p>Crea playlist</p>
-              </div>
-              <div
-                class="d-flex text-light link-success"
-                style="cursor: pointer"
-              >
-                <i class="bi bi-heart me-2"></i>
-                <p>Brani che ti piacciono</p>
-              </div>
-              <div
-                class="d-flex text-light link-success"
-                style="cursor: pointer"
-              >
-                <i class="bi bi-bookmark me-2"></i>
-                <p>I tuoi episodi</p>
-              </div>
-            </div>
-            <hr />
-            <div class="overflow-y-scroll" id="favourites-cont">
-              <ul id="favourites" class="ps-0"></ul>
-            </div>
-          </div>
-          <div
-            class="col col-12 col-md-8 rounded-4 bg-dark mx-1"
-            id="main-content"
-          >
-            <div class="row d-flex flex-column bg-black">
-              <div class="col">
-                <div class="position-relative d-none d-md-block">
-                  <ul class="list-unstyled d-flex position-sticky top-50 my-2">
-                    <li class="btn btn-dark mx-2 px-2">Playlist</li>
-                    <li class="btn btn-dark mx-2 px-2 d-none d-md-block">
-                      Podcast
-                    </li>
-                    <li class="btn btn-dark mx-2 px-2 d-none d-md-block">
-                      Audiolibri
-                    </li>
-                    <li class="btn btn-dark mx-2 px-2">Artisti</li>
-                    <li class="btn btn-dark mx-2 px-2">Album</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col">
-                <div
-                  class="row flex-nowrap bg-black p-md-3 my-3"
-                  id="row-1"
-                ></div>
-                <div class="row flex-column" id="row-2">
-                  <div class="col d-flex justify-content-between">
-                    <h4>Buonasera</h4>
-                    <div class="dropdown offset-4 d-md-none">
-                      <button
+      <!-- icons IMPORTANTE!!!! -->
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      />
+      <link rel="stylesheet" href="./assets/css/player.css" />
+   </head>
+   <body data-bs-theme="dark" class="overflow-x-hidden">
+      <header class="position-sticky top-0 z-3">
+         <nav
+            class="navbar navbar-expand-lg bg-black d-none d-md-block"
+            id="navbar"
+         >
+            <div class="container">
+               <div class="text-light d-flex">
+                  <div class="mx-2">
+                     <i class="bi bi-three-dots d-none d-md-inline-block"></i>
+                  </div>
+                  <div class="mx-2">
+                     <i class="bi bi-chevron-left d-none d-md-inline-block"></i>
+                  </div>
+                  <div class="mx-2">
+                     <i
+                        class="bi bi-chevron-right d-none d-md-inline-block"
+                     ></i>
+                  </div>
+               </div>
+               <div class="d-flex">
+                  <svg
+                     viewBox="0 0 1134 340"
+                     class="spotify-logo--text d-inlibe-block d-md-none"
+                     xmlns="http://www.w3.org/2000/svg"
+                  >
+                     <title>Spotify</title>
+                     <path
+                        fill="green"
+                        d="M8 171c0 92 76 168 168 168s168-76 168-168S268 4 176 4 8 79 8 171zm230 78c-39-24-89-30-147-17-14 2-16-18-4-20 64-15 118-8 162 19 11 7 0 24-11 18zm17-45c-45-28-114-36-167-20-17 5-23-21-7-25 61-18 136-9 188 23 14 9 0 31-14 22zM80 133c-17 6-28-23-9-30 59-18 159-15 221 22 17 9 1 37-17 27-54-32-144-35-195-19zm379 91c-17 0-33-6-47-20-1 0-1 1-1 1l-16 19c-1 1-1 2 0 3 18 16 40 24 64 24 34 0 55-19 55-47 0-24-15-37-50-46-29-7-34-12-34-22s10-16 23-16 25 5 39 15c0 0 1 1 2 1s1-1 1-1l14-20c1-1 1-1 0-2-16-13-35-20-56-20-31 0-53 19-53 46 0 29 20 38 52 46 28 6 32 12 32 22 0 11-10 17-25 17zm95-77v-13c0-1-1-2-2-2h-26c-1 0-2 1-2 2v147c0 1 1 2 2 2h26c1 0 2-1 2-2v-46c10 11 21 16 36 16 27 0 54-21 54-61s-27-60-54-60c-15 0-26 5-36 17zm30 78c-18 0-31-15-31-35s13-34 31-34 30 14 30 34-12 35-30 35zm68-34c0 34 27 60 62 60s62-27 62-61-26-60-61-60-63 27-63 61zm30-1c0-20 13-34 32-34s33 15 33 35-13 34-32 34-33-15-33-35zm140-58v-29c0-1 0-2-1-2h-26c-1 0-2 1-2 2v29h-13c-1 0-2 1-2 2v22c0 1 1 2 2 2h13v58c0 23 11 35 34 35 9 0 18-2 25-6 1 0 1-1 1-2v-21c0-1 0-2-1-2h-2c-5 3-11 4-16 4-8 0-12-4-12-12v-54h30c1 0 2-1 2-2v-22c0-1-1-2-2-2h-30zm129-3c0-11 4-15 13-15 5 0 10 0 15 2h1s1-1 1-2V93c0-1 0-2-1-2-5-2-12-3-22-3-24 0-36 14-36 39v5h-13c-1 0-2 1-2 2v22c0 1 1 2 2 2h13v89c0 1 1 2 2 2h26c1 0 1-1 1-2v-89h25l37 89c-4 9-8 11-14 11-5 0-10-1-15-4h-1l-1 1-9 19c0 1 0 3 1 3 9 5 17 7 27 7 19 0 30-9 39-33l45-116v-2c0-1-1-1-2-1h-27c-1 0-1 1-1 2l-28 78-30-78c0-1-1-2-2-2h-44v-3zm-83 3c-1 0-2 1-2 2v113c0 1 1 2 2 2h26c1 0 1-1 1-2V134c0-1 0-2-1-2h-26zm-6-33c0 10 9 19 19 19s18-9 18-19-8-18-18-18-19 8-19 18zm245 69c10 0 19-8 19-18s-9-18-19-18-18 8-18 18 8 18 18 18zm0-34c9 0 17 7 17 16s-8 16-17 16-16-7-16-16 7-16 16-16zm4 18c3-1 5-3 5-6 0-4-4-6-8-6h-8v19h4v-6h4l4 6h5zm-3-9c2 0 4 1 4 3s-2 3-4 3h-4v-6h4z"
+                     ></path>
+                  </svg>
+                  <div
+                     class="fw-bold bg-light rounded-pill text-dark p-2 align-self-center d-none d-md-inline-block"
+                  >
+                     <a href="main.html"
+                        ><i class="bi bi-house-door-fill mx-1"></i>Home</a
+                     >
+                  </div>
+                  <form
+                     class="d-flex align-items-center"
+                     role="search"
+                     id="form-search"
+                  >
+                     <button
+                        class="btn bg-dark text-white rounded-4"
+                        type="submit"
+                     >
+                        <i class="bi bi-search"></i>
+                     </button>
+
+                     <input
+                        class="form-control mx-2 rounded-4 w-100"
+                        type="search"
+                        placeholder="Cosa vuoi ascoltare?"
+                        aria-label="Search"
+                        id="search-input"
+                     />
+                  </form>
+               </div>
+               <div class="text-light fs-3 me-2">
+                  <div class="dropdown d-none d-md-block">
+                     <button
                         class="dropdown-toggle bg-black border-0"
                         type="button"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
-                      >
-                        <i class="bi bi-person-circle fs-4"></i>
-                      </button>
-                      <ul class="dropdown-menu">
+                     >
+                        <i class="bi bi-person-circle"></i>
+                     </button>
+                     <ul class="dropdown-menu">
                         <li class="d-flex">
-                          <a class="dropdown-item pe-0" href="account.html"
-                            >Account</a
-                          ><a class="dropdown-item ps-0" href="#"
-                            ><i class="bi bi-person"></i
-                          ></a>
+                           <a class="dropdown-item pe-0" href="account.html"
+                              >Account</a
+                           ><a class="dropdown-item ps-0" href="#"
+                              ><i class="bi bi-person"></i
+                           ></a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="settings.html"
-                            >Settings<i class="bi bi-gear ms-2"></i>
-                          </a>
+                           <a class="dropdown-item" href="settings.html"
+                              >Settings<i class="bi bi-gear ms-2"></i>
+                           </a>
                         </li>
                         <li class="d-flex">
-                          <a class="dropdown-item" href="login.html"
-                            >Logout<i class="bi bi-box-arrow-right ms-2"></i>
-                          </a>
+                           <a class="dropdown-item" href="login.html"
+                              >Logout<i class="bi bi-box-arrow-right ms-2"></i>
+                           </a>
                         </li>
-                      </ul>
-                    </div>
-                    <div class="d-md-none">
-                      <i class="bi bi-bell fs-4 position-relative">
-                        <span
-                          class="position-absolute top-0 start-0 translate-middle p-1 bg-primary border border-light rounded-circle"
-                        >
-                          <span class="visually-hidden">New alerts</span>
-                        </span>
-                      </i>
-                      <a href="history.html">
-                        <i class="bi bi-clock-history fs-4"></i
-                      ></a>
-                      <a href="settings.html"
-                        ><i class="bi bi-gear fs-4"> </i
-                      ></a>
-                    </div>
+                     </ul>
                   </div>
-                  <div class="row row-cols-2 row-cols-md-3 my-2" id="section2">
-                    <div class="col mb-3 col-md-4">
-                      <div
-                        class="card d-flex flex-row align-items-center bg-body-secondary border-0"
-                      >
-                        <img
-                          src="assets/imgs/main/image-1.jpg"
-                          class="card-img-top w-25"
-                          alt="${musicData.data[i].artist.name}"
-                        />
-                        <div class="card-body">
-                          <h6 class="card-title">Top Hits Italia</h6>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col mb-3 col-md-4">
-                      <div
-                        class="card d-flex flex-row align-items-center bg-body-secondary border-0"
-                      >
-                        <img
-                          src="assets/imgs/main/image-13.jpg"
-                          class="card-img-top w-25"
-                          alt="${musicData.data[i].artist.name}"
-                        />
-                        <div class="card-body">
-                          <h6 class="card-title">Estate Italiana</h6>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col mb-3 col-md-4">
-                      <div
-                        class="card d-flex flex-row align-items-center bg-body-secondary border-0"
-                      >
-                        <img
-                          src="assets/imgs/main/image-15.jpg"
-                          class="card-img-top w-25"
-                          alt="${musicData.data[i].artist.name}"
-                        />
-                        <div class="card-body">
-                          <h6 class="card-title">Hit internazionali</h6>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col mb-3 col-md-4">
-                      <div
-                        class="card d-flex flex-row align-items-center bg-body-secondary border-0"
-                      >
-                        <img
-                          src="assets/imgs/main/image-2.jpg"
-                          class="card-img-top w-25"
-                          alt="${musicData.data[i].artist.name}"
-                        />
-                        <div class="card-body">
-                          <h6 class="card-title">Festivalbar</h6>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col mb-3 col-md-4">
-                      <div
-                        class="card d-flex flex-row align-items-center bg-body-secondary border-0"
-                      >
-                        <img
-                          src="assets/imgs/main/image-16.jpg"
-                          class="card-img-top w-25"
-                          alt="${musicData.data[i].artist.name}"
-                        />
-                        <div class="card-body">
-                          <h6 class="card-title">Zecchino d'oro</h6>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col mb-3 col-md-4">
-                      <div
-                        class="card d-flex flex-row align-items-center bg-body-secondary border-0"
-                      >
-                        <img
-                          src="assets/imgs/main/image-17.jpg"
-                          class="card-img-top w-25"
-                          alt="${musicData.data[i].artist.name}"
-                        />
-                        <div class="card-body">
-                          <h6 class="card-title">Suggeriti per te</h6>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center justify-content-between">
-                  <h4>Altro di ciò che ti piace</h4>
-                  <h6 class="d-none d-md-block">VISUALIZZA TUTTO</h6>
-                </div>
-                <div
-                  class="row row-cols-2 row-cols-md-5 mt-4 flex-wrap flex-md-row overflow-x-hidden"
-                  id="row-3"
-                >
-                  <div class="col">
-                    <div
-                      class="card border-0 bg-body-secondary my-3 p-2"
-                      style="height: 300px"
-                      id="card1"
-                    >
-                      <img
-                        src="assets/imgs/search/image-1.jpeg"
-                        class="card-img-top"
-                        alt="${musicData.data[i].artist.name}"
-                      />
-                      <div class="card-body">
-                        <a
-                          href="./details.html?musicId=${musicData.data[i].artist.id}"
-                          class="card-title fw-bold"
-                          style="font-size: 15px"
-                          >Power Hits</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div
-                      class="card border-0 bg-body-secondary my-3 p-2"
-                      style="height: 300px"
-                    >
-                      <img
-                        src="assets/imgs/search/image-11.jpg"
-                        class="card-img-top"
-                        alt="${musicData.data[i].artist.name}"
-                      />
-                      <div class="card-body">
-                        <a
-                          href="./details.html?musicId=${musicData.data[i].artist.id}"
-                          class="card-title fw-bold"
-                          style="font-size: 15px"
-                          >Trending Hits</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div
-                      class="card border-0 bg-body-secondary my-3 p-2"
-                      style="height: 300px"
-                    >
-                      <img
-                        src="assets/imgs/search/image-13.jpeg"
-                        class="card-img-top"
-                        alt="${musicData.data[i].artist.name}"
-                      />
-                      <div class="card-body">
-                        <a
-                          href="./details.html?musicId=${musicData.data[i].artist.id}"
-                          class="card-title fw-bold"
-                          style="font-size: 15px"
-                          >Most listened</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div
-                      class="card border-0 bg-body-secondary my-3 p-2"
-                      style="height: 300px"
-                    >
-                      <img
-                        src="assets/imgs/search/image-17.jpg"
-                        class="card-img-top"
-                        alt="${musicData.data[i].artist.name}"
-                      />
-                      <div class="card-body">
-                        <a
-                          href="./details.html?musicId=${musicData.data[i].artist.id}"
-                          class="card-title fw-bold"
-                          style="font-size: 15px"
-                          >Popular Hits</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div
-                      class="card border-0 bg-body-secondary my-3 p-2"
-                      style="height: 300px"
-                    >
-                      <img
-                        src="assets/imgs/search/image-19.jpg"
-                        class="card-img-top"
-                        alt="${musicData.data[i].artist.name}"
-                      />
-                      <div class="card-body">
-                        <a
-                          href="./details.html?musicId=${musicData.data[i].artist.id}"
-                          class="card-title fw-bold"
-                          style="font-size: 15px"
-                          >2000'S</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+               </div>
             </div>
-          </div>
+         </nav>
+      </header>
+      <main class="bg-black">
+         <div class="container-fluid p-0">
+            <div
+               class="row row-cols-3 justify-content-between flex-nowrap mx-0 bg-black"
+            >
+               <div class="col col-2 rounded p-3 d-none d-lg-block">
+                  <div>
+                     <div
+                        class="d-flex text-light link-success"
+                        style="cursor: pointer"
+                     >
+                        <i class="bi bi-bookshelf me-2"></i>
+                        <p>La tua libreria</p>
+                     </div>
+                     <div
+                        class="d-flex text-light link-success"
+                        style="cursor: pointer"
+                     >
+                        <i class="bi bi-plus-square-fill me-2"></i>
+                        <p>Crea playlist</p>
+                     </div>
+                     <div
+                        class="d-flex text-light link-success"
+                        style="cursor: pointer"
+                     >
+                        <i class="bi bi-heart me-2"></i>
+                        <p>Brani che ti piacciono</p>
+                     </div>
+                     <div
+                        class="d-flex text-light link-success"
+                        style="cursor: pointer"
+                     >
+                        <i class="bi bi-bookmark me-2"></i>
+                        <p>I tuoi episodi</p>
+                     </div>
+                  </div>
+                  <hr />
+                  <div class="overflow-y-scroll" id="favourites-cont">
+                     <ul id="favourites" class="ps-0"></ul>
+                  </div>
+               </div>
+               <div
+                  class="col col-12 col-md-8 rounded-4 bg-dark mx-1"
+                  id="main-content"
+               >
+                  <div class="row d-flex flex-column bg-black">
+                     <div class="col">
+                        <div class="position-relative d-none d-md-block">
+                           <ul
+                              class="list-unstyled d-flex position-sticky top-50 my-2"
+                           >
+                              <li class="btn btn-dark mx-2 px-2">Playlist</li>
+                              <li
+                                 class="btn btn-dark mx-2 px-2 d-none d-md-block"
+                              >
+                                 Podcast
+                              </li>
+                              <li
+                                 class="btn btn-dark mx-2 px-2 d-none d-md-block"
+                              >
+                                 Audiolibri
+                              </li>
+                              <li class="btn btn-dark mx-2 px-2">Artisti</li>
+                              <li class="btn btn-dark mx-2 px-2">Album</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col">
+                        <div
+                           class="row flex-nowrap bg-black p-md-3 my-3"
+                           id="row-1"
+                        ></div>
+                        <div class="row flex-column" id="row-2">
+                           <div class="col d-flex justify-content-between">
+                              <h4>Buonasera</h4>
+                              <div class="dropdown offset-4 d-md-none">
+                                 <button
+                                    class="dropdown-toggle bg-black border-0"
+                                    type="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                 >
+                                    <i class="bi bi-person-circle fs-4"></i>
+                                 </button>
+                                 <ul class="dropdown-menu">
+                                    <li class="d-flex">
+                                       <a
+                                          class="dropdown-item pe-0"
+                                          href="account.html"
+                                          >Account</a
+                                       ><a class="dropdown-item ps-0" href="#"
+                                          ><i class="bi bi-person"></i
+                                       ></a>
+                                    </li>
+                                    <li>
+                                       <a
+                                          class="dropdown-item"
+                                          href="settings.html"
+                                          >Settings<i
+                                             class="bi bi-gear ms-2"
+                                          ></i>
+                                       </a>
+                                    </li>
+                                    <li class="d-flex">
+                                       <a
+                                          class="dropdown-item"
+                                          href="login.html"
+                                          >Logout<i
+                                             class="bi bi-box-arrow-right ms-2"
+                                          ></i>
+                                       </a>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div class="d-md-none">
+                                 <i class="bi bi-bell fs-4 position-relative">
+                                    <span
+                                       class="position-absolute top-0 start-0 translate-middle p-1 bg-primary border border-light rounded-circle"
+                                    >
+                                       <span class="visually-hidden"
+                                          >New alerts</span
+                                       >
+                                    </span>
+                                 </i>
+                                 <a href="history.html">
+                                    <i class="bi bi-clock-history fs-4"></i
+                                 ></a>
+                                 <a href="settings.html"
+                                    ><i class="bi bi-gear fs-4"> </i
+                                 ></a>
+                              </div>
+                           </div>
+                           <div
+                              class="row row-cols-2 row-cols-md-3 my-2"
+                              id="section2"
+                           >
+                              <div class="col mb-3 col-md-4">
+                                 <div
+                                    class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+                                 >
+                                    <img
+                                       src="assets/imgs/main/image-1.jpg"
+                                       class="card-img-top w-25"
+                                       alt="${musicData.data[i].artist.name}"
+                                    />
+                                    <div class="card-body">
+                                       <h6 class="card-title">
+                                          Top Hits Italia
+                                       </h6>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col mb-3 col-md-4">
+                                 <div
+                                    class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+                                 >
+                                    <img
+                                       src="assets/imgs/main/image-13.jpg"
+                                       class="card-img-top w-25"
+                                       alt="${musicData.data[i].artist.name}"
+                                    />
+                                    <div class="card-body">
+                                       <h6 class="card-title">
+                                          Estate Italiana
+                                       </h6>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col mb-3 col-md-4">
+                                 <div
+                                    class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+                                 >
+                                    <img
+                                       src="assets/imgs/main/image-15.jpg"
+                                       class="card-img-top w-25"
+                                       alt="${musicData.data[i].artist.name}"
+                                    />
+                                    <div class="card-body">
+                                       <h6 class="card-title">
+                                          Hit internazionali
+                                       </h6>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col mb-3 col-md-4">
+                                 <div
+                                    class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+                                 >
+                                    <img
+                                       src="assets/imgs/main/image-2.jpg"
+                                       class="card-img-top w-25"
+                                       alt="${musicData.data[i].artist.name}"
+                                    />
+                                    <div class="card-body">
+                                       <h6 class="card-title">Festivalbar</h6>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col mb-3 col-md-4">
+                                 <div
+                                    class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+                                 >
+                                    <img
+                                       src="assets/imgs/main/image-16.jpg"
+                                       class="card-img-top w-25"
+                                       alt="${musicData.data[i].artist.name}"
+                                    />
+                                    <div class="card-body">
+                                       <h6 class="card-title">
+                                          Zecchino d'oro
+                                       </h6>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col mb-3 col-md-4">
+                                 <div
+                                    class="card d-flex flex-row align-items-center bg-body-secondary border-0"
+                                 >
+                                    <img
+                                       src="assets/imgs/main/image-17.jpg"
+                                       class="card-img-top w-25"
+                                       alt="${musicData.data[i].artist.name}"
+                                    />
+                                    <div class="card-body">
+                                       <h6 class="card-title">
+                                          Suggeriti per te
+                                       </h6>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div
+                           class="d-flex align-items-center justify-content-between"
+                        >
+                           <h4>Altro di ciò che ti piace</h4>
+                           <h6 class="d-none d-md-block">VISUALIZZA TUTTO</h6>
+                        </div>
+                        <div
+                           class="row row-cols-2 row-cols-md-5 mt-4 flex-wrap flex-md-row overflow-x-hidden"
+                           id="row-3"
+                        >
+                           <div class="col">
+                              <div
+                                 class="card border-0 bg-body-secondary my-3 p-2"
+                                 style="height: 300px"
+                                 id="card1"
+                              >
+                                 <img
+                                    src="assets/imgs/search/image-1.jpeg"
+                                    class="card-img-top"
+                                    alt="${musicData.data[i].artist.name}"
+                                 />
+                                 <div class="card-body">
+                                    <a
+                                       href="./details.html?musicId=${musicData.data[i].artist.id}"
+                                       class="card-title fw-bold"
+                                       style="font-size: 15px"
+                                       >Power Hits</a
+                                    >
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col">
+                              <div
+                                 class="card border-0 bg-body-secondary my-3 p-2"
+                                 style="height: 300px"
+                              >
+                                 <img
+                                    src="assets/imgs/search/image-11.jpg"
+                                    class="card-img-top"
+                                    alt="${musicData.data[i].artist.name}"
+                                 />
+                                 <div class="card-body">
+                                    <a
+                                       href="./details.html?musicId=${musicData.data[i].artist.id}"
+                                       class="card-title fw-bold"
+                                       style="font-size: 15px"
+                                       >Trending Hits</a
+                                    >
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col">
+                              <div
+                                 class="card border-0 bg-body-secondary my-3 p-2"
+                                 style="height: 300px"
+                              >
+                                 <img
+                                    src="assets/imgs/search/image-13.jpeg"
+                                    class="card-img-top"
+                                    alt="${musicData.data[i].artist.name}"
+                                 />
+                                 <div class="card-body">
+                                    <a
+                                       href="./details.html?musicId=${musicData.data[i].artist.id}"
+                                       class="card-title fw-bold"
+                                       style="font-size: 15px"
+                                       >Most listened</a
+                                    >
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col">
+                              <div
+                                 class="card border-0 bg-body-secondary my-3 p-2"
+                                 style="height: 300px"
+                              >
+                                 <img
+                                    src="assets/imgs/search/image-17.jpg"
+                                    class="card-img-top"
+                                    alt="${musicData.data[i].artist.name}"
+                                 />
+                                 <div class="card-body">
+                                    <a
+                                       href="./details.html?musicId=${musicData.data[i].artist.id}"
+                                       class="card-title fw-bold"
+                                       style="font-size: 15px"
+                                       >Popular Hits</a
+                                    >
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col">
+                              <div
+                                 class="card border-0 bg-body-secondary my-3 p-2"
+                                 style="height: 300px"
+                              >
+                                 <img
+                                    src="assets/imgs/search/image-19.jpg"
+                                    class="card-img-top"
+                                    alt="${musicData.data[i].artist.name}"
+                                 />
+                                 <div class="card-body">
+                                    <a
+                                       href="./details.html?musicId=${musicData.data[i].artist.id}"
+                                       class="card-title fw-bold"
+                                       style="font-size: 15px"
+                                       >2000'S</a
+                                    >
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
 
-          <div
-            class="col col-2 bg-black rounded d-none d-lg-block pe-0"
-            id="friends-activity"
-          >
-            <div class="d-flex justify-content-between my-2">
-              <div><p>Attività amici</p></div>
-              <div><i class="bi bi-x close-tab fs-4"></i></div>
+               <div
+                  class="col col-2 bg-black rounded d-none d-lg-block pe-0"
+                  id="friends-activity"
+               >
+                  <div class="d-flex justify-content-between my-2">
+                     <div><p>Attività amici</p></div>
+                     <div><i class="bi bi-x close-tab fs-4"></i></div>
+                  </div>
+                  <div>
+                     <div class="d-flex mb-3">
+                        <div class="w-25">
+                           <img
+                              src="assets/imgs/main/image-9.jpg"
+                              alt=""
+                              class="rounded-circle img-fluid p-2"
+                           />
+                        </div>
+                        <div>
+                           <div
+                              class="d-flex justify-content-between m-0 align-items-center"
+                           >
+                              <p class="lh-1" style="font-size: 13px">
+                                 Charlie Hookham
+                              </p>
+                              <p class="ms-2" style="font-size: 10px">4 ore</p>
+                           </div>
+                           <p style="font-size: 11px">In Camera - Yumi Zouma</p>
+                           <div class="d-flex" style="font-size: 13px">
+                              <i
+                                 class="bi bi-record-circle text-light lh-1"
+                              ></i>
+                              <p class="ps-1 lh-1">EP III</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="d-flex mb-3">
+                        <div class="w-25">
+                           <img
+                              src="assets/imgs/main/image-16.jpg"
+                              alt=""
+                              class="rounded-circle img-fluid p-2"
+                           />
+                        </div>
+                        <div>
+                           <div
+                              class="d-flex justify-content-between m-0 align-items-center"
+                           >
+                              <p class="lh-1" style="font-size: 13px">
+                                 lightdark02
+                              </p>
+                              <p class="ms-2" style="font-size: 10px">8 ore</p>
+                           </div>
+                           <p style="font-size: 11px">
+                              Aimed to Kill - Jade LeMac
+                           </p>
+                           <div class="d-flex" style="font-size: 13px">
+                              <i
+                                 class="bi bi-record-circle text-light lh-1"
+                              ></i>
+                              <p class="ps-1 lh-1">Aimed to Kill</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="d-flex mb-3">
+                        <div class="w-25">
+                           <img
+                              src="assets/imgs/main/image-19.jpg"
+                              alt=""
+                              class="rounded-circle img-fluid p-2"
+                           />
+                        </div>
+                        <div>
+                           <div
+                              class="d-flex justify-content-between m-0 align-items-center"
+                           >
+                              <p class="lh-1" style="font-size: 13px">
+                                 Valeria Traverso
+                              </p>
+                              <p class="ms-2" style="font-size: 10px">
+                                 3 giorni
+                              </p>
+                           </div>
+                           <p style="font-size: 11px">
+                              New Kings - Sleeping Wolf
+                           </p>
+                           <div class="d-flex" style="font-size: 13px">
+                              <i
+                                 class="bi bi-music-note-beamed text-light lh-1"
+                              ></i>
+                              <p class="ps-1 lh-1">Twint Badass mood</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-            <div>
-              <div class="d-flex mb-3">
-                <div class="w-25">
-                  <img
-                    src="assets/imgs/main/image-9.jpg"
-                    alt=""
-                    class="rounded-circle img-fluid p-2"
-                  />
-                </div>
-                <div>
+         </div>
+         <!-- INIZIO BARRA MUSICA MD -->
+         <!-- <div
+            class="container-fluid position-sticky bottom-0 p-2 d-md-block d-none z-3"
+            id="music-bar"
+         >
+            <div class="row justify-content-between">
+               <div class="col-2 d-flex align-items-center">
+                  <img src="" width="18%" class="now-playing-img me-2" />
                   <div
-                    class="d-flex justify-content-between m-0 align-items-center"
+                     class="me-2 friends d-flex flex-column justify-content-center"
                   >
-                    <p class="lh-1" style="font-size: 13px">Charlie Hookham</p>
-                    <p class="ms-2" style="font-size: 10px">4 ore</p>
+                     <p class="small now-playing-artist"></p>
+                     <p class="secondary-col small now-playing-title"></p>
                   </div>
-                  <p style="font-size: 11px">In Camera - Yumi Zouma</p>
-                  <div class="d-flex" style="font-size: 13px">
-                    <i class="bi bi-record-circle text-light lh-1"></i>
-                    <p class="ps-1 lh-1">EP III</p>
-                  </div>
-                </div>
-              </div>
-              <div class="d-flex mb-3">
-                <div class="w-25">
-                  <img
-                    src="assets/imgs/main/image-16.jpg"
-                    alt=""
-                    class="rounded-circle img-fluid p-2"
-                  />
-                </div>
-                <div>
-                  <div
-                    class="d-flex justify-content-between m-0 align-items-center"
-                  >
-                    <p class="lh-1" style="font-size: 13px">lightdark02</p>
-                    <p class="ms-2" style="font-size: 10px">8 ore</p>
-                  </div>
-                  <p style="font-size: 11px">Aimed to Kill - Jade LeMac</p>
-                  <div class="d-flex" style="font-size: 13px">
-                    <i class="bi bi-record-circle text-light lh-1"></i>
-                    <p class="ps-1 lh-1">Aimed to Kill</p>
-                  </div>
-                </div>
-              </div>
-              <div class="d-flex mb-3">
-                <div class="w-25">
-                  <img
-                    src="assets/imgs/main/image-19.jpg"
-                    alt=""
-                    class="rounded-circle img-fluid p-2"
-                  />
-                </div>
-                <div>
-                  <div
-                    class="d-flex justify-content-between m-0 align-items-center"
-                  >
-                    <p class="lh-1" style="font-size: 13px">Valeria Traverso</p>
-                    <p class="ms-2" style="font-size: 10px">3 giorni</p>
-                  </div>
-                  <p style="font-size: 11px">New Kings - Sleeping Wolf</p>
-                  <div class="d-flex" style="font-size: 13px">
-                    <i class="bi bi-music-note-beamed text-light lh-1"></i>
-                    <p class="ps-1 lh-1">Twint Badass mood</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- INIZIO BARRA MUSICA MD -->
-      <div
-        class="container-fluid position-sticky bottom-0 p-2 d-md-block d-none z-3"
-        id="music-bar"
-      >
-        <div class="row justify-content-between">
-          <div class="col-2 d-flex align-items-center">
-            <img src="" width="18%" class="now-playing-img me-2" />
-            <div class="me-2 friends d-flex flex-column justify-content-center">
-              <p class="small now-playing-artist"></p>
-              <p class="secondary-col small now-playing-title"></p>
-            </div>
-            <i class="HeartAnimation"></i>
-          </div>
+                  <i class="HeartAnimation"></i>
+               </div>
 
-          <div class="audio-player col-6 flex-grow-1 justify-content-center">
-            <div class="audio-controls d-flex flex-column">
-              <div>
-                <button class="skip-button d-none d-md-inline-block" id="prev">
-                  <i class="bi bi-skip-start"></i>
-                </button>
-                <button class="play-pause">
+               <div
+                  class="audio-player col-6 flex-grow-1 justify-content-center"
+               >
+                  <div class="audio-controls d-flex flex-column">
+                     <div>
+                        <button
+                           class="skip-button d-none d-md-inline-block"
+                           id="prev"
+                        >
+                           <i class="bi bi-skip-start"></i>
+                        </button>
+                        <button class="play-pause">
+                           <i class="bi bi-play-fill color1 fs-1"></i>
+                        </button>
+                        <button class="skip-button d-none d-md-inline-block">
+                           <i class="bi bi-skip-end" id="next"></i>
+                        </button>
+                     </div>
+                     <div class="progress-bar-container d-none d-md-block">
+                        <div class="progress-bar">
+                           <div class="progress">
+                              <p class="color1">00</p>
+                           </div>
+                        </div>
+                     </div>
+                     <audio id="audio" src=""></audio>
+                  </div>
+               </div>
+
+               <div class="col-3 align-items-center d-flex justify-content-end">
+                  <svg
+                     class="d-none d-md-block"
+                     width="20"
+                     height="55"
+                     viewBox="0 0 57 55"
+                     fill="white"
+                     xmlns="http://www.w3.org/2000/svg"
+                  >
+                     <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M25.4793 15.0376L2.53887 39.3014C-0.89648 42.922 -0.734106 48.466 2.88256 51.9051C6.50877 55.3532 12.3393 55.4985 16.1468 52.2409L41.6637 30.427C45.5762 30.4542 49.4507 29.0931 52.3135 26.3437C58.2299 20.736 58.0391 11.3626 51.7409 5.41914C45.5287 -0.515253 35.6708 -0.687658 29.7734 4.92007C26.882 7.66949 25.4506 11.3172 25.4793 15.0376ZM37.3218 27.5324L12.6921 48.5931C10.9267 50.0994 8.2166 50.0359 6.53709 48.4298C4.85759 46.8328 4.79124 44.2649 6.37532 42.5862C12.7403 35.8623 24.1057 23.8393 28.524 19.1662L37.3218 27.5324ZM42.4749 25.4907L30.6711 14.2663C30.8237 12.0976 31.7301 10.0105 33.4287 8.3953C37.3698 4.64774 43.9446 4.92903 48.1147 8.89437C52.3135 12.8597 52.5998 19.1208 48.6873 22.8683C46.9505 24.4744 44.7556 25.3455 42.4749 25.4907Z"
+                        fill="white"
+                     />
+                  </svg>
+                  <svg
+                     class="ms-2 d-none d-md-block"
+                     width="20"
+                     height="47"
+                     viewBox="0 0 51 47"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                  >
+                     <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M48.095 41.4707C48.095 41.2892 47.9421 41.1531 47.7513 41.1531C43.7911 41.1531 6.28846 41.1531 2.32826 41.1531C2.14695 41.1531 1.99426 41.2892 1.99426 41.4707C1.99426 42.4144 1.99426 45.1729 1.99426 46.1257C1.99426 46.2981 2.14695 46.4433 2.32826 46.4433C6.28846 46.4433 43.7911 46.4433 47.7513 46.4433C47.9421 46.4433 48.095 46.2981 48.095 46.1257V41.4707ZM48.095 27.0794C48.095 26.907 47.9421 26.7618 47.7513 26.7618C43.7911 26.7618 6.28846 26.7618 2.32826 26.7618C2.14695 26.7618 1.99426 26.907 1.99426 27.0794C1.99426 28.0321 1.99426 30.7907 1.99426 31.7344C1.99426 31.9068 2.14695 32.052 2.32826 32.052C6.28846 32.052 43.7911 32.052 47.7513 32.052C47.9421 32.052 48.095 31.9068 48.095 31.7344V27.0794ZM0 8.77719C0 4.18575 3.91249 0.465271 8.73152 0.465271H41.3957C46.2148 0.465271 50.175 4.18575 50.175 8.77719C50.175 13.3596 46.2148 17.0799 41.3957 17.0799H8.73152C3.91249 17.0799 0 13.3596 0 8.77719ZM5.56307 8.77719C5.56307 7.10757 6.98522 5.76452 8.73152 5.76452H41.3957C43.142 5.76452 44.5642 7.10757 44.5642 8.77719C44.5642 10.4377 43.142 11.7897 41.3957 11.7897H8.73152C6.98522 11.7897 5.56307 10.4377 5.56307 8.77719Z"
+                        fill="white"
+                     />
+                  </svg>
+                  <svg
+                     class="ms-2"
+                     width="20"
+                     height="50"
+                     viewBox="0 0 59 50"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                  >
+                     <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M9.93571 49.2968H14.6116V44.3786H7.3592V49.2968H9.93571ZM58.6032 6.71246C58.6032 3.40953 55.8359 0.732666 52.3051 0.732666H28.2576C24.7268 0.732666 21.9595 3.40953 21.9595 6.71246V43.2716C21.9595 46.5745 24.7268 49.2514 28.2576 49.2514H52.3051C55.8359 49.2514 58.6032 46.5745 58.6032 43.2716V6.71246ZM53.4502 6.71246V43.2716C53.4502 43.8614 52.9731 44.3422 52.3051 44.3422H28.2576C27.5896 44.3422 27.1125 43.8614 27.1125 43.2716V6.71246C27.1125 6.12265 27.5896 5.64166 28.2576 5.64166H52.3051C52.9731 5.64166 53.4502 6.12265 53.4502 6.71246ZM40.2813 25.0783C44.3847 25.0783 47.6292 28.2178 47.6292 32.0923C47.6292 35.9669 44.3847 39.1157 40.2813 39.1157C36.178 39.1157 32.9335 35.9669 32.9335 32.0923C32.9335 28.2178 36.178 25.0783 40.2813 25.0783ZM12.0351 0.732666H6.50036C2.96958 0.732666 0.202209 3.39138 0.202209 6.66709V29.2794C0.202209 32.5551 2.96958 35.2138 6.50036 35.2138H14.6116V30.3048H6.50036C5.83237 30.3048 5.35524 29.842 5.35524 29.2794V6.66709C5.35524 6.1045 5.83237 5.64166 6.50036 5.64166H14.6116V0.732666H12.0351ZM40.2813 10.9409C42.2853 10.9409 44.003 12.5107 44.003 14.4434C44.003 16.3853 42.2853 17.9552 40.2813 17.9552C38.2774 17.9552 36.5597 16.3853 36.5597 14.4434C36.5597 12.5107 38.2774 10.9409 40.2813 10.9409Z"
+                        fill="white"
+                     />
+                  </svg>
+                  <svg
+                     class="ms-2 d-none d-md-block"
+                     width="20"
+                     height="55"
+                     viewBox="0 0 58 55"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                  >
+                     <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.30078 24.0088C-0.0236701 26.1412 -0.0045848 28.3189 0.348493 30.4694C0.882882 33.7632 2.95379 36.6397 5.98835 38.3184C14.3 42.9189 33.9863 53.8168 33.9863 53.8168C34.8547 54.2887 35.9144 54.2887 36.7828 53.8168C37.6416 53.345 38.1762 52.4738 38.1762 51.5301V2.64857C38.1762 1.70487 37.6416 0.824625 36.7828 0.352777C35.9144 -0.11907 34.8547 -0.119106 33.9863 0.361816C33.9863 0.361816 14.3 11.2507 5.98835 15.8512C2.95379 17.5299 0.882882 20.4154 0.348493 23.7093L0.30078 24.0088ZM42.7566 7.40337C42.7566 7.30356 42.8043 7.20368 42.8998 7.14923C42.9856 7.08571 43.0996 7.0766 43.195 7.1129C51.7261 10.1255 57.7952 17.9381 57.7952 27.0847C57.7952 36.2404 51.7261 44.0441 43.195 47.0658C43.0996 47.102 42.9856 47.0839 42.8998 47.0294C42.8139 46.9659 42.7566 46.8751 42.7566 46.7753C42.7566 45.6682 42.7566 42.8282 42.7566 41.8392C42.7566 41.6305 42.8805 41.4308 43.0809 41.3401C48.5107 38.6814 52.2322 33.2913 52.2322 27.0847C52.2322 20.8781 48.5107 15.4972 43.0809 12.8386C42.8805 12.7387 42.7566 12.5482 42.7566 12.3304C42.7566 11.3414 42.7566 8.50133 42.7566 7.40337ZM5.84521 24.544V24.5259C6.12195 22.8109 7.21026 21.3047 8.78479 20.4336L32.6026 7.24901C32.6026 7.24901 32.6026 40.9135 32.6026 46.2218C32.6026 46.367 32.5268 46.5031 32.3932 46.5757C32.2596 46.6483 32.107 46.6483 31.9734 46.5757C25.5989 43.0459 14.5008 36.9119 8.78479 33.7451C7.21026 32.874 6.12195 31.3677 5.84521 29.6527C5.56847 27.9559 5.56847 26.2228 5.84521 24.5259V24.544ZM42.7566 17.6297C42.7566 17.5027 42.833 17.3846 42.9475 17.3302C43.0715 17.2757 43.2145 17.2848 43.3195 17.3665C46.3636 19.6169 48.3294 23.1375 48.3294 27.0847C48.3294 31.041 46.3636 34.5527 43.3195 36.8121C43.2145 36.8847 43.0715 36.8937 42.9475 36.8393C42.833 36.7848 42.7566 36.6669 42.7566 36.549C42.7566 33.5001 42.7566 20.6786 42.7566 17.6297ZM0.30078 23.9996L0.339547 23.7273C0.330004 23.8181 0.310323 23.9088 0.30078 23.9996L0.186716 24.6984L0.30078 24.0088V23.9996Z"
+                        fill="white"
+                     />
+                  </svg>
+
+                  <input
+                     type="range"
+                     id="volume"
+                     name="volume"
+                     min="0"
+                     max="11"
+                     class="d-none d-md-block"
+                  />
+                  <svg
+                     width="20"
+                     height="48"
+                     viewBox="0 0 50 48"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                     class="ms-2 d-none d-md-block"
+                  >
+                     <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M5.87629 38.566V35.4264C5.87629 33.9655 4.63575 32.7767 3.10892 32.7767C1.5821 32.7767 0.341553 33.9655 0.341553 35.4264V47.522H13.0333C14.5601 47.522 15.8006 46.3333 15.8006 44.8724C15.8006 43.4115 14.5601 42.2319 13.0333 42.2319H9.8842L20.0948 32.5137C21.1445 31.4793 21.1445 29.8005 20.0948 28.7661C18.9497 27.7407 17.232 27.7407 16.1824 28.7751L5.87629 38.566ZM40.1344 5.92693L29.9238 15.6451C28.8741 16.6796 28.8741 18.3491 29.9238 19.3836C31.0689 20.418 32.7866 20.4089 33.8363 19.3745L44.1423 9.58364V12.7324C44.1423 14.1933 45.3829 15.3729 46.9097 15.3729C48.4365 15.3729 49.6771 14.1933 49.6771 12.7324V0.627686H36.9853C35.4585 0.627686 34.218 1.81631 34.218 3.27722C34.218 4.73813 35.4585 5.92693 36.9853 5.92693H40.1344Z"
+                        fill="white "
+                     />
+                  </svg>
+               </div>
+            </div>
+         </div> -->
+         <!-- INIZIO BARRA MUSICA SM -->
+         <div
+            class="container-fluid d-block d-md-none bg-black sticky-bottom"
+            id="music-bar"
+         >
+            <div class="row d-flex">
+               <div class="col-2 col-md-3 d-flex">
+                  <img src="" class="now-playing-img img-fluid" width="100%" />
+               </div>
+               <div class="col d-flex ps-0 align-items-center" id="music-bar2">
+                  <p class="small now-playing-artist"></p>
+                  <p class="small now-playing-title"></p>
+               </div>
+
+               <div class="col-1 play-pause me-3">
                   <i class="bi bi-play-fill color1 fs-1"></i>
-                </button>
-                <button class="skip-button d-none d-md-inline-block">
-                  <i class="bi bi-skip-end" id="next"></i>
-                </button>
-              </div>
-              <div class="progress-bar-container d-none d-md-block">
-                <div class="progress-bar">
-                  <div class="progress">
-                    <p class="color1">00</p>
-                  </div>
-                </div>
-              </div>
-              <audio id="audio" src=""></audio>
+               </div>
             </div>
-          </div>
+         </div>
 
-          <div class="col-3 align-items-center d-flex justify-content-end">
-            <svg
-              class="d-none d-md-block"
-              width="20"
-              height="55"
-              viewBox="0 0 57 55"
-              fill="white"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M25.4793 15.0376L2.53887 39.3014C-0.89648 42.922 -0.734106 48.466 2.88256 51.9051C6.50877 55.3532 12.3393 55.4985 16.1468 52.2409L41.6637 30.427C45.5762 30.4542 49.4507 29.0931 52.3135 26.3437C58.2299 20.736 58.0391 11.3626 51.7409 5.41914C45.5287 -0.515253 35.6708 -0.687658 29.7734 4.92007C26.882 7.66949 25.4506 11.3172 25.4793 15.0376ZM37.3218 27.5324L12.6921 48.5931C10.9267 50.0994 8.2166 50.0359 6.53709 48.4298C4.85759 46.8328 4.79124 44.2649 6.37532 42.5862C12.7403 35.8623 24.1057 23.8393 28.524 19.1662L37.3218 27.5324ZM42.4749 25.4907L30.6711 14.2663C30.8237 12.0976 31.7301 10.0105 33.4287 8.3953C37.3698 4.64774 43.9446 4.92903 48.1147 8.89437C52.3135 12.8597 52.5998 19.1208 48.6873 22.8683C46.9505 24.4744 44.7556 25.3455 42.4749 25.4907Z"
-                fill="white"
-              />
-            </svg>
-            <svg
-              class="ms-2 d-none d-md-block"
-              width="20"
-              height="47"
-              viewBox="0 0 51 47"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M48.095 41.4707C48.095 41.2892 47.9421 41.1531 47.7513 41.1531C43.7911 41.1531 6.28846 41.1531 2.32826 41.1531C2.14695 41.1531 1.99426 41.2892 1.99426 41.4707C1.99426 42.4144 1.99426 45.1729 1.99426 46.1257C1.99426 46.2981 2.14695 46.4433 2.32826 46.4433C6.28846 46.4433 43.7911 46.4433 47.7513 46.4433C47.9421 46.4433 48.095 46.2981 48.095 46.1257V41.4707ZM48.095 27.0794C48.095 26.907 47.9421 26.7618 47.7513 26.7618C43.7911 26.7618 6.28846 26.7618 2.32826 26.7618C2.14695 26.7618 1.99426 26.907 1.99426 27.0794C1.99426 28.0321 1.99426 30.7907 1.99426 31.7344C1.99426 31.9068 2.14695 32.052 2.32826 32.052C6.28846 32.052 43.7911 32.052 47.7513 32.052C47.9421 32.052 48.095 31.9068 48.095 31.7344V27.0794ZM0 8.77719C0 4.18575 3.91249 0.465271 8.73152 0.465271H41.3957C46.2148 0.465271 50.175 4.18575 50.175 8.77719C50.175 13.3596 46.2148 17.0799 41.3957 17.0799H8.73152C3.91249 17.0799 0 13.3596 0 8.77719ZM5.56307 8.77719C5.56307 7.10757 6.98522 5.76452 8.73152 5.76452H41.3957C43.142 5.76452 44.5642 7.10757 44.5642 8.77719C44.5642 10.4377 43.142 11.7897 41.3957 11.7897H8.73152C6.98522 11.7897 5.56307 10.4377 5.56307 8.77719Z"
-                fill="white"
-              />
-            </svg>
-            <svg
-              class="ms-2"
-              width="20"
-              height="50"
-              viewBox="0 0 59 50"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M9.93571 49.2968H14.6116V44.3786H7.3592V49.2968H9.93571ZM58.6032 6.71246C58.6032 3.40953 55.8359 0.732666 52.3051 0.732666H28.2576C24.7268 0.732666 21.9595 3.40953 21.9595 6.71246V43.2716C21.9595 46.5745 24.7268 49.2514 28.2576 49.2514H52.3051C55.8359 49.2514 58.6032 46.5745 58.6032 43.2716V6.71246ZM53.4502 6.71246V43.2716C53.4502 43.8614 52.9731 44.3422 52.3051 44.3422H28.2576C27.5896 44.3422 27.1125 43.8614 27.1125 43.2716V6.71246C27.1125 6.12265 27.5896 5.64166 28.2576 5.64166H52.3051C52.9731 5.64166 53.4502 6.12265 53.4502 6.71246ZM40.2813 25.0783C44.3847 25.0783 47.6292 28.2178 47.6292 32.0923C47.6292 35.9669 44.3847 39.1157 40.2813 39.1157C36.178 39.1157 32.9335 35.9669 32.9335 32.0923C32.9335 28.2178 36.178 25.0783 40.2813 25.0783ZM12.0351 0.732666H6.50036C2.96958 0.732666 0.202209 3.39138 0.202209 6.66709V29.2794C0.202209 32.5551 2.96958 35.2138 6.50036 35.2138H14.6116V30.3048H6.50036C5.83237 30.3048 5.35524 29.842 5.35524 29.2794V6.66709C5.35524 6.1045 5.83237 5.64166 6.50036 5.64166H14.6116V0.732666H12.0351ZM40.2813 10.9409C42.2853 10.9409 44.003 12.5107 44.003 14.4434C44.003 16.3853 42.2853 17.9552 40.2813 17.9552C38.2774 17.9552 36.5597 16.3853 36.5597 14.4434C36.5597 12.5107 38.2774 10.9409 40.2813 10.9409Z"
-                fill="white"
-              />
-            </svg>
-            <svg
-              class="ms-2 d-none d-md-block"
-              width="20"
-              height="55"
-              viewBox="0 0 58 55"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M0.30078 24.0088C-0.0236701 26.1412 -0.0045848 28.3189 0.348493 30.4694C0.882882 33.7632 2.95379 36.6397 5.98835 38.3184C14.3 42.9189 33.9863 53.8168 33.9863 53.8168C34.8547 54.2887 35.9144 54.2887 36.7828 53.8168C37.6416 53.345 38.1762 52.4738 38.1762 51.5301V2.64857C38.1762 1.70487 37.6416 0.824625 36.7828 0.352777C35.9144 -0.11907 34.8547 -0.119106 33.9863 0.361816C33.9863 0.361816 14.3 11.2507 5.98835 15.8512C2.95379 17.5299 0.882882 20.4154 0.348493 23.7093L0.30078 24.0088ZM42.7566 7.40337C42.7566 7.30356 42.8043 7.20368 42.8998 7.14923C42.9856 7.08571 43.0996 7.0766 43.195 7.1129C51.7261 10.1255 57.7952 17.9381 57.7952 27.0847C57.7952 36.2404 51.7261 44.0441 43.195 47.0658C43.0996 47.102 42.9856 47.0839 42.8998 47.0294C42.8139 46.9659 42.7566 46.8751 42.7566 46.7753C42.7566 45.6682 42.7566 42.8282 42.7566 41.8392C42.7566 41.6305 42.8805 41.4308 43.0809 41.3401C48.5107 38.6814 52.2322 33.2913 52.2322 27.0847C52.2322 20.8781 48.5107 15.4972 43.0809 12.8386C42.8805 12.7387 42.7566 12.5482 42.7566 12.3304C42.7566 11.3414 42.7566 8.50133 42.7566 7.40337ZM5.84521 24.544V24.5259C6.12195 22.8109 7.21026 21.3047 8.78479 20.4336L32.6026 7.24901C32.6026 7.24901 32.6026 40.9135 32.6026 46.2218C32.6026 46.367 32.5268 46.5031 32.3932 46.5757C32.2596 46.6483 32.107 46.6483 31.9734 46.5757C25.5989 43.0459 14.5008 36.9119 8.78479 33.7451C7.21026 32.874 6.12195 31.3677 5.84521 29.6527C5.56847 27.9559 5.56847 26.2228 5.84521 24.5259V24.544ZM42.7566 17.6297C42.7566 17.5027 42.833 17.3846 42.9475 17.3302C43.0715 17.2757 43.2145 17.2848 43.3195 17.3665C46.3636 19.6169 48.3294 23.1375 48.3294 27.0847C48.3294 31.041 46.3636 34.5527 43.3195 36.8121C43.2145 36.8847 43.0715 36.8937 42.9475 36.8393C42.833 36.7848 42.7566 36.6669 42.7566 36.549C42.7566 33.5001 42.7566 20.6786 42.7566 17.6297ZM0.30078 23.9996L0.339547 23.7273C0.330004 23.8181 0.310323 23.9088 0.30078 23.9996L0.186716 24.6984L0.30078 24.0088V23.9996Z"
-                fill="white"
-              />
-            </svg>
-
-            <input
-              type="range"
-              id="volume"
-              name="volume"
-              min="0"
-              max="11"
-              class="d-none d-md-block"
-            />
-            <svg
-              width="20"
-              height="48"
-              viewBox="0 0 50 48"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="ms-2 d-none d-md-block"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M5.87629 38.566V35.4264C5.87629 33.9655 4.63575 32.7767 3.10892 32.7767C1.5821 32.7767 0.341553 33.9655 0.341553 35.4264V47.522H13.0333C14.5601 47.522 15.8006 46.3333 15.8006 44.8724C15.8006 43.4115 14.5601 42.2319 13.0333 42.2319H9.8842L20.0948 32.5137C21.1445 31.4793 21.1445 29.8005 20.0948 28.7661C18.9497 27.7407 17.232 27.7407 16.1824 28.7751L5.87629 38.566ZM40.1344 5.92693L29.9238 15.6451C28.8741 16.6796 28.8741 18.3491 29.9238 19.3836C31.0689 20.418 32.7866 20.4089 33.8363 19.3745L44.1423 9.58364V12.7324C44.1423 14.1933 45.3829 15.3729 46.9097 15.3729C48.4365 15.3729 49.6771 14.1933 49.6771 12.7324V0.627686H36.9853C35.4585 0.627686 34.218 1.81631 34.218 3.27722C34.218 4.73813 35.4585 5.92693 36.9853 5.92693H40.1344Z"
-                fill="white "
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- INIZIO BARRA MUSICA SM -->
-      <div
-        class="container-fluid d-block d-md-none bg-black sticky-bottom"
-        id="music-bar"
+         <!-- BARRA SM RICERCA -->
+         <div class="row sticky-bottom d-md-none bg-black" id="small-bar">
+            <div class="col">
+               <ul
+                  class="list-unstyled secondary-col d-block d-md-none d-flex justify-content-evenly"
+               >
+                  <li class="d-flex flex-column align-items-center medium">
+                     <i class="bi bi-house-door fs-1"></i>
+                     <a href="main.html">Home</a>
+                  </li>
+                  <li
+                     class="d-flex flex-column align-items-center medium"
+                     id="search2"
+                  >
+                     <i class="bi bi-search fs-1"></i> Cerca
+                  </li>
+                  <li
+                     class="d-flex flex-column align-items-center justify-content-center medium"
+                  >
+                     <svg
+                        class="mb-1"
+                        id="library-svg"
+                        width="50"
+                        height="35"
+                        viewBox="0 0 242 255"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                     >
+                        <path
+                           d="M62.9931 0.872341C57.4417 -0.61514 51.735 2.67759 50.2462 8.23384L0.844504 192.603C-0.644288 198.16 2.65154 203.865 8.2029 205.352C13.7543 206.84 19.461 203.547 20.9498 197.991L70.3515 13.621C71.8403 8.06479 68.5444 2.35982 62.9931 0.872341Z"
+                           fill="gray"
+                        />
+                        <path
+                           d="M110.839 24.4695C112.327 18.9133 118.034 15.6206 123.586 17.108C129.137 18.5955 132.433 24.3005 130.944 29.8567L81.5423 214.226C80.0535 219.783 74.3467 223.075 68.7954 221.588C63.244 220.1 59.9482 214.395 61.437 208.839L110.839 24.4695Z"
+                           fill="gray"
+                        />
+                        <path
+                           fill-rule="evenodd"
+                           clip-rule="evenodd"
+                           d="M170.421 42.8009C172.728 34.19 183.571 31.4286 189.719 37.8872L238.275 88.8902C239.628 90.3126 240.566 92.028 241.051 93.863C241.546 95.7534 241.556 97.771 241.034 99.7194L201.893 245.797C200.261 251.887 193.998 255.503 187.908 253.871L129.854 238.316C123.762 236.683 120.148 230.421 121.78 224.331L170.421 42.8009Z"
+                           fill="gray"
+                        />
+                     </svg>
+                     La tua libreria
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </main>
+      <footer
+         class="container-player container-fluid d-none d-md-block d-lg-block d-xl-block d-xxl-block"
       >
-        <div class="row d-flex">
-          <div class="col-2 col-md-3 d-flex">
-            <img src="" class="now-playing-img img-fluid" width="100%" />
-          </div>
-          <div class="col d-flex ps-0 align-items-center" id="music-bar2">
-            <p class="small now-playing-artist"></p>
-            <p class="small now-playing-title"></p>
-          </div>
-
-          <div class="col-1 play-pause me-3">
-            <i class="bi bi-play-fill color1 fs-1"></i>
-          </div>
-        </div>
-      </div>
-
-      <!-- BARRA SM RICERCA -->
-      <div class="row sticky-bottom d-md-none bg-black" id="small-bar">
-        <div class="col">
-          <ul
-            class="list-unstyled secondary-col d-block d-md-none d-flex justify-content-evenly"
-          >
-            <li class="d-flex flex-column align-items-center medium">
-              <i class="bi bi-house-door fs-1"></i>
-              <a href="main.html">Home</a>
-            </li>
-            <li
-              class="d-flex flex-column align-items-center medium"
-              id="search2"
+         <div id="player-main" class="row row-cols-3">
+            <div class="col-3 d-flex align-items-center player-container-left">
+               <div class="d-flex align-items-center">
+                  <img
+                     id="player-img"
+                     class="img-thumbnail border-0 p-0 me-3"
+                     src="https://e-cdns-images.dzcdn.net/images/cover/8b8fc5d117f9357b79f0a0a410a170e8/56x56-000000-80-0-0.jpg"
+                     alt="cover image"
+                  />
+                  <div class="d-flex flex-column me-4">
+                     <a
+                        class="text-decoration-none text-white"
+                        href="#"
+                        id="player-title"
+                        >Title song</a
+                     >
+                     <span id="player-artists" class="fs-7 contributors">
+                        <a
+                           class="text-decoration-none text-white-50 fs-7"
+                           href="#"
+                           >artist 1</a
+                        >
+                        <a
+                           class="text-decoration-none text-white-50 fs-7"
+                           href="#"
+                           >artist 2</a
+                        >
+                     </span>
+                  </div>
+                  <div>
+                     <i class="far fa-heart text-white-50"></i>
+                  </div>
+               </div>
+            </div>
+            <div class="col-6 player-center">
+               <div
+                  class="player-buttons d-flex justify-content-center mt-3 align-items-center"
+               >
+                  <a href="#" id="btn-previous" class="mt-1"
+                     ><i class="fas fa-step-backward text-white-50 fs-5"></i
+                  ></a>
+                  <i id="btn-play" class="fas fa-play-circle fs-2 px-3"></i>
+                  <a href="#" id="btn-next" class="mt-1"
+                     ><i class="fas fa-step-forward text-white-50 fs-5"></i
+                  ></a>
+               </div>
+               <div
+                  class="progress text-white-50 d-flex align-items-center mb-3 mt-2"
+               >
+                  <span class="mx-2 fs-6 mb-1" id="currentTime">0:00</span>
+                  <label class="d-none" for="progressBar">Duration</label>
+                  <input
+                     class="w-100 sliderRange"
+                     id="progressBar"
+                     type="range"
+                     min="0"
+                     max="100"
+                     value="0"
+                  />
+                  <span class="mx-2 fs-6 mb-1" id="duration">0:00</span>
+               </div>
+            </div>
+            <div
+               class="player-container-right col-3 d-flex align-items-center justify-content-end"
             >
-              <i class="bi bi-search fs-1"></i> Cerca
-            </li>
-            <li
-              class="d-flex flex-column align-items-center justify-content-center medium"
-            >
-              <svg
-                class="mb-1"
-                id="library-svg"
-                width="50"
-                height="35"
-                viewBox="0 0 242 255"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M62.9931 0.872341C57.4417 -0.61514 51.735 2.67759 50.2462 8.23384L0.844504 192.603C-0.644288 198.16 2.65154 203.865 8.2029 205.352C13.7543 206.84 19.461 203.547 20.9498 197.991L70.3515 13.621C71.8403 8.06479 68.5444 2.35982 62.9931 0.872341Z"
-                  fill="gray"
-                />
-                <path
-                  d="M110.839 24.4695C112.327 18.9133 118.034 15.6206 123.586 17.108C129.137 18.5955 132.433 24.3005 130.944 29.8567L81.5423 214.226C80.0535 219.783 74.3467 223.075 68.7954 221.588C63.244 220.1 59.9482 214.395 61.437 208.839L110.839 24.4695Z"
-                  fill="gray"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M170.421 42.8009C172.728 34.19 183.571 31.4286 189.719 37.8872L238.275 88.8902C239.628 90.3126 240.566 92.028 241.051 93.863C241.546 95.7534 241.556 97.771 241.034 99.7194L201.893 245.797C200.261 251.887 193.998 255.503 187.908 253.871L129.854 238.316C123.762 236.683 120.148 230.421 121.78 224.331L170.421 42.8009Z"
-                  fill="gray"
-                />
-              </svg>
-              La tua libreria
-            </li>
-          </ul>
-        </div>
-      </div>
-    </main>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-    <script src="script/script.js"></script>
-  </body>
+               <div class="d-flex align-items-center justify-content-center">
+                  <i
+                     class="far fa-caret-square-right text-white-50 me-2 fs-6"
+                  ></i>
+                  <i class="fas fa-microphone text-white-50 me-2 fs-6"></i>
+                  <i class="fas fa-stream text-white-50 me-2 fs-6"></i>
+                  <i class="fas fa-users text-white-50 me-2 fs-6"></i>
+                  <i class="bi bi-speaker text-white-50 me-2 fs-6"></i>
+                  <label class="d-none" for="volume">Volume</label>
+                  <input
+                     id="volume"
+                     class="me-2 sliderRange"
+                     min="0"
+                     max="100"
+                     value="75"
+                     type="range"
+                  />
+                  <i class="fas fa-expand text-white-50 me-2 fs-6"></i>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <script
+         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+         crossorigin="anonymous"
+      ></script>
+      <script src="script/script.js"></script>
+      <script src="./script/player.js"></script>
+   </body>
 </html>
