@@ -4,6 +4,12 @@ container.classList.add("transition-slide-up");
 const addressBarContent = new URLSearchParams(location.search);
 const musicId = addressBarContent.get("musicId");
 
+const backBtn = document.getElementById("back");
+
+backBtn.addEventListener("click", function () {
+  window.history.back();
+});
+
 const getPlayer = function (music) {
   let trackToShow = music.tracks.data;
   console.log(trackToShow);
