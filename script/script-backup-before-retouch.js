@@ -187,7 +187,7 @@ const renderSection3 = function (musicData) {
       />
       <div class="card-body">
         <a
-          href="./artist.html?musicId=${musicData.data[6].artist.id}"
+          href="./album.html?musicId=${musicData.data[6].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
           >${musicData.data[6].artist.name}</a
@@ -209,7 +209,7 @@ const renderSection3 = function (musicData) {
       />
       <div class="card-body">
         <a
-          href="./artist.html?musicId=${musicData.data[7].artist.id}"
+          href="./album.html?musicId=${musicData.data[7].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
           >${musicData.data[7].artist.name}</a
@@ -231,7 +231,7 @@ const renderSection3 = function (musicData) {
       />
       <div class="card-body">
         <a
-          href="./artist.html?musicId=${musicData.data[8].artist.id}"
+          href="./album.html?musicId=${musicData.data[8].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
           >${musicData.data[8].artist.name}</a
@@ -253,7 +253,7 @@ const renderSection3 = function (musicData) {
       />
       <div class="card-body">
         <a
-          href="./artist.html?musicId=${musicData.data[9].artist.id}"
+          href="./album.html?musicId=${musicData.data[9].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
           >${musicData.data[9].artist.name}</a
@@ -275,7 +275,7 @@ const renderSection3 = function (musicData) {
       />
       <div class="card-body">
         <a
-          href="./artist.html?musicId=${musicData.data[10].artist.id}"
+          href="./album.html?musicId=${musicData.data[10].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
           >${musicData.data[10].artist.name}</a
@@ -298,7 +298,7 @@ const renderSection3 = function (musicData) {
       />
       <div class="card-body">
         <a
-          href="./artist.html?musicId=${musicData.data[11].artist.id}"
+          href="./album.html?musicId=${musicData.data[11].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
           >${musicData.data[11].artist.name}</a

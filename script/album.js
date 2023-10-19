@@ -85,7 +85,9 @@ const renderAlbum = function (album) {
             <img src="${album.artist.picture_small}" class="me-2">
 
             <div class="moving">
-            <p class="mb-0 card-text ">${track.title}</p>
+            <a href="album.html?musicId=${album.id}&trackId${
+         track.id
+      }" class="mb-0 card-text ">${track.title}</a>
             <p class="mb-0"><small class="text-body-secondary ">${
                track.artist.name
             }</small></p>
@@ -131,7 +133,7 @@ const renderAlbum = function (album) {
    //    fullHeight.clientHeight - window.innerHeight / 2 + "px";
 };
 
-const visualizeAlbums = function (albums) {
+const visualizeAlbums = function (albums, musicId) {
    const albumListTracks = document.getElementById("album-tracks-continer");
 
    const secToTime = function (duration, type = "albumDuration") {
@@ -159,7 +161,7 @@ const visualizeAlbums = function (albums) {
    };
 
    albums.data.forEach((album, index) => {
-      console.log(album);
+      console.log("inside album", albums);
       const trackRow = document.createElement("div");
       trackRow.className = "row row-cols-3 tracks mx-0 mb-2";
       trackRow.innerHTML = `
@@ -168,8 +170,11 @@ const visualizeAlbums = function (albums) {
               <img src="${album.album.cover_small}" class="me-2">
 
               <div class="moving">
-             
-              <p class="mb-0">${album.title}</p>
+              <a href="artist.html?musicId=${musicId}&trackId=${
+         album.id
+      }" class="mb-0 card-text ">${album.title}</a>
+
+    
               <p class="mb-0"><small class="text-body-secondary">${
                  album.artist.name
               }</small></p>
@@ -276,7 +281,7 @@ const renderArtist = function (artist) {
       })
       .then((suggested) => {
          console.log(suggested);
-         visualizeAlbums(suggested);
+         visualizeAlbums(suggested, musicId);
          audiotrack2(suggested);
       })
       .catch((err) => {
