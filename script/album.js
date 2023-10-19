@@ -230,10 +230,11 @@ const audiotrack3 = function (event) {
 
 // SCELTA DELLA TRACCIA IN MODALITA' ARTISTA
 
+const audioSrc = document.getElementById("audio");
+
 const audiotrack2 = function (event) {
   console.log(event);
 
-  const audioSrc = document.getElementById("audio");
   console.log(audioSrc);
 
   const playBtnArtist = document.querySelectorAll(".play-track");
@@ -277,7 +278,7 @@ const visualizeArtist = function (artist) {
 const addressBarContent = new URLSearchParams(location.search);
 const musicId = addressBarContent.get("musicId");
 
-const renderArtist = function (artist) {
+const renderArtist = function () {
   fetch(
     "https://striveschool-api.herokuapp.com/api/deezer/artist/" +
       musicId +
@@ -311,7 +312,7 @@ const loadAlbum = function () {
     .then((respone) => {
       console.log("Fetch went fine!", respone);
       renderAlbum(respone);
-      // audiotrack3(respone);
+      audiotrack3(respone);
       player(respone);
     })
     .catch((err) => console.log("Fetching issue", err));

@@ -1,3 +1,13 @@
+// SEZIONE CERCA MOBILE
+
+const searchButton2 = document.getElementById("search2");
+
+searchButton2.addEventListener("click", function () {
+  const navBar = document.getElementById("navbar");
+  navBar.classList.remove("d-none");
+  navBar.classList.add("slide-in-blurred-top");
+});
+
 // EVENT LISTENER PER CHIUDERE SEZ. AMICI ED INGRANDIRE SEZ. CENTRALE
 
 const closeBtn = document.getElementsByClassName("close-tab")[0];
@@ -443,14 +453,4 @@ playPauseButton.forEach((button) => {
       button.style.transform = "scale(1)";
     }
   });
-});
-
-// SEZIONE CERCA MOBILE
-
-const searchButton2 = document.getElementById("search2");
-
-searchButton2.addEventListener("click", function () {
-  const navBar = document.getElementById("navbar");
-  navBar.classList.remove("d-none");
-  navBar.classList.add("slide-in-blurred-top");
 });
