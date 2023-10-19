@@ -17,8 +17,6 @@ HeartAnimation.addEventListener("click", function () {
   HeartAnimation.classList.toggle("animate");
 });
 
-// EVENT LISTENER PER APRIRE MOB PLAYER
-
 // DETTAGLIO
 
 const generateDetails = function (details) {
@@ -175,26 +173,26 @@ const renderSection2 = function (musicData) {
 
 const renderSection3 = function (musicData) {
   const row3 = document.getElementById("row-3");
+  console.log(musicData);
 
-  for (let i = 0; i < 6; i++) {
-    row3.innerHTML = `<div class="col grow">
+  row3.innerHTML = `<div class="col grow">
     <div
       class="card border-0 bg-body-secondary my-3 p-2"
-      style="height: 250px"
+      style="height: 260px"
     >
       <img
-        src="${musicData.data[0].artist.picture_medium}"
+        src="${musicData.data[6].album.cover_medium}"
         class="card-img-top"
-        alt="${musicData.data[0].artist.name}"
+        alt="${musicData.data[6].artist.name}"
       />
       <div class="card-body">
         <a
-          href="./album.html?musicId=${musicData.data[0].artist.id}"
+          href="./album.html?musicId=${musicData.data[6].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
-          >${musicData.data[0].artist.name}</a
-        >  <p class="card-text">
-        ${musicData.data[0].album.title}
+          >${musicData.data[6].artist.name}</a
+        >  <p class="card-text text-truncate">
+        ${musicData.data[6].album.title}
       </p>
       </div>
     </div>
@@ -202,21 +200,21 @@ const renderSection3 = function (musicData) {
   <div class="col grow"">
     <div
       class="card border-0 bg-body-secondary my-3 p-2"
-      style="height: 250px"
+      style="height: 260px"
     >
       <img
-        src="${musicData.data[1].artist.picture_medium}"
+        src="${musicData.data[7].album.cover_medium}"
         class="card-img-top"
-        alt="${musicData.data[1].artist.name}"
+        alt="${musicData.data[7].artist.name}"
       />
       <div class="card-body">
         <a
-          href="./album.html?musicId=${musicData.data[1].artist.id}"
+          href="./album.html?musicId=${musicData.data[7].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
-          >${musicData.data[1].artist.name}</a
-        >  <p class="card-text">
-        ${musicData.data[1].album.title}
+          >${musicData.data[7].artist.name}</a
+        >  <p class="card-text text-truncate">
+        ${musicData.data[7].album.title}
       </p>
       </div>
     </div>
@@ -224,21 +222,21 @@ const renderSection3 = function (musicData) {
   <div class="col grow"">
     <div
       class="card border-0 bg-body-secondary my-3 p-2"
-      style="height: 250px"
+      style="height: 260px"
     >
       <img
-        src="${musicData.data[2].artist.picture_medium}"
+        src="${musicData.data[8].album.cover_medium}"
         class="card-img-top"
-        alt="${musicData.data[2].artist.name}"
+        alt="${musicData.data[8].artist.name}"
       />
       <div class="card-body">
         <a
-          href="./album.html?musicId=${musicData.data[2].artist.id}"
+          href="./album.html?musicId=${musicData.data[8].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
-          >${musicData.data[2].artist.name}</a
-        >  <p class="card-text">
-        ${musicData.data[2].album.title}
+          >${musicData.data[8].artist.name}</a
+        >  <p class="card-text text-truncate">
+        ${musicData.data[8].album.title}
       </p>
       </div>
     </div>
@@ -246,21 +244,21 @@ const renderSection3 = function (musicData) {
   <div class="col grow"">
     <div
       class="card border-0 bg-body-secondary my-3 p-2"
-      style="height: 250px"
+      style="height: 260px"
     >
       <img
-        src="${musicData.data[3].artist.picture_medium}"
+        src="${musicData.data[9].album.cover_medium}"
         class="card-img-top"
-        alt="${musicData.data[3].artist.name}"
+        alt="${musicData.data[9].artist.name}"
       />
       <div class="card-body">
         <a
-          href="./album.html?musicId=${musicData.data[3].artist.id}"
+          href="./album.html?musicId=${musicData.data[9].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
-          >${musicData.data[3].artist.name}</a
-        >  <p class="card-text">
-        ${musicData.data[3].album.title}
+          >${musicData.data[9].artist.name}</a
+        >  <p class="card-text text-truncate">
+        ${musicData.data[9].album.title}
       </p>
       </div>
     </div>
@@ -268,50 +266,49 @@ const renderSection3 = function (musicData) {
   <div class="col grow"">
     <div
       class="card border-0 bg-body-secondary my-3 p-2"
-      style="height: 250px"
+      style="height: 260px"
     >
       <img
-        src="${musicData.data[4].artist.picture_medium}"
+        src="${musicData.data[10].album.cover_medium}"
         class="card-img-top"
-        alt="${musicData.data[4].artist.name}"
+        alt="${musicData.data[10].artist.name}"
       />
       <div class="card-body">
         <a
-          href="./album.html?musicId=${musicData.data[4].artist.id}"
+          href="./album.html?musicId=${musicData.data[10].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
-          >${musicData.data[4].artist.name}</a
+          >${musicData.data[10].artist.name}</a
         >
-        <p class="card-text">
-          ${musicData.data[4].album.title}
+        <p class="card-text text-truncate">
+          ${musicData.data[10].album.title}
         </p>
       </div>
     </div>
   </div>
   <div class="col grow"">
     <div
-      class="card border-0 bg-body-secondary my-3 p-2"
-      style="height: 250px"
+      class="card border-0 bg-body-secondary my-3 p-2 "
+      style="height: 260px"
     >
       <img
-        src="${musicData.data[5].artist.picture_medium}"
+        src="${musicData.data[11].album.cover_medium}"
         class="card-img-top"
-        alt="${musicData.data[5].artist.name}"
+        alt="${musicData.data[11].artist.name}"
       />
       <div class="card-body">
         <a
-          href="./album.html?musicId=${musicData.data[4].artist.id}"
+          href="./album.html?musicId=${musicData.data[11].artist.id}"
           class="card-title fw-bold"
           style="font-size: 15px"
-          >${musicData.data[5].artist.name}</a
+          >${musicData.data[11].artist.name}</a
         >
-        <p class="card-text">
-          ${musicData.data[5].album.title}
+        <p class="card-text text-truncate">
+          ${musicData.data[11].album.title}
         </p>
       </div>
     </div>
   </div>`;
-  }
 };
 
 // SEZIONE PREFERITI
@@ -321,7 +318,7 @@ const generateFavourites = function (musicData) {
   for (let k = 0; k < musicData.data.length; k++) {
     const newLi = document.createElement("li");
     newLi.classList.add("lh-base", "text-secondary", "link-light");
-    newLi.innerHTML = `<a href="./album.html?musicId=${musicData.data[k].album.id}">${musicData.data[k].title}</a>`;
+    newLi.innerHTML = `<a href="./album.html?musicId=${musicData.data[k].album.id}">${musicData.data[k].album.title}</a>`;
     ul.appendChild(newLi);
   }
 };
@@ -346,6 +343,7 @@ const audiotrack = function (event) {
     img.src = event.data[0].album.cover_big;
   });
 
+  // EVENT LISTENER PER APRIRE MOB PLAYER
   const musicBarSM = document.getElementById("music-bar2");
   musicBarSM.addEventListener("click", function () {
     const newUrl = `./mobile_player.html?musicId=${event.data[0].album.id}`;
