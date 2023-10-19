@@ -85,7 +85,7 @@ const renderAlbum = function (album) {
             <img src="${album.artist.picture_small}" class="me-2">
 
             <div class="moving">
-            <a href="album.html?musicId=${album.id}&trackId${
+            <a href="album.html?musicId=${album.id}&trackId=${
          track.id
       }" class="mb-0 card-text ">${track.title}</a>
             <p class="mb-0"><small class="text-body-secondary ">${
@@ -133,7 +133,10 @@ const renderAlbum = function (album) {
    //    fullHeight.clientHeight - window.innerHeight / 2 + "px";
 };
 
+// this is only for the artist
+// render artist's tracks
 const visualizeAlbums = function (albums, musicId) {
+   console.log("this is artist: ", albums);
    const albumListTracks = document.getElementById("album-tracks-continer");
 
    const secToTime = function (duration, type = "albumDuration") {
@@ -254,6 +257,7 @@ const audiotrack2 = function (event) {
    }
 };
 
+// set artist profile
 const visualizeArtist = function (artist) {
    albumName.innerText = artist.name;
 
@@ -266,6 +270,7 @@ const visualizeArtist = function (artist) {
 const addressBarContent = new URLSearchParams(location.search);
 const musicId = addressBarContent.get("musicId");
 
+// fetch artist's tracks
 const renderArtist = function (artist) {
    fetch(
       "https://striveschool-api.herokuapp.com/api/deezer/artist/" +
@@ -308,6 +313,7 @@ const loadAlbum = function () {
 
 loadAlbum();
 
+// fetch for artists
 const loadArtist = function () {
    fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/" + musicId)
       .then((response) => {
@@ -319,10 +325,15 @@ const loadArtist = function () {
       })
       .then((response) => {
          console.log("Fetch went fine!", response);
+         // fertch artist's tracks
          renderArtist(response);
+         // render artist profile
          visualizeArtist(response);
       })
       .catch((err) => console.log("Fetching issue", err));
 };
 
 loadArtist();
+
+// get the artist
+// render each track

@@ -24,6 +24,15 @@
   background: linear-gradient(180deg, rgb(222, 222, 0) 0%, rgb(222, 222, 0) 50%, rgb(0, 0, 0) 100%);
   height: 50vh;
 }
+.container-mid .artist-bg-img {
+  height: 50vh;
+}
+.container-mid .artist-bg-img img {
+  width: 100%;
+  height: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .container-mid .album-bg-black {
   background-color: #000;
   height: 50vh;
@@ -41,12 +50,16 @@
 .container-mid .tracks-and-header .album-header .album-content {
   padding-top: 1em;
 }
-.container-mid .tracks-and-header .album-tracks {
+.container-mid .tracks-and-header .artist-header {
+  background: rgb(222, 222, 0);
+  background: linear-gradient(180deg, rgba(222, 222, 0, 0) 0%, rgba(0, 0, 0, 0.7058473047) 75%, rgba(0, 0, 0, 0.9) 100%);
+}
+.container-mid .album-tracks {
   padding: 0;
   width: 100%;
   top: 13em;
   /* From https://css.glass */
-  background: rgba(102, 87, 87, 0.466);
+  background: rgba(0, 0, 0, 0.9);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);

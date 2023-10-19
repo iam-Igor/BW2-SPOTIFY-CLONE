@@ -57,47 +57,47 @@ audio {
 }
 
 /* input[type="range"] {
-   width: 100px;
-   height: 5px;
-   background-color: lightgrey;
-   border: none;
-   border-radius: 2.5px;
-   outline: none;
-   opacity: 0.7;
-   -webkit-transition: 0.2s;
-   transition: opacity 0.2s;
+  width: 100px;
+  height: 5px;
+  background-color: lightgrey;
+  border: none;
+  border-radius: 2.5px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
 }
 
 input[type="range"]::-webkit-slider-thumb {
-   width: 10px;
-   height: 10px;
-   background-color: lightgrey;
-   border: none;
-   border-radius: 50%;
-   cursor: pointer;
+  width: 10px;
+  height: 10px;
+  background-color: lightgrey;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 input[type="range"] {
-   width: 100px;
-   height: 5px;
-   background-color: lightgrey;
-   border: none;
-   border-radius: 2.5px;
-   outline: none;
-   opacity: 0.7;
-   -webkit-transition: 0.2s;
-   transition: opacity 0.2s;
+  width: 100px;
+  height: 5px;
+  background-color: lightgrey;
+  border: none;
+  border-radius: 2.5px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
 
-   -webkit-appearance: none;
-   appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 input[type="range"]::-moz-range-progress {
-   background-color: gray;
+  background-color: gray;
 }
 
 input[type="range"]::-webkit-slider-thumb {
-   display: none;
+  display: none;
 } */
 
 #music-bar svg path:hover {

@@ -12,10 +12,11 @@ closeBtn.addEventListener("click", function () {
 // EVENT LISTENER PER IL CUORE PREFERITI
 
 const HeartAnimation = document.getElementsByClassName("HeartAnimation")[0];
-
-HeartAnimation.addEventListener("click", function () {
-   HeartAnimation.classList.toggle("animate");
-});
+if (HeartAnimation) {
+   HeartAnimation.addEventListener("click", function () {
+      HeartAnimation.classList.toggle("animate");
+   });
+}
 
 // DETTAGLIO
 
