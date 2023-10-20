@@ -305,6 +305,12 @@ nav svg {
   display: flex;
 }
 
+@media screen and (max-width: 480px) {
+  .carousel-item2 .carousel-item.active {
+    padding-left: 1.6em;
+  }
+}
+
 @media (min-width: 768px) {
   .carousel-inner .carousel-item-end.active,
   .carousel-inner .carousel-item-next {
