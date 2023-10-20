@@ -567,57 +567,53 @@
             </div>
          </div>
       </main>
-      <footer
-         class="container-player container-fluid d-none d-md-block d-lg-block d-xl-block d-xxl-block"
-      >
-         <div id="player-main" class="row row-cols-3">
-            <div class="col-3 d-flex align-items-center player-container-left">
+      <footer class="container-player container-fluid">
+         <div id="player-main" class="row row-cols-3 row-md-cols-2">
+            <div
+               class="col-9 col-md-3 d-flex align-items-center player-container-left"
+            >
                <div class="d-flex align-items-center">
                   <img
                      id="player-img"
-                     class="img-thumbnail border-0 p-0 me-3"
-                     src="https://e-cdns-images.dzcdn.net/images/cover/8b8fc5d117f9357b79f0a0a410a170e8/56x56-000000-80-0-0.jpg"
+                     class="img-thumbnail border-0 p-0 me-3 now-playing-img"
+                     src="https://e-cdns-images.dzcdn.net/images/cover/cc2568760fa398647ad570ec6bd20c6b/56x56-000000-80-0-0.jpg"
                      alt="cover image"
                   />
-                  <div class="d-flex flex-column me-4">
+                  <div class="d-flex flex-column me-4 moving-title-song">
                      <a
                         class="text-decoration-none text-white"
                         href="#"
                         id="player-title"
-                        >Title song</a
+                        >DISCO PARADISE</a
                      >
                      <span id="player-artists" class="fs-7 contributors">
                         <a
                            class="text-decoration-none text-white-50 fs-7"
                            href="#"
-                           >artist 1</a
-                        >
-                        <a
-                           class="text-decoration-none text-white-50 fs-7"
-                           href="#"
-                           >artist 2</a
+                           >Fedez</a
                         >
                      </span>
                   </div>
                   <div>
                      <i class="far fa-heart text-white-50"></i>
+                     <!-- <i class="HeartAnimation"></i> -->
                   </div>
                </div>
             </div>
-            <div class="col-6 player-center">
+            <div class="col-3 col-md-6 player-center">
                <div
-                  class="player-buttons d-flex justify-content-center mt-3 align-items-center"
+                  class="player-buttons d-flex justify-content-md-center justify-content-end mt-3 align-items-center"
                >
-                  <a href="#" id="btn-previous" class="mt-1"
+                  <a href="#" id="btn-previous" class="mt-1 d-none d-md-block"
                      ><i class="fas fa-step-backward text-white-50 fs-5"></i
                   ></a>
                   <i id="btn-play" class="fas fa-play-circle fs-2 px-3"></i>
-                  <a href="#" id="btn-next" class="mt-1"
+                  <a href="#" id="btn-next" class="mt-1 d-none d-md-block"
                      ><i class="fas fa-step-forward text-white-50 fs-5"></i
                   ></a>
                </div>
                <div
-                  class="progress text-white-50 d-flex align-items-center mb-3 mt-2"
+                  class="progress text-white-50 d-none d-md-flex align-items-center mb-3 mt-2"
                >
                   <span class="mx-2 fs-6 mb-1" id="currentTime">0:00</span>
                   <label class="d-none" for="progressBar">Duration</label>
@@ -633,7 +629,7 @@
                </div>
             </div>
             <div
-               class="player-container-right col-3 d-flex align-items-center justify-content-end"
+               class="player-container-right col-3 d-md-flex align-items-center justify-content-end d-none"
             >
                <div class="d-flex align-items-center justify-content-center">
                   <i
@@ -654,6 +650,54 @@
                   />
                   <i class="fas fa-expand text-white-50 me-2 fs-6"></i>
                </div>
+            </div>
+         </div>
+         <!-- BARRA SM RICERCA -->
+         <div class="row sticky-bottom d-md-none bg-black" id="small-bar">
+            <div class="col">
+               <ul
+                  class="list-unstyled secondary-col d-block d-md-none d-flex justify-content-evenly"
+               >
+                  <li class="d-flex flex-column align-items-center medium">
+                     <i class="bi bi-house-door fs-1"></i>
+                     <a href="main.html">Home</a>
+                  </li>
+                  <li
+                     class="d-flex flex-column align-items-center medium"
+                     id="search2"
+                  >
+                     <i class="bi bi-search fs-1"></i> Cerca
+                  </li>
+                  <li
+                     class="d-flex flex-column align-items-center justify-content-center medium"
+                  >
+                     <svg
+                        class="mb-1"
+                        id="library-svg"
+                        width="50"
+                        height="35"
+                        viewBox="0 0 242 255"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                     >
+                        <path
+                           d="M62.9931 0.872341C57.4417 -0.61514 51.735 2.67759 50.2462 8.23384L0.844504 192.603C-0.644288 198.16 2.65154 203.865 8.2029 205.352C13.7543 206.84 19.461 203.547 20.9498 197.991L70.3515 13.621C71.8403 8.06479 68.5444 2.35982 62.9931 0.872341Z"
+                           fill="gray"
+                        />
+                        <path
+                           d="M110.839 24.4695C112.327 18.9133 118.034 15.6206 123.586 17.108C129.137 18.5955 132.433 24.3005 130.944 29.8567L81.5423 214.226C80.0535 219.783 74.3467 223.075 68.7954 221.588C63.244 220.1 59.9482 214.395 61.437 208.839L110.839 24.4695Z"
+                           fill="gray"
+                        />
+                        <path
+                           fill-rule="evenodd"
+                           clip-rule="evenodd"
+                           d="M170.421 42.8009C172.728 34.19 183.571 31.4286 189.719 37.8872L238.275 88.8902C239.628 90.3126 240.566 92.028 241.051 93.863C241.546 95.7534 241.556 97.771 241.034 99.7194L201.893 245.797C200.261 251.887 193.998 255.503 187.908 253.871L129.854 238.316C123.762 236.683 120.148 230.421 121.78 224.331L170.421 42.8009Z"
+                           fill="gray"
+                        />
+                     </svg>
+                     La tua libreria
+                  </li>
+               </ul>
             </div>
          </div>
       </footer>
