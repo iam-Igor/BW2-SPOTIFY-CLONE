@@ -386,6 +386,40 @@ const player = function (data) {
          const coverImg = document.getElementById("player-img");
          coverImg.addEventListener("click", function () {
             popUp.classList.remove("d-none");
+            const popUpProgressBar = popUp.querySelector("#progressBar");
+            const popUpCurrentTime = popUp.querySelector("#currentTime");
+            const popUpDuration = popUp.querySelector("#duration");
+            const popUpBtnPlay = popUp.querySelector("#btn-play");
+
+            console.log("popup progress:", popUpProgressBar);
+
+            // update progressbar value
+            audio.addEventListener("timeupdate", function () {
+               const progress = (audio.currentTime / audio.duration) * 100;
+               popUpProgressBar.value = progress;
+
+               popUpCurrentTime.textContent = formatTime(audio.currentTime);
+               popUpDuration.textContent = formatTime(audio.duration);
+            });
+
+            // changes the playing position
+            popUpProgressBar.addEventListener("input", function () {
+               const time = (popUpProgressBar.value / 100) * audio.duration;
+               audio.currentTime = time;
+            });
+
+            popUpBtnPlay.addEventListener("click", function () {
+               if (popUpBtnPlay.classList.contains("fa-play-circle")) {
+                  popUpBtnPlay.classList.remove("fa-play-circle");
+                  popUpBtnPlay.classList.add("fa-pause-circle");
+                  btnClicked();
+                  audio.play();
+               } else {
+                  popUpBtnPlay.classList.add("fa-play-circle");
+                  btnClicked();
+                  audio.pause();
+               }
+            });
          });
 
          // close btn popup
