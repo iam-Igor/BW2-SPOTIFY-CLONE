@@ -4,40 +4,74 @@ container.classList.add("transition-slide-up");
 const addressBarContent = new URLSearchParams(location.search);
 const musicId = addressBarContent.get("musicId");
 
+const backBtn = document.getElementById("back");
+
+backBtn.addEventListener("click", function () {
+  window.history.back();
+});
+
 const getPlayer = function (music) {
-  const songTitle = document.getElementById("song-title");
-  songTitle.innerText = `${music.tracks.data[0].title}`;
+  let trackToShow = music.tracks.data;
+  console.log(trackToShow);
 
-  const artistname = document.getElementById("artist-name");
-  artistname.innerText = `${music.artist.name}`;
+  for (let i = 0; i < trackToShow.length; i++) {
+    const songTitle = document.getElementById("song-title");
+    songTitle.innerText = `${trackToShow[i].title}`;
 
-  const imageAlbum = document.getElementById("album-img");
-  imageAlbum.src = `${music.tracks.data[0].album.cover_medium}`;
+    const artistname = document.getElementById("artist-name");
+    artistname.innerText = `${music.artist.name}`;
 
-  const audioSource = document.getElementById("audio-player");
-  audioSource.src = `${music.tracks.data[0].preview}`;
+    const imageAlbum = document.getElementById("album-img");
+    imageAlbum.src = `${trackToShow[i].album.cover_medium}`;
 
-  console.log(music);
+    const audioSource = document.getElementById("audio-player");
+    audioSource.src = `${trackToShow[i].preview}`;
 
-  const playbtn = document.getElementById("play-pause");
-  playbtn.addEventListener("click", function () {
-    if (audioSource.paused) {
-      audioSource.play();
-      playbtn.innerHTML = `<i class="bi bi-pause-circle color1 fs-1 text-white"></i> `;
-    } else {
-      audioSource.pause();
-      playbtn.innerHTML = `<i class="bi bi-play-circle color1 fs-1 text-white"></i>`;
-    }
-  });
+    console.log(music);
 
-  audioSource.addEventListener("timeupdate", function () {
-    const progressBar = document.getElementsByClassName("progress")[0];
-    const currentTime = audioSource.currentTime;
-    const duration = audioSource.duration;
-    const percentagePlayed = (currentTime / duration) * 100;
+    const playbtn = document.getElementById("play-pause");
+    playbtn.addEventListener("click", function () {
+      if (audioSource.paused) {
+        audioSource.play();
+        playbtn.innerHTML = `<i class="bi bi-pause-circle color1 fs-1 text-white"></i> `;
+      } else {
+        audioSource.pause();
+        playbtn.innerHTML = `<i class="bi bi-play-circle color1 fs-1 text-white"></i>`;
+      }
+    });
 
-    progressBar.style.width = percentagePlayed + "%";
-  });
+    audioSource.addEventListener("timeupdate", function () {
+      const progressBar = document.getElementsByClassName("progress")[0];
+      const currentTime = audioSource.currentTime;
+      const duration = audioSource.duration;
+      const percentagePlayed = (currentTime / duration) * 100;
+
+      progressBar.style.width = percentagePlayed + "%";
+
+      const songStart = document.getElementsByClassName("song-start")[0];
+      const songEnd = document.getElementsByClassName("song-end")[0];
+
+      const formattedCurrentTime = formatTime(currentTime);
+      songStart.textContent = formattedCurrentTime;
+
+      const remainingTime = duration - currentTime;
+
+      const formattedRemainingTime = formatTime(remainingTime);
+      songEnd.textContent = formattedRemainingTime;
+
+      if (songEnd.textContent === "NaN:NaN") {
+        songEnd.textContent = "";
+      }
+    });
+  }
+};
+
+const formatTime = function (seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = Math.floor(seconds % 60);
+  return `${String(minutes).padStart(2, "0")}:${String(
+    remainingSeconds
+  ).padStart(2, "0")}`;
 };
 
 fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + musicId)

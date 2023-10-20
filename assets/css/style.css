@@ -1,59 +1,65 @@
 body {
-   font-family: "circular";
+  font-family: "circular";
 }
 
 .card-main img {
-   width: 30%;
+  width: 30%;
 }
 
 .color1 {
-   color: white;
+  color: white;
 }
 
 #music-bar {
-   background-color: black;
+  background-color: black;
 }
 
 #main-content .audio-player {
-   display: flex;
-   align-items: center;
-   width: 300px;
+  display: flex;
+  align-items: center;
+  width: 300px;
 }
 
 .audio-controls {
-   display: flex;
-   align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 button.play-pause {
-   background: none;
-   border: none;
-   font-size: 24px;
-   cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 .progress-bar-container {
-   width: 500px;
-   margin: 0 10px;
-   background-color: #888;
-   height: 5px;
-   border-radius: 2.5px;
-   position: relative;
+  width: 600px;
+  margin: 0 10px;
+  background-color: lightgray;
+  height: 5px;
+  border-radius: 2.5px;
+  position: relative;
 }
 
 .progress-bar {
-   width: 0;
-   border-radius: 2.5px;
+  width: 0px;
+  height: 5px;
+  background-color: green;
+  border-radius: 2.5px;
+}
+
+.progress {
+  background-color: green;
 }
 
 audio {
-   display: none;
+  display: none;
 }
 
 .skip-button {
-   background-color: transparent;
-   border: 0;
-   color: white;
+  background-color: transparent;
+  border: 0;
+  color: white;
 }
 
 /* input[type="range"] {
@@ -77,6 +83,7 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
 }
 
+/* VOLUME INPUT */
 input[type="range"] {
   width: 100px;
   height: 5px;
@@ -98,7 +105,8 @@ input[type="range"]::-moz-range-progress {
 
 input[type="range"]::-webkit-slider-thumb {
   display: none;
-} */
+}
+*/
 
 /* #music-bar svg path:hover {
    fill: green;
@@ -109,173 +117,262 @@ input[type="range"]::-webkit-slider-thumb {
 } */
 
 #small-bar i:hover {
-   color: white;
+  color: white;
 }
 
 #small-bar path:hover {
-   fill: white;
+  fill: white;
 }
 
 #library-svg {
-   transform: rotate(-15deg);
+  transform: rotate(-15deg);
 }
 a {
-   text-decoration: none;
-   color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 @media screen and (min-width: 481px) {
-   #list-container,
-   #row-3 {
-      overflow-y: scroll;
-   }
+  #list-container,
+  #row-3 {
+    overflow-y: scroll;
+  }
 }
 
 @media screen and (max-width: 480px) {
-   nav {
-      justify-content: center;
-   }
-   nav {
-      justify-content: center;
-   }
+  nav {
+    justify-content: center;
+  }
+  nav {
+    justify-content: center;
+  }
 
-   .card-body {
-      padding: 0;
-   }
-   .card-title {
-      font-size: 0.7em;
-      padding-left: 0.5em;
-   }
+  .card-body {
+    padding: 0;
+  }
+  .card-title {
+    font-size: 0.7em;
+    padding-left: 0.5em;
+  }
 }
 
 nav svg {
-   width: 20%;
+  width: 20%;
 }
 
 #favourites-cont {
-   height: 55vh;
+  height: 55vh;
 }
 
 #favourites li {
-   list-style-type: none;
+  list-style-type: none;
 }
 
 #form-search input:hover {
-   border: 2px solid white;
+  border: 2px solid white;
 }
 
 #form-search input:focus {
-   border: 2px solid white;
+  border: 2px solid white;
 }
 
 #form-search input {
-   border-radius: 0 20px 20px 0;
+  border-radius: 0 20px 20px 0;
 }
 
 .slide-in-blurred-top {
-   animation: slide-in-blurred-top 0.2s cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation: slide-in-blurred-top 0.2s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
 @keyframes slide-in-blurred-top {
-   0% {
-      transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
-      transform-origin: 50% 0%;
-      filter: blur(40px);
-      opacity: 0;
-   }
-   100% {
-      transform: translateY(0) scaleY(1) scaleX(1);
-      transform-origin: 50% 50%;
-      filter: blur(0);
-      opacity: 1;
-   }
+  0% {
+    transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+    transform-origin: 50% 0%;
+    filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scaleY(1) scaleX(1);
+    transform-origin: 50% 50%;
+    filter: blur(0);
+    opacity: 1;
+  }
 }
 
 .friends {
-   line-height: 1.2em;
-   font-size: 0.6em;
+  line-height: 1.2em;
+  font-size: 0.6em;
 }
 
 .grow {
-   transition: all 2s linear 1;
-   z-index: 2;
+  transition: all 2s linear 1;
+  z-index: 2;
 }
 
 .grow:hover {
-   transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* login page */
 
 .loginalert {
-   background-color: rgb(233, 20, 41);
-   color: white;
-   border: none;
+  background-color: rgb(233, 20, 41);
+  color: white;
+  border: none;
 }
 
 /* account page */
 
 .HeartAnimation {
-   padding-top: 2em;
-   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/66955/web_heart_animation.png");
-   background-repeat: no-repeat;
-   background-size: 2900%;
-   background-position: left;
-   height: 70px;
-   width: 70px;
-   margin: 0 auto;
-   cursor: pointer;
+  padding-top: 2em;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/66955/web_heart_animation.png");
+  background-repeat: no-repeat;
+  background-size: 2900%;
+  background-position: left;
+  height: 70px;
+  width: 70px;
+  margin: 0 auto;
+  cursor: pointer;
 }
 
 .animate {
-   animation: heart-burst 0.8s steps(28) forwards;
+  animation: heart-burst 0.8s steps(28) forwards;
 }
 
 @keyframes heart-burst {
-   0% {
-      background-position: left;
-   }
-   100% {
-      background-position: right;
-   }
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
 }
 
 #album-tracks-continer .card-text {
-   font-size: 0.8em;
+  font-size: 0.8em;
 }
 
 @media screen and (max-width: 480px) {
-   .moving {
-      width: 250px;
+  .moving {
+    width: 250px;
 
-      z-index: -2;
-      overflow: hidden;
-      white-space: nowrap;
-      animation: moveText 10s linear infinite;
-      text-overflow: ellipsis;
-   }
+    z-index: -2;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: moveText 10s linear infinite;
+    text-overflow: ellipsis;
+  }
 
-   .moving-title-song {
-      z-index: -2;
-      overflow: hidden;
-      white-space: nowrap;
-      animation: moveText 10s linear infinite;
-      text-overflow: ellipsis;
-      width: 100%;
-   }
+  .moving-title-song {
+    z-index: -2;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: moveText 10s linear infinite;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
 
-   @keyframes moveText {
-      0% {
-         transform: translateX(0);
-      }
-      25% {
-         transform: translateX(-20px);
-      }
-      75% {
-         transform: translateX(-10px);
-      }
-      100% {
-         transform: translateX(0px);
-      }
-   }
+  @keyframes moveText {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-20px);
+    }
+    75% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+}
+
+/* carousel */
+
+@media (max-width: 767px) {
+  .carousel-inner .carousel-item > div {
+    display: none;
+  }
+  .carousel-inner .carousel-item > div:first-child {
+    display: block;
+  }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .carousel-inner .carousel-item-end.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(25%);
+  }
+
+  .carousel-inner .carousel-item-start.active,
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-25%);
+  }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start {
+  transform: translateX(0);
+}
+
+.carousel-item img {
+  width: 80%;
+}
+
+@media screen and (max-width: 480px) {
+  .carousel-item2 img {
+    width: 100%;
+  }
+}
+
+.carousel-inner .card {
+  background-color: black;
+  border: 0;
+}
+
+.play-inner {
+  bottom: 5%;
+  position: absolute;
+  right: 20%;
+  font-size: 4em;
+  color: rgb(31, 223, 100);
+
+  opacity: 0;
+}
+
+.slide-in-bottom {
+  animation: slide-in-bottom 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.slide-out {
+  animation: slide-out 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
 }

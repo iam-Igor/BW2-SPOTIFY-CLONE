@@ -1,30 +1,103 @@
+// CAROUSEL
+let items = document.querySelectorAll(".carousel .carousel-item");
+
+items.forEach((el) => {
+  const minPerSlide = 4;
+  let next = el.nextElementSibling;
+  for (var i = 1; i < minPerSlide; i++) {
+    if (!next) {
+      // wrap carousel by using first child
+      next = items[0];
+    }
+    let cloneChild = next.cloneNode(true);
+    el.appendChild(cloneChild.children[0]);
+    next = next.nextElementSibling;
+  }
+});
+
+// SEZIONE CERCA MOBILE
+
+const searchButton2 = document.getElementById("search2");
+
+searchButton2.addEventListener("click", function () {
+  const navBar = document.getElementById("navbar");
+  navBar.classList.remove("d-none");
+  navBar.classList.add("slide-in-blurred-top");
+});
+
 // EVENT LISTENER PER CHIUDERE SEZ. AMICI ED INGRANDIRE SEZ. CENTRALE
 
 const closeBtn = document.getElementsByClassName("close-tab")[0];
 closeBtn.addEventListener("click", function () {
-   const friendstab = document.getElementById("friends-activity");
-   friendstab.classList.add("d-lg-none");
+  const friendstab = document.getElementById("friends-activity");
+  friendstab.classList.add("d-lg-none");
 
-   const mainContent = document.getElementById("main-content");
-   mainContent.classList.add("col-md-10");
+  const mainContent = document.getElementById("main-content");
+  mainContent.classList.add("col-md-10");
 });
+
+// EVENT LISTENER PER AGGIORNARE AVANZAMENTO BARRA PLAYER DESKTOP
+
+const audioSrc = document.getElementById("audio");
+
+const progressBar = document.getElementsByClassName("progress-bar")[0];
+audioSrc.addEventListener("timeupdate", function () {
+  const currentTime = audioSrc.currentTime;
+  const duration = audioSrc.duration;
+  const songStart = document.getElementsByClassName("song-start")[0];
+  const songEnd = document.getElementsByClassName("song-end")[0];
+
+  const formattedCurrentTime = formatTime(currentTime);
+  songStart.textContent = formattedCurrentTime;
+
+  const remainingTime = duration - currentTime;
+
+  const formattedRemainingTime = formatTime(remainingTime);
+  songEnd.textContent = formattedRemainingTime;
+
+  if (songEnd.textContent === "NaN:NaN") {
+    songEnd.textContent = "";
+  }
+
+  const percentagePlayed = (currentTime / duration) * 100;
+
+  progressBar.style.width = percentagePlayed + "%";
+});
+
+// GESTIONE VOLUME DEL PLAYER
+const volumeInput = document.getElementById("volume");
+
+volumeInput.addEventListener("input", function () {
+  const volume = volumeInput.value;
+  audioSrc.volume = volume;
+
+  audioSrc.volume = volumeInput.value / 100;
+});
+
+const formatTime = function (seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = Math.floor(seconds % 60);
+  return `${String(minutes).padStart(2, "0")}:${String(
+    remainingSeconds
+  ).padStart(2, "0")}`;
+};
 
 // EVENT LISTENER PER IL CUORE PREFERITI
 
 const HeartAnimation = document.getElementsByClassName("HeartAnimation")[0];
 if (HeartAnimation) {
-   HeartAnimation.addEventListener("click", function () {
-      HeartAnimation.classList.toggle("animate");
-   });
+  HeartAnimation.addEventListener("click", function () {
+    HeartAnimation.classList.toggle("animate");
+  });
 }
 
 // DETTAGLIO
 
 const generateDetails = function (details) {
-   console.log(details);
-   const row1 = document.getElementById("row-1");
-   for (let j = 0; j < details.data.length; j++) {
-      row1.innerHTML = `<div class="col col-4">
+  console.log(details);
+  const row1 = document.getElementById("row-1");
+  for (let j = 0; j < details.data.length; j++) {
+    row1.innerHTML = `<div class="col col-4">
      <img
      src="${details.data[j].album.cover_medium}"
       alt=""
@@ -48,17 +121,17 @@ const generateDetails = function (details) {
        <i class="bi bi-three-dots ms-3"></i>
      </div>
   </div>`;
-   }
+  }
 };
 
 // SEZIONE 2
 
 const renderSection2 = function (musicData) {
-   const section = document.getElementById("section2");
-   console.log(musicData.data);
-   console.log("music data", musicData);
-   for (let i = 0; i < 6; i++) {
-      section.innerHTML = `<div class="col mb-3 col-md-4 grow">
+  const section = document.getElementById("section2");
+  console.log(musicData.data);
+  console.log("music data", musicData);
+  for (let i = 0; i < 6; i++) {
+    section.innerHTML = `<div class="col mb-3 col-md-4 grow">
     <div
       class="card d-flex flex-row align-items-center bg-body-secondary border-0"
     >
@@ -168,215 +241,297 @@ const renderSection2 = function (musicData) {
       </div>
     </div>
   </div>`;
-   }
+  }
 };
 
 // SEZIONE 3
 
 const renderSection3 = function (musicData) {
-   const row3 = document.getElementById("row-3");
-   console.log(musicData);
+  const row3 = document.getElementById("row-3");
+  console.log(musicData);
 
-   row3.innerHTML = `<div class="col grow">
-    <div
-      class="card border-0 bg-body-secondary my-3 p-2"
-      style="height: 260px"
-    >
-      <img
-        src="${musicData.data[6].album.cover_medium}"
-        class="card-img-top"
-        alt="${musicData.data[6].artist.name}"
-      />
-      <div class="card-body">
-        <a
-          href="./artist.html?musicId=${musicData.data[6].artist.id}&artistId=${musicData.data[6].artist.id}"
-          class="card-title fw-bold"
-          style="font-size: 15px"
-          >${musicData.data[6].artist.name}</a
-        >  <p class="card-text text-truncate">
-        ${musicData.data[6].album.title}
-      </p>
+  row3.innerHTML = `<div
+  id="recipeCarousel"
+  class="carousel slide "
+  data-bs-ride="carousel"
+>
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <div class="col-md-3">
+        <div class="card card-2">
+          <div class="card-img position-relative">
+            <img
+              src="${musicData.data[6].album.cover_medium}"
+              class="img-fluid"
+            />
+            <a href="./album.html?musicId=${musicData.data[6].album.id}"><i
+            class="bi bi-play-circle-fill play-inner"
+          ></i></a>
+          </div>
+          <div class="card-body">
+            <a
+              href="./album.html?musicId=${musicData.data[6].artist.id}"
+              class="card-title fw-bold"
+              style="font-size: 15px"
+              >${musicData.data[6].artist.name}</a
+            >
+            <p class="card-text text-truncate">
+              ${musicData.data[6].album.title}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="col-md-3">
+        <div class="card card-2">
+          <div class="card-img position-relative">
+            <img
+              src="${musicData.data[7].album.cover_medium}"
+              class="img-fluid"
+            />
+            <a href="./album.html?musicId=${musicData.data[7].album.id}"><i
+            class="bi bi-play-circle-fill play-inner"
+          ></i></a>
+          </div>
+          <div class="card-body">
+            <a
+              href="./album.html?musicId=${musicData.data[7].artist.id}"
+              class="card-title fw-bold"
+              style="font-size: 15px"
+              >${musicData.data[7].artist.name}</a
+            >
+            <p class="card-text text-truncate">
+              ${musicData.data[7].album.title}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="col-md-3">
+        <div class="card card-2">
+          <div class="card-img position-relative">
+            <img
+              src="${musicData.data[8].album.cover_medium}"
+              class="img-fluid"
+            />
+            <a href="./album.html?musicId=${musicData.data[8].album.id}"><i
+            class="bi bi-play-circle-fill play-inner"
+          ></i></a>
+          </div>
+          <div class="card-body">
+            <a
+              href="./album.html?musicId=${musicData.data[8].artist.id}"
+              class="card-title fw-bold"
+              style="font-size: 15px"
+              >${musicData.data[8].artist.name}</a
+            >
+            <p class="card-text text-truncate">
+              ${musicData.data[8].album.title}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="col-md-3">
+        <div class="card card-2">
+          <div class="card-img position-relative">
+            <img
+              src="${musicData.data[9].album.cover_medium}"
+              class="img-fluid"
+            />
+            <a href="./album.html?musicId=${musicData.data[9].album.id}"><i
+            class="bi bi-play-circle-fill play-inner"
+          ></i></a>
+          </div>
+          <div class="card-body">
+            <a
+              href="./album.html?musicId=${musicData.data[9].artist.id}"
+              class="card-title fw-bold"
+              style="font-size: 15px"
+              >${musicData.data[9].artist.name}</a
+            >
+            <p class="card-text text-truncate">
+              ${musicData.data[9].album.title}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="col-md-3">
+        <div class="card card-2">
+          <div class="card-img position-relative">
+            <img
+              src="${musicData.data[10].album.cover_medium}"
+              class="img-fluid"
+            />
+            <a href="./album.html?musicId=${musicData.data[10].album.id}"><i
+            class="bi bi-play-circle-fill play-inner"
+          ></i></a>
+          </div>
+          <div class="card-body">
+            <a
+              href="./album.html?musicId=${musicData.data[10].artist.id}"
+              class="card-title fw-bold"
+              style="font-size: 15px"
+              >${musicData.data[10].artist.name}</a
+            >
+            <p class="card-text text-truncate">
+              ${musicData.data[10].album.title}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="col-md-3">
+        <div class="card card-2">
+          <div class="card-img position-relative">
+            <img
+              src="${musicData.data[11].album.cover_medium}"
+              class="img-fluid"
+            />
+            <a href="./album.html?musicId=${musicData.data[11].album.id}"><i
+            class="bi bi-play-circle-fill play-inner"
+          ></i></a>
+          </div>
+          <div class="card-body">
+            <a
+              href="./album.html?musicId=${musicData.data[11].artist.id}"
+              class="card-title fw-bold"
+              style="font-size: 15px"
+              >${musicData.data[11].artist.name}</a
+            >
+            <p class="card-text text-truncate">
+              ${musicData.data[11].album.title}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col grow"">
-    <div
-      class="card border-0 bg-body-secondary my-3 p-2"
-      style="height: 260px"
-    >
-      <img
-        src="${musicData.data[7].album.cover_medium}"
-        class="card-img-top"
-        alt="${musicData.data[7].artist.name}"
-      />
-      <div class="card-body">
-        <a
-          href="./artist.html?musicId=${musicData.data[7].artist.id}"
-          class="card-title fw-bold"
-          style="font-size: 15px"
-          >${musicData.data[7].artist.name}</a
-        >  <p class="card-text text-truncate">
-        ${musicData.data[7].album.title}
-      </p>
-      </div>
-    </div>
-  </div>
-  <div class="col grow"">
-    <div
-      class="card border-0 bg-body-secondary my-3 p-2"
-      style="height: 260px"
-    >
-      <img
-        src="${musicData.data[8].album.cover_medium}"
-        class="card-img-top"
-        alt="${musicData.data[8].artist.name}"
-      />
-      <div class="card-body">
-        <a
-          href="./artist.html?musicId=${musicData.data[8].artist.id}"
-          class="card-title fw-bold"
-          style="font-size: 15px"
-          >${musicData.data[8].artist.name}</a
-        >  <p class="card-text text-truncate">
-        ${musicData.data[8].album.title}
-      </p>
-      </div>
-    </div>
-  </div>
-  <div class="col grow"">
-    <div
-      class="card border-0 bg-body-secondary my-3 p-2"
-      style="height: 260px"
-    >
-      <img
-        src="${musicData.data[9].album.cover_medium}"
-        class="card-img-top"
-        alt="${musicData.data[9].artist.name}"
-      />
-      <div class="card-body">
-        <a
-          href="./artist.html?musicId=${musicData.data[9].artist.id}"
-          class="card-title fw-bold"
-          style="font-size: 15px"
-          >${musicData.data[9].artist.name}</a
-        >  <p class="card-text text-truncate">
-        ${musicData.data[9].album.title}
-      </p>
-      </div>
-    </div>
-  </div>
-  <div class="col grow"">
-    <div
-      class="card border-0 bg-body-secondary my-3 p-2"
-      style="height: 260px"
-    >
-      <img
-        src="${musicData.data[10].album.cover_medium}"
-        class="card-img-top"
-        alt="${musicData.data[10].artist.name}"
-      />
-      <div class="card-body">
-        <a
-          href="./artist.html?musicId=${musicData.data[10].artist.id}"
-          class="card-title fw-bold"
-          style="font-size: 15px"
-          >${musicData.data[10].artist.name}</a
-        >
-        <p class="card-text text-truncate">
-          ${musicData.data[10].album.title}
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="col grow d-md-none"">
-    <div
-      class="card border-0 bg-body-secondary my-3 p-2 "
-      style="height: 260px"
-    >
-      <img
-        src="${musicData.data[11].album.cover_medium}"
-        class="card-img-top"
-        alt="${musicData.data[11].artist.name}"
-      />
-      <div class="card-body">
-        <a
-          href="./artist.html?musicId=${musicData.data[11].artist.id}"
-          class="card-title fw-bold"
-          style="font-size: 15px"
-          >${musicData.data[11].artist.name}</a
-        >
-        <p class="card-text text-truncate">
-          ${musicData.data[11].album.title}
-        </p>
-      </div>
-    </div>
-  </div>`;
+  
+</div>`;
+
+  // CAROUSEL
+  let items = document.querySelectorAll(".carousel .carousel-item");
+
+  items.forEach((el) => {
+    const minPerSlide = 4;
+    let next = el.nextElementSibling;
+    for (var i = 1; i < minPerSlide; i++) {
+      if (!next) {
+        // wrap carousel by using first child
+        next = items[0];
+      }
+      let cloneChild = next.cloneNode(true);
+      el.appendChild(cloneChild.children[0]);
+      next = next.nextElementSibling;
+    }
+  });
+
+  // EVENT LISTENER PER FAR COMPARIRE PLAY BUTTON SULLE CARDS
+  const cards = document.getElementsByClassName("card-2");
+  const playIcon = document.getElementsByClassName("play-inner");
+
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener("mouseover", function () {
+      playIcon[i].classList.remove("slide-out");
+
+      playIcon[i].classList.add("slide-in-bottom");
+      playIcon[i].style.opacity = "1";
+    });
+    cards[i].addEventListener("mouseleave", function () {
+      playIcon[i].classList.remove("slide-in-bottom");
+      playIcon[i].classList.add("slide-out");
+    });
+  }
 };
+
+// EVENT LISTENER PER FAR COMPARIRE PLAY BUTTON SULLE CARDS
+const cards = document.getElementsByClassName("card-2");
+const playIcon = document.getElementsByClassName("play-inner");
+
+for (let i = 0; i < cards.length; i++) {
+  cards[i].addEventListener("mouseover", function () {
+    playIcon[i].classList.remove("slide-out");
+
+    playIcon[i].classList.add("slide-in-bottom");
+    playIcon[i].style.opacity = "1";
+  });
+  cards[i].addEventListener("mouseleave", function () {
+    playIcon[i].classList.remove("slide-in-bottom");
+    playIcon[i].classList.add("slide-out");
+  });
+}
 
 // SEZIONE PREFERITI
 const generateFavourites = function (musicData) {
-   console.log(musicData);
-   const ul = document.getElementById("favourites");
-   for (let k = 0; k < musicData.data.length; k++) {
-      const newLi = document.createElement("li");
-      newLi.classList.add("lh-base", "text-secondary", "link-light");
-      newLi.innerHTML = `<a href="./album.html?musicId=${musicData.data[k].album.id}">${musicData.data[k].album.title}</a>`;
-      ul.appendChild(newLi);
-   }
+  console.log(musicData);
+  const ul = document.getElementById("favourites");
+  for (let k = 0; k < musicData.data.length; k++) {
+    const newLi = document.createElement("li");
+    newLi.classList.add("lh-base", "text-secondary", "link-light");
+    newLi.innerHTML = `<a href="./album.html?musicId=${musicData.data[k].album.id}">${musicData.data[k].album.title}</a>`;
+    ul.appendChild(newLi);
+  }
 };
 const audiotrack = function (event) {
-   console.log(event);
-   const audioSrc = document.getElementById("audio");
-   audioSrc.src = event.data[0].preview;
+  console.log(event);
+  const audioSrc = document.getElementById("audio");
+  audioSrc.src = event.data[0].preview;
 
-   console.log((audioSrc.src = event.data[0].preview));
-   const artistInfo = document.querySelectorAll(".now-playing-artist");
-   artistInfo.forEach((artist) => {
-      artist.textContent = event.data[0].artist.name;
-   });
+  console.log((audioSrc.src = event.data[0].preview));
+  const artistInfo = document.querySelectorAll(".now-playing-artist");
+  artistInfo.forEach((artist) => {
+    artist.textContent = event.data[0].artist.name;
+  });
 
-   const titleInfo = document.querySelectorAll(".now-playing-title");
-   titleInfo.forEach((title) => {
-      title.textContent = event.data[0].title;
-   });
+  const titleInfo = document.querySelectorAll(".now-playing-title");
+  titleInfo.forEach((title) => {
+    title.textContent = event.data[0].title;
+  });
 
-   const imgInfo = document.querySelectorAll(".now-playing-img");
-   imgInfo.forEach((img) => {
-      img.src = event.data[0].album.cover_big;
-   });
+  const imgInfo = document.querySelectorAll(".now-playing-img");
+  imgInfo.forEach((img) => {
+    img.src = event.data[0].album.cover_big;
+  });
 
-   // EVENT LISTENER PER APRIRE MOB PLAYER
-   const musicBarSM = document.getElementById("music-bar2");
-   musicBarSM.addEventListener("click", function () {
-      const newUrl = `./mobile_player.html?musicId=${event.data[0].album.id}`;
-      window.location.href = newUrl;
-   });
+  // EVENT LISTENER PER APRIRE MOB PLAYER
+  const musicBarSM = document.getElementById("music-bar2");
+  musicBarSM.addEventListener("click", function () {
+    const newUrl = `./mobile_player.html?musicId=${event.data[0].album.id}`;
+    window.location.href = newUrl;
+  });
 };
 
 const form = document.getElementById("form-search");
 form.addEventListener("submit", function (e) {
-   e.preventDefault();
-   const input = document.getElementById("search-input");
-   let index = input.value;
-   fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + index)
-      .then((res) => {
-         if (res.ok) {
-            return res.json();
-         } else {
-            throw new Error("Errore nel contattare il server");
-         }
-      })
-      .then((music) => {
-         renderSection2(music);
-         renderSection3(music);
-         generateFavourites(music);
+  e.preventDefault();
+  const input = document.getElementById("search-input");
+  let index = input.value;
+  fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + index)
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error("Errore nel contattare il server");
+      }
+    })
+    .then((music) => {
+      renderSection2(music);
+      renderSection3(music);
+      generateFavourites(music);
 
-         audiotrack(music);
-         generateDetails(music);
-      })
-      .catch((err) => {
-         console.log("Si è verificato un errore", err);
-      });
+      audiotrack(music);
+      generateDetails(music);
+    })
+    .catch((err) => {
+      console.log("Si è verificato un errore", err);
+    });
 });
 
 const audio = document.getElementById("audio");
@@ -388,23 +543,15 @@ const nextButton = document.querySelector(".skip-button:nth-child(3)");
 const prevButton = document.querySelector(".skip-button:nth-child(1)");
 
 playPauseButton.forEach((button) => {
-   button.addEventListener("click", function () {
-      if (audio.paused) {
-         audio.play();
-         button.innerHTML = `<i class="bi bi-pause-circle color1 fs-1 fs-md-4"></i>`;
-      } else {
-         audio.pause();
-         button.innerHTML = `<i class="bi bi-play-fill color1 fs-1 fs-md-4"></i>`;
-      }
-   });
-});
-
-// SEZIONE CERCA MOBILE
-
-const searchButton2 = document.getElementById("search2");
-
-searchButton2.addEventListener("click", function () {
-   const navBar = document.getElementById("navbar");
-   navBar.classList.remove("d-none");
-   navBar.classList.add("slide-in-blurred-top");
+  button.addEventListener("click", function () {
+    if (audio.paused) {
+      audio.play();
+      button.innerHTML = `<i class="bi bi-pause-circle color1 fs-1 fs-md-4"></i>`;
+      button.style.transform = "scale(0.8)";
+    } else {
+      audio.pause();
+      button.innerHTML = `<i class="bi bi-play-fill color1 fs-1 fs-md-4"></i>`;
+      button.style.transform = "scale(1)";
+    }
+  });
 });
