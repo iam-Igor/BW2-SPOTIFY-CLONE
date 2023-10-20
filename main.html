@@ -315,110 +315,229 @@
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
                   <h4>Altro di ciò che ti piace</h4>
-                  <h6 class="d-none d-md-block">VISUALIZZA TUTTO</h6>
+                  <div class="d-flex">
+                    <h6 class="d-none d-md-block">VISUALIZZA TUTTO</h6>
+                    <a href="#recipeCarousel" role="button" data-bs-slide="prev"
+                      ><i class="bi bi-chevron-left"></i
+                    ></a>
+                    <a href="#recipeCarousel" role="button" data-bs-slide="next"
+                      ><i class="bi bi-chevron-right"></i
+                    ></a>
+                  </div>
                 </div>
-                <div
-                  class="row row-cols-2 row-cols-md-5 mt-4 flex-wrap flex-md-row overflow-x-hidden"
-                  id="row-3"
-                >
-                  <div class="col">
+
+                <!-- SECTION CAROUSEL -->
+                <div class="container text-center my-3">
+                  <div
+                    class="row mx-auto my-auto justify-content-center"
+                    id="row-3"
+                  >
                     <div
-                      class="card border-0 bg-body-secondary my-3 p-2"
-                      style="height: 250px"
-                      id="card1"
+                      id="recipeCarousel"
+                      class="carousel slide"
+                      data-bs-ride="carousel"
                     >
-                      <img
-                        src="assets/imgs/search/image-1.jpeg"
-                        class="card-img-top"
-                        alt="${musicData.data[i].artist.name}"
-                      />
-                      <div class="card-body">
-                        <a
-                          href="./details.html?musicId=${musicData.data[i].artist.id}"
-                          class="card-title fw-bold"
-                          style="font-size: 15px"
-                          >Power Hits</a
-                        >
+                      <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                          <div class="col-md-3">
+                            <div class="card">
+                              <div class="card-img">
+                                <img
+                                  src="assets/imgs/main/image-11.jpg"
+                                  class="img-fluid"
+                                />
+                              </div>
+                              <p>Imagine Dragons</p>
+                              <p>Mercury</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <div class="col-md-3">
+                            <div class="card">
+                              <div class="card-img">
+                                <img
+                                  src="assets/imgs/main/image-19.jpg"
+                                  class="img-fluid"
+                                />
+                              </div>
+                              <p>Street Culto</p>
+                              <p>Playlist</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <div class="col-md-3">
+                            <div class="card">
+                              <div class="card-img">
+                                <img
+                                  src="assets/imgs/main/image-8.jpg"
+                                  class="img-fluid"
+                                />
+                              </div>
+                              <p>Sangue Giovane</p>
+                              <p>Playlist</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <div class="col-md-3">
+                            <div class="card">
+                              <div class="card-img">
+                                <img
+                                  src="assets/imgs/main/image-5.jpg"
+                                  class="img-fluid"
+                                />
+                              </div>
+                              <p>lofi beats</p>
+                              <p>Playlist</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <div class="col-md-3">
+                            <div class="card">
+                              <div class="card-img">
+                                <img
+                                  src="assets/imgs/search/image-17.jpg"
+                                  class="img-fluid"
+                                />
+                              </div>
+                              <p>Stress Relief</p>
+                              <p>Playlist</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <div class="col-md-3">
+                            <div class="card">
+                              <div class="card-img">
+                                <img
+                                  src="assets/imgs/main/image-9.jpg"
+                                  class="img-fluid"
+                                />
+                              </div>
+                              <p>Canta sotto la doccia</p>
+                              <p>Playlist</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col">
-                    <div
-                      class="card border-0 bg-body-secondary my-3 p-2"
-                      style="height: 250px"
-                    >
-                      <img
-                        src="assets/imgs/search/image-11.jpg"
-                        class="card-img-top"
-                        alt="${musicData.data[i].artist.name}"
-                      />
-                      <div class="card-body">
-                        <a
-                          href="./details.html?musicId=${musicData.data[i].artist.id}"
-                          class="card-title fw-bold"
-                          style="font-size: 15px"
-                          >Trending Hits</a
-                        >
-                      </div>
-                    </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                  <h4>Creato per te</h4>
+                  <div class="d-flex">
+                    <h6 class="d-none d-md-block">VISUALIZZA TUTTO</h6>
+                    <a
+                      href="#recipeCarousel2"
+                      role="button"
+                      data-bs-slide="prev"
+                      ><i class="bi bi-chevron-left"></i
+                    ></a>
+                    <a
+                      href="#recipeCarousel2"
+                      role="button"
+                      data-bs-slide="next"
+                      ><i class="bi bi-chevron-right"></i
+                    ></a>
                   </div>
-                  <div class="col">
+                </div>
+
+                <!-- SECTION CAROUSEL -->
+                <div class="container text-center my-3">
+                  <div class="row mx-auto my-auto justify-content-center">
                     <div
-                      class="card border-0 bg-body-secondary my-3 p-2"
-                      style="height: 250px"
+                      id="recipeCarousel2"
+                      class="carousel slide"
+                      data-bs-ride="carousel"
                     >
-                      <img
-                        src="assets/imgs/search/image-13.jpeg"
-                        class="card-img-top"
-                        alt="${musicData.data[i].artist.name}"
-                      />
-                      <div class="card-body">
-                        <a
-                          href="./details.html?musicId=${musicData.data[i].artist.id}"
-                          class="card-title fw-bold"
-                          style="font-size: 15px"
-                          >Most listened</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div
-                      class="card border-0 bg-body-secondary my-3 p-2"
-                      style="height: 250px"
-                    >
-                      <img
-                        src="assets/imgs/search/image-17.jpg"
-                        class="card-img-top"
-                        alt="${musicData.data[i].artist.name}"
-                      />
-                      <div class="card-body">
-                        <a
-                          href="./details.html?musicId=${musicData.data[i].artist.id}"
-                          class="card-title fw-bold"
-                          style="font-size: 15px"
-                          >Popular Hits</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div
-                      class="card border-0 bg-body-secondary my-3 p-2"
-                      style="height: 250px"
-                    >
-                      <img
-                        src="assets/imgs/search/image-19.jpg"
-                        class="card-img-top"
-                        alt="${musicData.data[i].artist.name}"
-                      />
-                      <div class="card-body">
-                        <a
-                          href="./details.html?musicId=${musicData.data[i].artist.id}"
-                          class="card-title fw-bold"
-                          style="font-size: 15px"
-                          >2000'S</a
-                        >
+                      <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                          <div class="col-md-3">
+                            <div class="card">
+                              <div class="card-img">
+                                <img
+                                  src="assets/imgs/playlists/1.png"
+                                  class="img-fluid"
+                                />
+                              </div>
+                              <p>Daily Mix 1</p>
+                              <p>Liverato, Shiva e altro</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <div class="col-md-3">
+                            <div class="card">
+                              <div class="card-img">
+                                <img
+                                  src="assets/imgs/playlists/2.png"
+                                  class="img-fluid"
+                                />
+                              </div>
+                              <p>Daily Mix 3</p>
+                              <p>Gazzelle, Gemitaiz e altro</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <div class="col-md-3">
+                            <div class="card">
+                              <div class="card-img">
+                                <img
+                                  src="assets/imgs/playlists/3.png"
+                                  class="img-fluid"
+                                />
+                              </div>
+                              <p>Top 50 Italia</p>
+                              <p>Playlist</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <div class="col-md-3">
+                            <div class="card">
+                              <div class="card-img">
+                                <img
+                                  src="assets/imgs/playlists/4.png"
+                                  class="img-fluid"
+                                />
+                              </div>
+                              <p>XXXTENTACION Mix</p>
+                              <p>Don Toliver, Post Malone e altro</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <div class="col-md-3">
+                            <div class="card">
+                              <div class="card-img">
+                                <img
+                                  src="assets/imgs/playlists/5.png"
+                                  class="img-fluid"
+                                />
+                              </div>
+                              <p>Novità Pop</p>
+                              <p>Playlist</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <div class="col-md-3">
+                            <div class="card">
+                              <div class="card-img">
+                                <img
+                                  src="assets/imgs/playlists/6.png"
+                                  class="img-fluid"
+                                />
+                              </div>
+                              <p>Estate 2023</p>
+                              <p>Playlist</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
