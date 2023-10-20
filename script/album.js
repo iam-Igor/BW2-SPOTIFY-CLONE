@@ -83,7 +83,7 @@ const renderAlbum = function (album) {
    album.tracks.data.forEach((track, index) => {
       const trackRow = document.createElement("div");
       // console.log(album);
-      trackRow.className = "row row-cols-3 tracks mx-0 mb-2";
+      trackRow.className = "row row-cols-3 tracks mx-0 mb-2 track-row";
       trackRow.innerHTML = `
          <div class="col-6 d-flex align-items-center ps-0 ps-md-3">
             <p class="ps-4 pe-3 m-0 number >${index + 1}</p>
