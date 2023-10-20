@@ -100,13 +100,13 @@ input[type="range"]::-webkit-slider-thumb {
   display: none;
 } */
 
-#music-bar svg path:hover {
+/* #music-bar svg path:hover {
    fill: green;
-}
+} */
 
-i:hover {
+/* i:hover {
    color: green;
-}
+} */
 
 #small-bar i:hover {
    color: white;
@@ -253,6 +253,15 @@ nav svg {
       white-space: nowrap;
       animation: moveText 10s linear infinite;
       text-overflow: ellipsis;
+   }
+
+   .moving-title-song {
+      z-index: -2;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: moveText 10s linear infinite;
+      text-overflow: ellipsis;
+      width: 100%;
    }
 
    @keyframes moveText {

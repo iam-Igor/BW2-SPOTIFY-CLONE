@@ -331,6 +331,76 @@ const player = function (data) {
             audio.pause();
          }
       });
+
+      if (window.innerWidth <= 768) {
+         console.log("small device");
+         const popUp = document.createElement("div");
+         popUp.className = "pop-up z-2 d-none";
+         popUp.innerHTML = `
+         <div class="z-3 d-flex flex-column align-items-center">
+            <div
+               class="btn m-3 pe-4 w-100 d-flex align-items-end justify-content-end mb-5"
+            >
+               <i id="close-btn_" class="fas fa-times fs-1"></i>
+            </div>
+            <div class="mt-5 pt-3 mb-5">
+               <img
+                  src="https://placekitten.com/300"
+                  class="rounded mx-auto d-block mt-5"
+                  alt="cover image"
+               />
+            </div>
+            <div class="player-center w-75">
+               <div
+                  class="player-buttons d-flex justify-content-center mt-3 align-items-center mb-3"
+               >
+                  <a href="#" id="btn-previous" class="mt-1"
+                     ><i class="fas fa-step-backward text-white-50 fs-5"></i
+                  ></a>
+                  <i id="btn-play" class="fas fa-play-circle fs-2 px-3"></i>
+                  <a href="#" id="btn-next" class="mt-1"
+                     ><i class="fas fa-step-forward text-white-50 fs-5"></i
+                  ></a>
+               </div>
+               <div
+                  class="progress text-white-50 d-flex align-items-center mb-3 mt-2"
+               >
+                  <span class="mx-2 fs-6 mb-1" id="currentTime">0:00</span>
+                  <label class="d-none" for="progressBar">Duration</label>
+                  <input
+                     class="w-100 sliderRange"
+                     id="progressBar"
+                     type="range"
+                     min="0"
+                     max="100"
+                     value="0"
+                  />
+                  <span class="mx-2 fs-6 mb-1" id="duration">0:00</span>
+               </div>
+            </div>
+         </div>
+         `;
+         document.querySelector("body").append(popUp);
+
+         // open popup when user click on cover image of the player
+         const coverImg = document.getElementById("player-img");
+         coverImg.addEventListener("click", function () {
+            popUp.classList.remove("d-none");
+         });
+
+         // close btn popup
+         const btnClose = popUp.querySelector("#close-btn_");
+         btnClose.addEventListener("click", function () {
+            popUp.classList.add("d-none");
+         });
+
+         console.log(" btn close", btnClose);
+         console.log("this is popup", popUp);
+      } else {
+         console.log("large device");
+      }
+
+      console.log("width: ", window.innerWidth);
    }
 };
 
