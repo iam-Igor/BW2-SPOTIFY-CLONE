@@ -245,7 +245,13 @@ const player = function (data) {
          </audio>
          `;
 
+      console.log("cuurent playeeee", obj.data[currentTrack].album);
+
       playerImg.setAttribute("src", obj.data[currentTrack].album.cover_small);
+      playerImg.setAttribute(
+         "data-cover",
+         obj.data[currentTrack].album.cover_medium
+      );
 
       playerArtists.innerHTML = "";
 
@@ -345,6 +351,7 @@ const player = function (data) {
             </div>
             <div class="mt-5 pt-3 mb-5">
                <img
+               id="pop-up-cover-img"
                   src="https://placekitten.com/300"
                   class="rounded mx-auto d-block mt-5"
                   alt="cover image"
@@ -390,6 +397,12 @@ const player = function (data) {
             const popUpCurrentTime = popUp.querySelector("#currentTime");
             const popUpDuration = popUp.querySelector("#duration");
             const popUpBtnPlay = popUp.querySelector("#btn-play");
+            const popUpCoverImg = popUp.querySelector("#pop-up-cover-img");
+            const retreaveCover =
+               document.getElementById("player-img").dataset.cover;
+
+            popUpCoverImg.setAttribute("src", retreaveCover);
+            console.log("get img:", retreaveCover);
 
             console.log("popup progress:", popUpProgressBar);
 
