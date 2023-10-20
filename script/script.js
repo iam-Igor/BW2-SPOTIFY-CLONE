@@ -38,31 +38,31 @@ closeBtn.addEventListener("click", function () {
 
 // EVENT LISTENER PER AGGIORNARE AVANZAMENTO BARRA PLAYER DESKTOP
 
-const audioSrc = document.getElementById("audio");
+// const audioSrc = document.getElementById("audio");
 
-const progressBar = document.getElementsByClassName("progress-bar")[0];
-audioSrc.addEventListener("timeupdate", function () {
-  const currentTime = audioSrc.currentTime;
-  const duration = audioSrc.duration;
-  const songStart = document.getElementsByClassName("song-start")[0];
-  const songEnd = document.getElementsByClassName("song-end")[0];
+// const progressBar = document.getElementsByClassName("progress-bar")[0];
+// audioSrc.addEventListener("timeupdate", function () {
+//   const currentTime = audioSrc.currentTime;
+//   const duration = audioSrc.duration;
+//   const songStart = document.getElementsByClassName("song-start")[0];
+//   const songEnd = document.getElementsByClassName("song-end")[0];
 
-  const formattedCurrentTime = formatTime(currentTime);
-  songStart.textContent = formattedCurrentTime;
+//   const formattedCurrentTime = formatTime(currentTime);
+//   songStart.textContent = formattedCurrentTime;
 
-  const remainingTime = duration - currentTime;
+//   const remainingTime = duration - currentTime;
 
-  const formattedRemainingTime = formatTime(remainingTime);
-  songEnd.textContent = formattedRemainingTime;
+//   const formattedRemainingTime = formatTime(remainingTime);
+//   songEnd.textContent = formattedRemainingTime;
 
-  if (songEnd.textContent === "NaN:NaN") {
-    songEnd.textContent = "";
-  }
+//   if (songEnd.textContent === "NaN:NaN") {
+//     songEnd.textContent = "";
+//   }
 
-  const percentagePlayed = (currentTime / duration) * 100;
+//   const percentagePlayed = (currentTime / duration) * 100;
 
-  progressBar.style.width = percentagePlayed + "%";
-});
+//   progressBar.style.width = percentagePlayed + "%";
+// });
 
 // GESTIONE VOLUME DEL PLAYER
 const volumeInput = document.getElementById("volume");
@@ -270,7 +270,7 @@ const renderSection3 = function (musicData) {
           </div>
           <div class="card-body">
             <a
-              href="./album.html?musicId=${musicData.data[6].artist.id}"
+              href="./artist.html?musicId=${musicData.data[6].artist.id}&artistId=${musicData.data[6].artist.id}"
               class="card-title fw-bold"
               style="font-size: 15px"
               >${musicData.data[6].artist.name}</a
@@ -296,8 +296,8 @@ const renderSection3 = function (musicData) {
           </div>
           <div class="card-body">
             <a
-              href="./album.html?musicId=${musicData.data[7].artist.id}"
-              class="card-title fw-bold"
+            href="./artist.html?musicId=${musicData.data[7].artist.id}&artistId=${musicData.data[7].artist.id}"
+            class="card-title fw-bold"
               style="font-size: 15px"
               >${musicData.data[7].artist.name}</a
             >
@@ -322,8 +322,8 @@ const renderSection3 = function (musicData) {
           </div>
           <div class="card-body">
             <a
-              href="./album.html?musicId=${musicData.data[8].artist.id}"
-              class="card-title fw-bold"
+            href="./artist.html?musicId=${musicData.data[8].artist.id}&artistId=${musicData.data[8].artist.id}"
+            class="card-title fw-bold"
               style="font-size: 15px"
               >${musicData.data[8].artist.name}</a
             >
@@ -348,8 +348,8 @@ const renderSection3 = function (musicData) {
           </div>
           <div class="card-body">
             <a
-              href="./album.html?musicId=${musicData.data[9].artist.id}"
-              class="card-title fw-bold"
+            href="./artist.html?musicId=${musicData.data[9].artist.id}&artistId=${musicData.data[9].artist.id}"
+            class="card-title fw-bold"
               style="font-size: 15px"
               >${musicData.data[9].artist.name}</a
             >
@@ -368,7 +368,7 @@ const renderSection3 = function (musicData) {
               src="${musicData.data[10].album.cover_medium}"
               class="img-fluid"
             />
-            <a href="./album.html?musicId=${musicData.data[10].album.id}"><i
+            href="./artist.html?musicId=${musicData.data[10].artist.id}&artistId=${musicData.data[10].artist.id}"
             class="bi bi-play-circle-fill play-inner"
           ></i></a>
           </div>
@@ -400,8 +400,8 @@ const renderSection3 = function (musicData) {
           </div>
           <div class="card-body">
             <a
-              href="./album.html?musicId=${musicData.data[11].artist.id}"
-              class="card-title fw-bold"
+            href="./artist.html?musicId=${musicData.data[11].artist.id}&artistId=${musicData.data[11].artist.id}"
+            class="card-title fw-bold"
               style="font-size: 15px"
               >${musicData.data[11].artist.name}</a
             >

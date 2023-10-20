@@ -10,7 +10,7 @@ body {
   color: white;
 }
 
-#music-bar {
+/* #music-bar {
   background-color: black;
 }
 
@@ -60,7 +60,7 @@ audio {
   background-color: transparent;
   border: 0;
   color: white;
-}
+} */
 
 /* input[type="range"] {
   width: 100px;
@@ -84,7 +84,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 /* VOLUME INPUT */
-input[type="range"] {
+/* input[type="range"] {
   width: 100px;
   height: 5px;
   background-color: lightgrey;
@@ -97,9 +97,9 @@ input[type="range"] {
 
   -webkit-appearance: none;
   appearance: none;
-}
+} */
 
-input[type="range"]::-moz-range-progress {
+/* input[type="range"]::-moz-range-progress {
   background-color: gray;
 }
 
