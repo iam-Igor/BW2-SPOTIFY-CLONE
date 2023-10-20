@@ -390,7 +390,9 @@ const player = function (data) {
       // open popup when user click on cover image of the player
       const coverImg = document.getElementById("player-img");
       coverImg.addEventListener("click", function () {
+        popUp.classList.add("slide-in-bottom");
         popUp.classList.remove("d-none");
+
         const popUpProgressBar = popUp.querySelector("#progressBar");
         const popUpCurrentTime = popUp.querySelector("#currentTime");
         const popUpDuration = popUp.querySelector("#duration");
