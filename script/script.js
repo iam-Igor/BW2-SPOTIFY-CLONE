@@ -256,12 +256,15 @@ const renderSection3 = function (musicData) {
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
       <div class="col-md-3">
-        <div class="card">
-          <div class="card-img">
+        <div class="card card-2">
+          <div class="card-img position-relative">
             <img
               src="${musicData.data[6].album.cover_medium}"
               class="img-fluid"
             />
+            <i
+            class="bi bi-play-circle-fill play-inner"
+          ></i>
           </div>
           <div class="card-body">
             <a
@@ -279,12 +282,15 @@ const renderSection3 = function (musicData) {
     </div>
     <div class="carousel-item">
       <div class="col-md-3">
-        <div class="card">
-          <div class="card-img">
+        <div class="card card-2">
+          <div class="card-img position-relative">
             <img
               src="${musicData.data[7].album.cover_medium}"
               class="img-fluid"
             />
+            <i
+            class="bi bi-play-circle-fill play-inner"
+          ></i>
           </div>
           <div class="card-body">
             <a
@@ -302,12 +308,15 @@ const renderSection3 = function (musicData) {
     </div>
     <div class="carousel-item">
       <div class="col-md-3">
-        <div class="card">
-          <div class="card-img">
+        <div class="card card-2">
+          <div class="card-img position-relative">
             <img
               src="${musicData.data[8].album.cover_medium}"
               class="img-fluid"
             />
+            <i
+            class="bi bi-play-circle-fill play-inner"
+          ></i>
           </div>
           <div class="card-body">
             <a
@@ -325,12 +334,15 @@ const renderSection3 = function (musicData) {
     </div>
     <div class="carousel-item">
       <div class="col-md-3">
-        <div class="card">
-          <div class="card-img">
+        <div class="card card-2">
+          <div class="card-img position-relative">
             <img
               src="${musicData.data[9].album.cover_medium}"
               class="img-fluid"
             />
+            <i
+            class="bi bi-play-circle-fill play-inner"
+          ></i>
           </div>
           <div class="card-body">
             <a
@@ -348,12 +360,15 @@ const renderSection3 = function (musicData) {
     </div>
     <div class="carousel-item">
       <div class="col-md-3">
-        <div class="card">
-          <div class="card-img">
+        <div class="card card-2">
+          <div class="card-img position-relative">
             <img
               src="${musicData.data[10].album.cover_medium}"
               class="img-fluid"
             />
+            <i
+            class="bi bi-play-circle-fill play-inner"
+          ></i>
           </div>
           <div class="card-body">
             <a
@@ -371,12 +386,15 @@ const renderSection3 = function (musicData) {
     </div>
     <div class="carousel-item">
       <div class="col-md-3">
-        <div class="card">
-          <div class="card-img">
+        <div class="card card-2">
+          <div class="card-img position-relative">
             <img
               src="${musicData.data[11].album.cover_medium}"
               class="img-fluid"
             />
+            <i
+            class="bi bi-play-circle-fill play-inner"
+          ></i>
           </div>
           <div class="card-body">
             <a
@@ -412,7 +430,37 @@ const renderSection3 = function (musicData) {
       next = next.nextElementSibling;
     }
   });
+
+  // EVENT LISTENER PER FAR COMPARIRE PLAY BUTTON SULLE CARDS
+  const cards = document.getElementsByClassName("card-2");
+  const playIcon = document.getElementsByClassName("play-inner");
+
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener("mouseover", function () {
+      playIcon[i].classList.add("slide-in-bottom");
+      playIcon[i].style.display = "block";
+    });
+    cards[i].addEventListener("mouseleave", function () {
+      playIcon[i].classList.remove("slide-in-bottom");
+      playIcon[i].classList.add("slide-out");
+    });
+  }
 };
+
+// EVENT LISTENER PER FAR COMPARIRE PLAY BUTTON SULLE CARDS
+const cards = document.getElementsByClassName("card-2");
+const playIcon = document.getElementsByClassName("play-inner");
+
+for (let i = 0; i < cards.length; i++) {
+  cards[i].addEventListener("mouseover", function () {
+    playIcon[i].classList.add("slide-in-bottom");
+    playIcon[i].style.display = "block";
+  });
+  cards[i].addEventListener("mouseleave", function () {
+    playIcon[i].classList.remove("slide-in-bottom");
+    playIcon[i].classList.add("slide-out");
+  });
+}
 
 // SEZIONE PREFERITI
 const generateFavourites = function (musicData) {
