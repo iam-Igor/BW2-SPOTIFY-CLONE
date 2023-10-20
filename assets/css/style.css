@@ -320,8 +320,8 @@ nav svg {
   right: 20%;
   font-size: 4em;
   color: rgb(31, 223, 100);
-  background-color: none;
-  display: none;
+
+  opacity: 0;
 }
 
 .slide-in-bottom {

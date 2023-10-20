@@ -262,9 +262,9 @@ const renderSection3 = function (musicData) {
               src="${musicData.data[6].album.cover_medium}"
               class="img-fluid"
             />
-            <i
+            <a href="./album.html?musicId=${musicData.data[6].album.id}"><i
             class="bi bi-play-circle-fill play-inner"
-          ></i>
+          ></i></a>
           </div>
           <div class="card-body">
             <a
@@ -288,9 +288,9 @@ const renderSection3 = function (musicData) {
               src="${musicData.data[7].album.cover_medium}"
               class="img-fluid"
             />
-            <i
+            <a href="./album.html?musicId=${musicData.data[7].album.id}"><i
             class="bi bi-play-circle-fill play-inner"
-          ></i>
+          ></i></a>
           </div>
           <div class="card-body">
             <a
@@ -314,9 +314,9 @@ const renderSection3 = function (musicData) {
               src="${musicData.data[8].album.cover_medium}"
               class="img-fluid"
             />
-            <i
+            <a href="./album.html?musicId=${musicData.data[8].album.id}"><i
             class="bi bi-play-circle-fill play-inner"
-          ></i>
+          ></i></a>
           </div>
           <div class="card-body">
             <a
@@ -340,9 +340,9 @@ const renderSection3 = function (musicData) {
               src="${musicData.data[9].album.cover_medium}"
               class="img-fluid"
             />
-            <i
+            <a href="./album.html?musicId=${musicData.data[9].album.id}"><i
             class="bi bi-play-circle-fill play-inner"
-          ></i>
+          ></i></a>
           </div>
           <div class="card-body">
             <a
@@ -366,9 +366,9 @@ const renderSection3 = function (musicData) {
               src="${musicData.data[10].album.cover_medium}"
               class="img-fluid"
             />
-            <i
+            <a href="./album.html?musicId=${musicData.data[10].album.id}"><i
             class="bi bi-play-circle-fill play-inner"
-          ></i>
+          ></i></a>
           </div>
           <div class="card-body">
             <a
@@ -392,9 +392,9 @@ const renderSection3 = function (musicData) {
               src="${musicData.data[11].album.cover_medium}"
               class="img-fluid"
             />
-            <i
+            <a href="./album.html?musicId=${musicData.data[11].album.id}"><i
             class="bi bi-play-circle-fill play-inner"
-          ></i>
+          ></i></a>
           </div>
           <div class="card-body">
             <a
@@ -437,8 +437,10 @@ const renderSection3 = function (musicData) {
 
   for (let i = 0; i < cards.length; i++) {
     cards[i].addEventListener("mouseover", function () {
+      playIcon[i].classList.remove("slide-out");
+
       playIcon[i].classList.add("slide-in-bottom");
-      playIcon[i].style.display = "block";
+      playIcon[i].style.opacity = "1";
     });
     cards[i].addEventListener("mouseleave", function () {
       playIcon[i].classList.remove("slide-in-bottom");
@@ -453,8 +455,10 @@ const playIcon = document.getElementsByClassName("play-inner");
 
 for (let i = 0; i < cards.length; i++) {
   cards[i].addEventListener("mouseover", function () {
+    playIcon[i].classList.remove("slide-out");
+
     playIcon[i].classList.add("slide-in-bottom");
-    playIcon[i].style.display = "block";
+    playIcon[i].style.opacity = "1";
   });
   cards[i].addEventListener("mouseleave", function () {
     playIcon[i].classList.remove("slide-in-bottom");
